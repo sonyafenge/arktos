@@ -147,6 +147,7 @@ func TestApplyStripsFields(t *testing.T) {
 	f := NewTestFieldManager()
 
 	obj := &corev1.Pod{}
+	obj.ObjectMeta.ManagedFields = []metav1.ManagedFieldsEntry{{}}
 
 	newObj := &corev1.Pod{
 		TypeMeta: metav1.TypeMeta{
@@ -224,6 +225,7 @@ func TestApplyDoesNotStripLabels(t *testing.T) {
 	f := NewTestFieldManager()
 
 	obj := &corev1.Pod{}
+	obj.ObjectMeta.ManagedFields = []metav1.ManagedFieldsEntry{{}}
 
 	newObj, err := f.Apply(obj, []byte(`{
 		"apiVersion": "apps/v1",

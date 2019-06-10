@@ -98,7 +98,7 @@ func calculateCondition(in *apiextensions.CustomResourceDefinition) *apiextensio
 
 		pth := field.NewPath("spec", "validation", "openAPIV3Schema")
 
-		allErrs = append(allErrs, schema.ValidateStructural(s, pth)...)
+		allErrs = append(allErrs, schema.ValidateStructural(pth, s)...)
 	}
 
 	for _, v := range in.Spec.Versions {
@@ -115,7 +115,7 @@ func calculateCondition(in *apiextensions.CustomResourceDefinition) *apiextensio
 
 		pth := field.NewPath("spec", "version").Key(v.Name).Child("schema", "openAPIV3Schema")
 
-		allErrs = append(allErrs, schema.ValidateStructural(s, pth)...)
+		allErrs = append(allErrs, schema.ValidateStructural(pth, s)...)
 	}
 
 	if len(allErrs) == 0 {

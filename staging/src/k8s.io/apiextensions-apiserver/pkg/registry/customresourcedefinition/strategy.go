@@ -21,7 +21,9 @@ import (
 	"context"
 	"fmt"
 
+	"k8s.io/apiextensions-apiserver/pkg/apihelpers"
 	"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions"
+	"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1"
 	"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/validation"
 	apiextensionsfeatures "k8s.io/apiextensions-apiserver/pkg/features"
 	apiequality "k8s.io/apimachinery/pkg/api/equality"

@@ -18,6 +18,7 @@ limitations under the License.
 package customresourcedefinition
 
 import (
+	"context"
 	"fmt"
 	"reflect"
 	"testing"

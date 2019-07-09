@@ -24,6 +24,7 @@ import (
 	"strings"
 	"testing"
 
+	"sigs.k8s.io/structured-merge-diff/typed"
 	"sigs.k8s.io/yaml"
 
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"

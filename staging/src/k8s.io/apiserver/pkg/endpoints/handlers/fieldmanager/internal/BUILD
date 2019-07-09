@@ -53,6 +53,8 @@ go_test(
         "//vendor/k8s.io/kube-openapi/pkg/util/proto/testing:go_default_library",
         "//vendor/sigs.k8s.io/structured-merge-diff/v3/fieldpath:go_default_library",
         "//vendor/sigs.k8s.io/structured-merge-diff/v3/merge:go_default_library",
+        "//vendor/sigs.k8s.io/structured-merge-diff/v3/typed:go_default_library",
+        "//vendor/sigs.k8s.io/structured-merge-diff/v3/value:go_default_library",
         "//vendor/sigs.k8s.io/yaml:go_default_library",
     ],
 )

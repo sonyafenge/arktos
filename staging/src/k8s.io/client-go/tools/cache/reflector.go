@@ -316,7 +316,7 @@ func (r *Reflector) ListAndWatch(stopCh <-chan struct{}) error {
 
 	// LIST
 	if err := func() error {
-		initTrace := trace.New("Reflector " + r.name + " ListAndWatch")
+		initTrace := trace.New("Reflector ListAndWatch", trace.Field{"name", r.name})
 		defer initTrace.LogIfLong(10 * time.Second)
 		var list runtime.Object
 		var paginatedResult bool

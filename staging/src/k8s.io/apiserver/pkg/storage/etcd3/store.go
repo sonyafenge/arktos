@@ -347,7 +347,7 @@ func (s *store) conditionalDelete(ctx context.Context, key string, out runtime.O
 func (s *store) GuaranteedUpdate(
 	ctx context.Context, key string, out runtime.Object, ignoreNotFound bool,
 	preconditions *storage.Preconditions, tryUpdate storage.UpdateFunc, suggestion ...runtime.Object) error {
-	trace := utiltrace.New(fmt.Sprintf("GuaranteedUpdate etcd3: %s", getTypeName(out)))
+	trace := utiltrace.New("GuaranteedUpdate etcd3", utiltrace.Field{"type", getTypeName(out)})
 	defer trace.LogIfLong(500 * time.Millisecond)
 
 	v, err := conversion.EnforcePtr(out)
@@ -497,7 +497,11 @@ func (s *store) GuaranteedUpdate(
 
 // GetToList implements storage.Interface.GetToList.
 func (s *store) GetToList(ctx context.Context, key string, resourceVersion string, pred storage.SelectionPredicate, listObj runtime.Object) error {
-	trace := utiltrace.New(fmt.Sprintf("GetToList etcd3: key=%v, resourceVersion=%s, limit: %d, continue: %s", key, resourceVersion, pred.Limit, pred.Continue))
+	trace := utiltrace.New("GetToList etcd3",
+		utiltrace.Field{"key", key},
+		utiltrace.Field{"resourceVersion", resourceVersion},
+		utiltrace.Field{"limit", pred.Limit},
+		utiltrace.Field{"continue", pred.Continue})
 	defer trace.LogIfLong(500 * time.Millisecond)
 	listPtr, err := meta.GetItemsPtr(listObj)
 	if err != nil {
@@ -634,7 +638,11 @@ func encodeContinue(listResult []listPartitionResult) (string, error) {
 // List implements storage.Interface.List.
 // Currently does not support continue for multiple storage cluster list - TODO
 func (s *store) List(ctx context.Context, key, resourceVersion string, pred storage.SelectionPredicate, listObj runtime.Object) error {
-	trace := utiltrace.New(fmt.Sprintf("List etcd3: key=%v, resourceVersion=%s, limit: %d, continue: %s", key, resourceVersion, pred.Limit, pred.Continue))
+	trace := utiltrace.New("List etcd3",
+		utiltrace.Field{"key", key},
+		utiltrace.Field{"resourceVersion", resourceVersion},
+		utiltrace.Field{"limit", pred.Limit},
+		utiltrace.Field{"continue", pred.Continue})
 	defer trace.LogIfLong(500 * time.Millisecond)
 	listPtr, err := meta.GetItemsPtr(listObj)
 	if err != nil {

@@ -35,7 +35,8 @@ func TestRoundTripManagedFields(t *testing.T) {
 		`null
 `,
 		`- apiVersion: v1
-  fields:
+  fieldsType: FieldsV1
+  fieldsV1:
     v:3:
       f:alsoPi: {}
     v:3.1415:
@@ -46,7 +47,8 @@ func TestRoundTripManagedFields(t *testing.T) {
   operation: Update
   time: "2001-02-03T04:05:06Z"
 - apiVersion: v1beta1
-  fields:
+  fieldsType: FieldsV1
+  fieldsV1:
     i:5:
       f:i: {}
   manager: foo
@@ -54,7 +56,8 @@ func TestRoundTripManagedFields(t *testing.T) {
   time: "2011-12-13T14:15:16Z"
 `,
 		`- apiVersion: v1
-  fields:
+  fieldsType: FieldsV1
+  fieldsV1:
     f:spec:
       f:containers:
         k:{"name":"c"}:
@@ -64,7 +67,8 @@ func TestRoundTripManagedFields(t *testing.T) {
   operation: Apply
 `,
 		`- apiVersion: v1
-  fields:
+  fieldsType: FieldsV1
+  fieldsV1:
     f:apiVersion: {}
     f:kind: {}
     f:metadata:
@@ -93,7 +97,8 @@ func TestRoundTripManagedFields(t *testing.T) {
   operation: Update
 `,
 		`- apiVersion: v1
-  fields:
+  fieldsType: FieldsV1
+  fieldsV1:
     f:allowVolumeExpansion: {}
     f:apiVersion: {}
     f:kind: {}
@@ -109,7 +114,8 @@ func TestRoundTripManagedFields(t *testing.T) {
   operation: Apply
 `,
 		`- apiVersion: v1
-  fields:
+  fieldsType: FieldsV1
+  fieldsV1:
     f:apiVersion: {}
     f:kind: {}
     f:metadata:
@@ -166,7 +172,7 @@ func TestBuildManagerIdentifier(t *testing.T) {
 		{
 			managedFieldsEntry: `
 apiVersion: v1
-fields:
+fieldsV1:
   f:apiVersion: {}
 manager: foo
 operation: Update
@@ -177,7 +183,7 @@ time: "2001-02-03T04:05:06Z"
 		{
 			managedFieldsEntry: `
 apiVersion: v1
-fields:
+fieldsV1:
   f:apiVersion: {}
 manager: foo
 operation: Apply

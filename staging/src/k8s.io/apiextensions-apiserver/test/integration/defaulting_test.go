@@ -19,6 +19,7 @@ package integration
 
 import (
 	"fmt"
+	"reflect"
 	"strings"
 	"testing"
 	"time"
@@ -33,12 +34,17 @@ import (
 	"k8s.io/apimachinery/pkg/util/wait"
 	"k8s.io/apimachinery/pkg/watch"
 	utilfeature "k8s.io/apiserver/pkg/util/feature"
+	"k8s.io/client-go/dynamic"
 	utilfeaturetesting "k8s.io/component-base/featuregate/testing"
 	"k8s.io/utils/pointer"
 
+	apiextensionsv1 "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1"
 	apiextensionsv1beta1 "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1"
+	"k8s.io/apiextensions-apiserver/pkg/client/clientset/clientset"
+	serveroptions "k8s.io/apiextensions-apiserver/pkg/cmd/server/options"
 	"k8s.io/apiextensions-apiserver/pkg/features"
 	"k8s.io/apiextensions-apiserver/test/integration/fixtures"
+	"k8s.io/apiextensions-apiserver/test/integration/storage"
 )
 
 var defaultingFixture = &apiextensionsv1beta1.CustomResourceDefinition{
@@ -144,6 +150,13 @@ properties:
       v1beta2:
         type: string
         default: "v1beta2"
+`
+
+const defaultingFooInstance = `
+kind: Foo
+apiVersion: tests.example.com/v1beta1
+metadata:
+  name: foo
 `
 
 func TestCustomResourceDefaultingWithWatchCache(t *testing.T) {
@@ -252,7 +265,7 @@ func testDefaulting(t *testing.T, watchCache bool) {
 	t.Logf("Creating CR and expecting defaulted fields in spec, but status does not exist at all")
 	fooClient := dynamicClient.Resource(schema.GroupVersionResource{crd.Spec.Group, crd.Spec.Version, crd.Spec.Names.Plural})
 	foo := &unstructured.Unstructured{}
-	if err := yaml.Unmarshal([]byte(fooInstance), &foo.Object); err != nil {
+	if err := yaml.Unmarshal([]byte(defaultingFooInstance), &foo.Object); err != nil {
 		t.Fatal(err)
 	}
 	unstructured.SetNestedField(foo.Object, "a", "spec", "a")

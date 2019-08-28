@@ -679,6 +679,25 @@ func (r *crdHandler) getOrCreateServingInfoFor(uid types.UID, name string) (*crd
 		}
 	}
 
+	var openAPIModels proto.Models
+	if utilfeature.DefaultFeatureGate.Enabled(features.ServerSideApply) && r.staticOpenAPISpec != nil {
+		specs := []*spec.Swagger{}
+		for _, v := range crd.Spec.Versions {
+			s, err := builder.BuildSwagger(crd, v.Name, builder.Options{V2: false, StripDefaults: true, StripValueValidation: true})
+			if err != nil {
+				utilruntime.HandleError(err)
+				return nil, fmt.Errorf("the server could not properly serve the CR schema")
+			}
+			specs = append(specs, s)
+		}
+		mergedOpenAPI := builder.MergeSpecs(r.staticOpenAPISpec, specs...)
+		openAPIModels, err = utilopenapi.ToProtoModels(mergedOpenAPI)
+		if err != nil {
+			utilruntime.HandleError(err)
+			return nil, fmt.Errorf("the server could not properly serve the CR schema")
+		}
+	}
+
 	for _, v := range crd.Spec.Versions {
 		safeConverter, unsafeConverter, err := r.converterFactory.NewConverter(crd)
 		if err != nil {

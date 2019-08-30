@@ -765,10 +765,6 @@ func ValidateCustomResourceDefinitionOpenAPISchema(schema *apiextensions.JSONSch
 		}
 	}
 
-	if schema.XListType == nil && schema.Type == "array" {
-		allErrs = append(allErrs, field.Required(fldPath.Child("x-kubernetes-list-type"), "must be set if type is array"))
-	}
-
 	if schema.XListType != nil && *schema.XListType != "atomic" && *schema.XListType != "set" && *schema.XListType != "map" {
 		allErrs = append(allErrs, field.NotSupported(fldPath.Child("x-kubernetes-list-type"), *schema.XListType, []string{"atomic", "set", "map"}))
 	}

@@ -44,6 +44,7 @@ import (
 	apierrs "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/api/meta"
 	metainternalversion "k8s.io/apimachinery/pkg/apis/meta/internalversion"
+	metainternalversionscheme "k8s.io/apimachinery/pkg/apis/meta/internalversion/scheme"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	metav1beta1 "k8s.io/apimachinery/pkg/apis/meta/v1beta1"
@@ -3306,7 +3307,7 @@ func TestGetTableWithMultiTenancy(t *testing.T) {
 	{
 		partial := meta.AsPartialObjectMetadata(m)
 		partial.GetObjectKind().SetGroupVersionKind(metav1beta1.SchemeGroupVersion.WithKind("PartialObjectMetadata"))
-		encodedBody, err := runtime.Encode(metainternalversion.Codecs.LegacyCodec(metav1beta1.SchemeGroupVersion), partial)
+		encodedBody, err := runtime.Encode(metainternalversionscheme.Codecs.LegacyCodec(metav1beta1.SchemeGroupVersion), partial)
 		if err != nil {
 			t.Fatal(err)
 		}
@@ -3317,7 +3318,7 @@ func TestGetTableWithMultiTenancy(t *testing.T) {
 	{
 		partial := meta.AsPartialObjectMetadata(m)
 		partial.GetObjectKind().SetGroupVersionKind(metav1.SchemeGroupVersion.WithKind("PartialObjectMetadata"))
-		encodedBody, err := runtime.Encode(metainternalversion.Codecs.LegacyCodec(metav1.SchemeGroupVersion), partial)
+		encodedBody, err := runtime.Encode(metainternalversionscheme.Codecs.LegacyCodec(metav1.SchemeGroupVersion), partial)
 		if err != nil {
 			t.Fatal(err)
 		}
@@ -3752,14 +3753,14 @@ func TestWatchTableWithMultiTenancy(t *testing.T) {
 	}
 	partial := meta.AsPartialObjectMetadata(m)
 	partial.GetObjectKind().SetGroupVersionKind(metav1beta1.SchemeGroupVersion.WithKind("PartialObjectMetadata"))
-	encodedBody, err := runtime.Encode(metainternalversion.Codecs.LegacyCodec(metav1beta1.SchemeGroupVersion), partial)
+	encodedBody, err := runtime.Encode(metainternalversionscheme.Codecs.LegacyCodec(metav1beta1.SchemeGroupVersion), partial)
 	if err != nil {
 		t.Fatal(err)
 	}
 	// the codec includes a trailing newline that is not present during decode
 	encodedBody = bytes.TrimSpace(encodedBody)
 
-	encodedBodyV1, err := runtime.Encode(metainternalversion.Codecs.LegacyCodec(metav1.SchemeGroupVersion), partial)
+	encodedBodyV1, err := runtime.Encode(metainternalversionscheme.Codecs.LegacyCodec(metav1.SchemeGroupVersion), partial)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -3768,7 +3769,7 @@ func TestWatchTableWithMultiTenancy(t *testing.T) {
 
 	metaDoc := metav1.ObjectMeta{}.SwaggerDoc()
 
-	s := metainternalversion.Codecs.SupportedMediaTypes()[0].Serializer
+	s := metainternalversionscheme.Codecs.SupportedMediaTypes()[0].Serializer
 
 	tests := []struct {
 		accept string
@@ -4350,7 +4351,7 @@ func TestGetPartialObjectMetadataWithMultiTenancy(t *testing.T) {
 		}
 		body := ""
 		if test.expected != nil {
-			itemOut, d, err := extractBodyObject(resp, metainternalversion.Codecs.LegacyCodec(metav1beta1.SchemeGroupVersion))
+			itemOut, d, err := extractBodyObject(resp, metainternalversionscheme.Codecs.LegacyCodec(metav1beta1.SchemeGroupVersion))
 			if err != nil {
 				t.Fatal(err)
 			}

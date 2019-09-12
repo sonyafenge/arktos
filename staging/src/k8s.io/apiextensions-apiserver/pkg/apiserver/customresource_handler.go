@@ -779,7 +779,7 @@ func (r *crdHandler) getOrCreateServingInfoFor(crd *apiextensions.CustomResource
 		}
 		if utilfeature.DefaultFeatureGate.Enabled(features.ServerSideApply) {
 			reqScope := *requestScopes[v.Name]
-			reqScope.FieldManager, err = fieldmanager.NewCRDFieldManager(
+			fm, err := fieldmanager.NewCRDFieldManager(
 				openAPIModels,
 				reqScope.Convertor,
 				reqScope.Defaulter,
@@ -790,6 +790,7 @@ func (r *crdHandler) getOrCreateServingInfoFor(crd *apiextensions.CustomResource
 			if err != nil {
 				return nil, err
 			}
+			reqScope.FieldManager = fieldmanager.NewSkipNonAppliedManager(fm, reqScope.Creater, reqScope.Kind)
 			requestScopes[v.Name] = &reqScope
 		}
 

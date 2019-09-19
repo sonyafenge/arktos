@@ -141,7 +141,7 @@ func (f *TestFieldManager) Reset() {
 }
 
 func (f *TestFieldManager) Apply(obj []byte, manager string, force bool) error {
-	out, err := f.fieldManager.Apply(f.liveObj, obj, manager, force)
+	out, err := fieldmanager.NewFieldManager(f.fieldManager).Apply(f.liveObj, obj, manager, force)
 	if err == nil {
 		f.liveObj = out
 	}
@@ -149,7 +149,7 @@ func (f *TestFieldManager) Apply(obj []byte, manager string, force bool) error {
 }
 
 func (f *TestFieldManager) Update(obj runtime.Object, manager string) error {
-	out, err := f.fieldManager.Update(f.liveObj, obj, manager)
+	out, err := fieldmanager.NewFieldManager(f.fieldManager).Update(f.liveObj, obj, manager)
 	if err == nil {
 		f.liveObj = out
 	}

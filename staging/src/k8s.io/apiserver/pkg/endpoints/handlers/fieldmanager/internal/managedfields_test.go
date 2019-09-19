@@ -31,6 +31,8 @@ import (
 // (api format) to the format used by sigs.k8s.io/structured-merge-diff and back
 func TestRoundTripManagedFields(t *testing.T) {
 	tests := []string{
+		`null
+`,
 		`- apiVersion: v1
   fields:
     v:3:
@@ -140,7 +142,7 @@ func TestRoundTripManagedFields(t *testing.T) {
 			if err != nil {
 				t.Fatalf("did not expect decoding error but got: %v", err)
 			}
-			encoded, err := encodeManagedFields(decoded)
+			encoded, err := encodeManagedFields(&decoded)
 			if err != nil {
 				t.Fatalf("did not expect encoding error but got: %v", err)
 			}

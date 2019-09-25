@@ -124,9 +124,6 @@ spec:
 		t.Run(fmt.Sprintf("%v ObjectToTyped with TypeConverter", testCase.name), func(t *testing.T) {
 			testObjectToTyped(t, tc, testCase.yaml)
 		})
-		t.Run(fmt.Sprintf("%v YAMLToTyped with TypeConverter", testCase.name), func(t *testing.T) {
-			testYAMLToTyped(t, tc, testCase.yaml)
-		})
 		t.Run(fmt.Sprintf("%v ObjectToTyped with DeducedTypeConverter", testCase.name), func(t *testing.T) {
 			testObjectToTyped(t, dtc, testCase.yaml)
 		})
@@ -148,28 +145,6 @@ func testObjectToTyped(t *testing.T, tc internal.TypeConverter, y string) {
 	}
 	if !reflect.DeepEqual(obj, newObj) {
 		t.Errorf(`Round-trip failed:
-Original object:
-%#v
-Final object:
-%#v`, obj, newObj)
-	}
-}
-
-func testYAMLToTyped(t *testing.T, tc internal.TypeConverter, y string) {
-	obj := &unstructured.Unstructured{Object: map[string]interface{}{}}
-	if err := yaml.Unmarshal([]byte(y), &obj.Object); err != nil {
-		t.Fatalf("Failed to parse yaml object: %v", err)
-	}
-	yamlTyped, err := tc.YAMLToTyped([]byte(y))
-	if err != nil {
-		t.Fatalf("Failed to convert yaml to typed: %v", err)
-	}
-	newObj, err := tc.TypedToObject(yamlTyped)
-	if err != nil {
-		t.Fatalf("Failed to convert typed to object: %v", err)
-	}
-	if !reflect.DeepEqual(obj, newObj) {
-		t.Errorf(`YAML conversion resulted in different object failed:
 Original object:
 %#v
 Final object:

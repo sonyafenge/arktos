@@ -4,6 +4,7 @@ go_library(
     name = "go_default_library",
     srcs = [
         "buildmanagerinfo.go",
+        "capmanagers.go",
         "fieldmanager.go",
         "skipnonapplied.go",
         "stripmeta.go",
@@ -48,6 +49,7 @@ filegroup(
 go_test(
     name = "go_default_test",
     srcs = [
+        "capmanagers_test.go",
         "fieldmanager_test.go",
         "skipnonapplied_test.go",
     ],
@@ -60,6 +62,7 @@ go_test(
     embed = [":go_default_library"],
     deps = [
         "//staging/src/k8s.io/api/core/v1:go_default_library",
+        "//staging/src/k8s.io/apimachinery/pkg/api/equality:go_default_library",
         "//staging/src/k8s.io/apimachinery/pkg/api/errors:go_default_library",
         "//staging/src/k8s.io/apimachinery/pkg/api/meta:go_default_library",
         "//staging/src/k8s.io/apimachinery/pkg/apis/meta/v1:go_default_library",

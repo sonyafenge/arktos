@@ -582,7 +582,7 @@ func convertJSONSchemaProps(in []byte, out *spec.Schema) error {
 	if err := v1beta1.Convert_v1beta1_JSONSchemaProps_To_apiextensions_JSONSchemaProps(&external, &internal, nil); err != nil {
 		return err
 	}
-	if err := validation.ConvertJSONSchemaProps(&internal, out); err != nil {
+	if err := validation.ConvertJSONSchemaPropsWithPostProcess(&internal, out, validation.StripUnsupportedFormatsPostProcess); err != nil {
 		return err
 	}
 	return nil

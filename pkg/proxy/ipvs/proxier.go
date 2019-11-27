@@ -795,10 +795,12 @@ func (proxier *Proxier) syncProxyRules() {
 		metrics.DeprecatedSyncProxyRulesLatency.Observe(metrics.SinceInMicroseconds(start))
 		klog.V(4).Infof("syncProxyRules took %v", time.Since(start))
 	}()
-	// don't sync rules till we've received services and endpoints
-	if !proxier.endpointsSynced || !proxier.servicesSynced {
-		klog.V(2).Info("Not syncing ipvs rules until Services and Endpoints have been received from master")
-		return
+
+	localAddrs, err := utilproxy.GetLocalAddrs()
+	if err != nil {
+		klog.Errorf("Failed to get local addresses during proxy sync: %v, assuming external IPs are not local", err)
+	} else if len(localAddrs) == 0 {
+		klog.Warning("No local addresses found, assuming all external IPs are not local")
 	}
 
 	// We assume that if this was called, we really want to sync them,
@@ -944,11 +946,11 @@ func (proxier *Proxier) syncProxyRules() {
 
 		// Capture externalIPs.
 		for _, externalIP := range svcInfo.ExternalIPStrings() {
-			if local, err := utilproxy.IsLocalIP(externalIP); err != nil {
-				klog.Errorf("can't determine if IP is local, assuming not: %v", err)
-				// We do not start listening on SCTP ports, according to our agreement in the
-				// SCTP support KEP
-			} else if local && (svcInfo.Protocol() != v1.ProtocolSCTP) {
+			// If the "external" IP happens to be an IP that is local to this
+			// machine, hold the local port open so no other process can open it
+			// (because the socket might open but it would never work).
+			if len(localAddrs) > 0 && (svcInfo.Protocol() != v1.ProtocolSCTP) && utilproxy.ContainsIP(localAddrs, net.ParseIP(externalIP)) {
+				// We do not start listening on SCTP ports, according to our agreement in the SCTP support KEP
 				lp := utilproxy.LocalPort{
 					Description: "externalIP for " + svcNameString,
 					IP:          externalIP,

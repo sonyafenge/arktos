@@ -34,7 +34,7 @@ func TestInit(tt *testing.T) {
 	plugin.Init(plugin.host)
 }
 
-func fakeVolumeNameOutput(name string) exec.FakeCombinedOutputAction {
+func fakeVolumeNameOutput(name string) testingexec.FakeAction {
 	return fakeResultOutput(&DriverStatus{
 		Status:     StatusSuccess,
 		VolumeName: name,

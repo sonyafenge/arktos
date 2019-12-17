@@ -1139,8 +1139,8 @@ func TestOnServiceAddChangeMap(t *testing.T) {
 
 func makeFakeExec() *fakeexec.FakeExec {
 	fcmd := fakeexec.FakeCmd{
-		CombinedOutputScript: []fakeexec.FakeCombinedOutputAction{
-			func() ([]byte, error) { return []byte("1 flow entries have been deleted"), nil },
+		CombinedOutputScript: []fakeexec.FakeAction{
+			func() ([]byte, []byte, error) { return []byte("1 flow entries have been deleted"), nil, nil },
 		},
 	}
 	return &fakeexec.FakeExec{

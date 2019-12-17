@@ -239,6 +239,64 @@ func (f *fakeVolumeHost) GetEventRecorder() record.EventRecorder {
 	return nil
 }
 
+func (f *fakeVolumeHost) ScriptCommands(scripts []CommandScript) {
+	ScriptCommands(f.exec, scripts)
+}
+
+// CommandScript is used to pre-configure a command that will be executed and
+// optionally set it's output (stdout and stderr combined) and return code.
+type CommandScript struct {
+	// Cmd is the command to execute, e.g. "ls"
+	Cmd string
+	// Args is a slice of arguments to pass to the command, e.g. "-a"
+	Args []string
+	// Output is the combined stdout and stderr of the command to return
+	Output string
+	// ReturnCode is the exit code for the command. Setting this to non-zero will
+	// cause the command to return an error with this exit code set.
+	ReturnCode int
+}
+
+// ScriptCommands configures fe, the FakeExec, to have a pre-configured list of
+// commands to expect. Calling more commands using fe than those scripted will
+// result in a panic. By default, the fe does not enforce command argument checking
+// or order -- if you have given an Output to the command, the first command scripted
+// will return its output on the first command call, even if the command called is
+// different than the one scripted. This is mostly useful to make sure that the
+// right number of commands were called. If you want to check the exact commands
+// and arguments were called, set fe.ExectOrder to true.
+func ScriptCommands(fe *testingexec.FakeExec, scripts []CommandScript) {
+	fe.DisableScripts = false
+	for _, script := range scripts {
+		fakeCmd := &testingexec.FakeCmd{}
+		cmdAction := makeFakeCmd(fakeCmd, script.Cmd, script.Args...)
+		outputAction := makeFakeOutput(script.Output, script.ReturnCode)
+		fakeCmd.CombinedOutputScript = append(fakeCmd.CombinedOutputScript, outputAction)
+		fe.CommandScript = append(fe.CommandScript, cmdAction)
+	}
+}
+
+func makeFakeCmd(fakeCmd *testingexec.FakeCmd, cmd string, args ...string) testingexec.FakeCommandAction {
+	fc := fakeCmd
+	c := cmd
+	a := args
+	return func(cmd string, args ...string) exec.Cmd {
+		command := testingexec.InitFakeCmd(fc, c, a...)
+		return command
+	}
+}
+
+func makeFakeOutput(output string, rc int) testingexec.FakeAction {
+	o := output
+	var e error
+	if rc != 0 {
+		e = testingexec.FakeExitError{Status: rc}
+	}
+	return func() ([]byte, []byte, error) {
+		return []byte(o), nil, e
+	}
+}
+
 func ProbeVolumePlugins(config VolumeConfig) []VolumePlugin {
 	if _, ok := config.OtherAttributes["fake-property"]; ok {
 		return []VolumePlugin{

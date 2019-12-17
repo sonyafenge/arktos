@@ -84,13 +84,14 @@ func TestGetPodNetworkStatus(t *testing.T) {
 	for _, t := range testCases {
 		// the fake commands return the IP from the given index, or an error
 		fCmd := fakeexec.FakeCmd{
-			CombinedOutputScript: []fakeexec.FakeCombinedOutputAction{
-				func() ([]byte, error) {
-					ip, ok := podIPMap[kubecontainer.ContainerID{ID: t.id}]
+			CombinedOutputScript: []fakeexec.FakeAction{
+				func() ([]byte, []byte, error) {
+					ips, ok := podIPMap[kubecontainer.ContainerID{ID: t.id}]
 					if !ok {
-						return nil, fmt.Errorf("Pod IP %q not found", t.id)
+						return nil, nil, fmt.Errorf("Pod IP %q not found", t.id)
 					}
-					return []byte(ip), nil
+					ipsList := ips.UnsortedList()
+					return []byte(ipsList[0]), nil, nil
 				},
 			},
 		}
@@ -167,9 +168,9 @@ func TestInit_MTU(t *testing.T) {
 	{
 		// modprobe br-netfilter
 		fCmd := fakeexec.FakeCmd{
-			CombinedOutputScript: []fakeexec.FakeCombinedOutputAction{
-				func() ([]byte, error) {
-					return make([]byte, 0), nil
+			CombinedOutputScript: []fakeexec.FakeAction{
+				func() ([]byte, []byte, error) {
+					return make([]byte, 0), nil, nil
 				},
 			},
 		}

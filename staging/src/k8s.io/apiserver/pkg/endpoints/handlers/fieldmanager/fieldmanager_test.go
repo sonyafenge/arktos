@@ -21,6 +21,8 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
+	"path/filepath"
+	"strings"
 	"testing"
 
 	corev1 "k8s.io/api/core/v1"
@@ -30,12 +32,33 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apiserver/pkg/endpoints/handlers/fieldmanager"
+	"k8s.io/apiserver/pkg/endpoints/handlers/fieldmanager/internal"
+
+	"k8s.io/kube-openapi/pkg/util/proto"
+	prototesting "k8s.io/kube-openapi/pkg/util/proto/testing"
+	"sigs.k8s.io/structured-merge-diff/v3/fieldpath"
+	"sigs.k8s.io/structured-merge-diff/v3/merge"
+	"sigs.k8s.io/structured-merge-diff/v3/typed"
 	"sigs.k8s.io/yaml"
 )
 
-type fakeObjectConvertor struct{}
+var fakeSchema = prototesting.Fake{
+	Path: filepath.Join(
+		strings.Repeat(".."+string(filepath.Separator), 8),
+		"api", "openapi-spec", "swagger.json"),
+}
+
+type fakeObjectConvertor struct {
+	converter  merge.Converter
+	apiVersion fieldpath.APIVersion
+}
 
 func (c *fakeObjectConvertor) Convert(in, out, context interface{}) error {
+	if typedValue, ok := in.(*typed.TypedValue); ok {
+		var err error
+		out, err = c.converter.Convert(typedValue, c.apiVersion)
+		return err
+	}
 	out = in
 	return nil
 }
@@ -52,21 +75,63 @@ type fakeObjectDefaulter struct{}
 
 func (d *fakeObjectDefaulter) Default(in runtime.Object) {}
 
-func NewTestFieldManager() *fieldmanager.FieldManager {
-	gv := schema.GroupVersion{
-		Group:   "apps",
-		Version: "v1",
-	}
+type TestFieldManager struct {
+	fieldManager fieldmanager.Manager
+	emptyObj     runtime.Object
+	liveObj      runtime.Object
+}
 
-	f, _ := fieldmanager.NewCRDFieldManager(
-		nil,
-		&fakeObjectConvertor{},
+func NewTestFieldManager(gvk schema.GroupVersionKind) TestFieldManager {
+	m := NewFakeOpenAPIModels()
+	tc := NewFakeTypeConverter(m)
+
+	converter := internal.NewVersionConverter(tc, &fakeObjectConvertor{}, gvk.GroupVersion())
+	apiVersion := fieldpath.APIVersion(gvk.GroupVersion().String())
+	f, err := fieldmanager.NewStructuredMergeManager(
+		m,
+		&fakeObjectConvertor{converter, apiVersion},
 		&fakeObjectDefaulter{},
 		gv,
 		gv,
 		true,
 	)
-	return f
+	if err != nil {
+		panic(err)
+	}
+	live := &unstructured.Unstructured{}
+	live.SetKind(gvk.Kind)
+	live.SetAPIVersion(gvk.GroupVersion().String())
+	f = fieldmanager.NewStripMetaManager(f)
+	f = fieldmanager.NewBuildManagerInfoManager(f, gvk.GroupVersion())
+	return TestFieldManager{
+		fieldManager: f,
+		emptyObj:     live,
+		liveObj:      live.DeepCopyObject(),
+	}
+}
+
+func NewFakeTypeConverter(m proto.Models) internal.TypeConverter {
+	tc, err := internal.NewTypeConverter(m, false)
+	if err != nil {
+		panic(fmt.Sprintf("Failed to build TypeConverter: %v", err))
+	}
+	return tc
+}
+
+func NewFakeOpenAPIModels() proto.Models {
+	d, err := fakeSchema.OpenAPISchema()
+	if err != nil {
+		panic(err)
+	}
+	m, err := proto.NewOpenAPIData(d)
+	if err != nil {
+		panic(err)
+	}
+	return m
+}
+
+func (f *TestFieldManager) Reset() {
+	f.liveObj = f.emptyObj.DeepCopyObject()
 }
 
 func TestFieldManagerCreation(t *testing.T) {

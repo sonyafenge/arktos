@@ -488,7 +488,6 @@ func toUnstructured(sv, dv reflect.Value) error {
 		if v != nil {
 			dv.Set(reflect.ValueOf(v))
 		}
-
 		return nil
 	}
 	st, dt := sv.Type(), dv.Type()

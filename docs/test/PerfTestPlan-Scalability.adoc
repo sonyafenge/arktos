@@ -87,6 +87,15 @@ to upgrade your google cloud SDK
 .. Shut down cluster: `./cluster/kube-down.sh`
 
 == Metrics
+[width=90%,options="header"]
+|=========
+|Metrics|Description
+|APIResponsiveness|Summary for latency and number for server api calls
+|PodStartupLatency|Verifies if [pod startup SLO] is satisfied
+|SaturationPodStartupLatency|Verifies if [pod startup SLO] is satisfied with limit: CpuRequest: 1m/MemoryRequest: 10M
+|ResourceUsageSummary|The resource usage per component
+|SchedulingThroughput|Scheduling throughput
+|=========
 
 == Test Cases
 

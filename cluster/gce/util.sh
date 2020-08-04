@@ -2752,6 +2752,7 @@ function create-master() {
 
   declare -a APISERVER_CREATED
   declare -a WORLOADSERVER_CREATED
+  declare -a ETCDSERVER_CREATED
   
 
   TOTALSERVER_EXTRA_NUM=${TOTALSERVER_EXTRA_NUM:-0}
@@ -2800,6 +2801,12 @@ function set-partitionserver {
           WORKLOADSERVER_CREATED[$num]=false
         fi
         
+        if [[ "${ETCD_EXTRA_NUM:-0}" -gt "0" && "${ETCD_EXTRA_NUM:-0}" -ge "$num" && "${ETCDSERVER_CREATED[$num]:-false}" != "true" ]]; then
+          partitionserver_name+="-etcd${num}"
+          ETCDSERVER_CREATED[$num]=true
+        else
+          ETCDSERVER_CREATED[$num]=false
+        fi
       fi
       
       TOTALSERVER_EXTRA_NUM=$((TOTALSERVER_EXTRA_NUM+1))
@@ -2818,6 +2825,38 @@ function set-partitionserver {
       fi  
     done
   fi
+
+  if [[ "${ETCD_EXTRA_NUM:-0}" -gt "0" ]]; then
+    for num in $(seq ${ETCD_EXTRA_NUM:-0}); do
+      partitionserver_name=""
+      if [[ "${ETCDSERVER_CREATED[$num]:-false}" != "true" ]]; then
+        if [[ "${SHARE_PARTITIONSERVER:-false}" == "true" ]]; then
+          if [[ "${WORKLOADCONTROLLER_EXTRA_NUM:-0}" -gt "0" && "${WORKLOADCONTROLLER_EXTRA_NUM:-0}" -ge "$num" && "${WORKLOADSERVER_CREATED[$num]:-false}" != "true" ]]; then
+            partitionserver_name+="-workload${num}"
+            WORKLOADSERVER_CREATED[$num]=true
+          else
+            WORKLOADSERVER_CREATED[$num]=false
+          fi
+        fi
+        partitionserver_name+="-etcd${num}"
+        ETCDSERVER_CREATED[$num]=true
+        TOTALSERVER_EXTRA_NUM=$((TOTALSERVER_EXTRA_NUM+1))
+        PARTITIONSERVER_NAME[$TOTALSERVER_EXTRA_NUM]="${partitionserver_name}"
+        if [[ "${is_create}" == "true" ]]; then
+          create-static-ip "${CLUSTER_NAME}${partitionserver_name}-ip" "${REGION}"
+          PARTITIONSERVER_RESERVED_IP[$TOTALSERVER_EXTRA_NUM]=$(gcloud compute addresses describe "${CLUSTER_NAME}${partitionserver_name}-ip" \
+              --project "${PROJECT}" --region "${REGION}" -q --format='value(address)') 
+          echo "PARTITIONSERVER${TOTALSERVER_EXTRA_NUM}_RESERVED_IP: ${PARTITIONSERVER_RESERVED_IP[$TOTALSERVER_EXTRA_NUM]}"
+          CREATE_CERT_SERVER_IP+=" ${PARTITIONSERVER_RESERVED_IP[$TOTALSERVER_EXTRA_NUM]}"
+          create-static-internalip "${CLUSTER_NAME}${partitionserver_name}-internalip" "${REGION}" "${SUBNETWORK}"
+          PARTITIONSERVER_RESERVED_INTERNAL_IP[$TOTALSERVER_EXTRA_NUM]=$(gcloud compute addresses describe "${CLUSTER_NAME}${partitionserver_name}-internalip" \
+          --project "${PROJECT}" --region "${REGION}" -q --format='value(address)')
+          CREATE_CERT_SERVER_IP+=" ${PARTITIONSERVER_RESERVED_INTERNAL_IP[$TOTALSERVER_EXTRA_NUM]}"
+        fi
+      fi
+    done
+  fi
+
   if [[ "${WORKLOADCONTROLLER_EXTRA_NUM:-0}" -gt "0" ]]; then
     for num in $(seq ${WORKLOADCONTROLLER_EXTRA_NUM:-0}); do
       partitionserver_name=""
@@ -2845,6 +2884,14 @@ function create-partitionserver {
         ENABLE_APISERVER=true
       else
         ENABLE_APISERVER=false
+      fi
+      if [[ "${PARTITIONSERVER_NAME[$num]:-}" == *"etcd"* ]]; then
+        ENABLE_ETCD=true
+        ETCD_CLUSTERID=$num
+        echo "ETCD_CLUSTERID: ${ETCD_CLUSTERID}"
+        INITIAL_ETCD_CLUSTER="${partitionserver_name}"
+      else
+        ENABLE_ETCD=false
       fi
       if [[ "${PARTITIONSERVER_NAME[$num]:-}" == *"workload"* ]]; then
         ENABLE_WORKLOADCONTROLLER=true

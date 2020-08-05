@@ -131,6 +131,10 @@ function main() {
     update-legacy-addon-node-labels &
     apply-encryption-config &
     start-cluster-networking   ####start cluster networking if not using default kubenet
+    if [[ -z "${ETCD_SERVERS:-}" ]]; then
+      create-etcd-storagecluster-yml
+      config-etcd-datapartition
+    fi
 
   else
     if [[ "${KUBE_PROXY_DAEMONSET:-}" != "true" ]]; then

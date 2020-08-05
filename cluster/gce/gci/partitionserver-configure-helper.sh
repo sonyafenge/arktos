@@ -86,7 +86,7 @@ function main() {
     create-node-pki
     create-master-pki
     create-master-auth
-    ensure-master-bootstrap-kubectl-auth
+    ensure-master-bootstrap-kubectl-auth ${KUBERNETES_MASTER_INTERNAL_IP}
     create-master-kubelet-auth
     create-master-etcd-auth
     create-master-etcd-apiserver-auth
@@ -118,6 +118,8 @@ function main() {
   if [[ "${ENABLE_ETCD}" == "true" ]]; then
     start-etcd-servers
     start-etcd-empty-dir-cleanup-pod
+    create-etcd-storagecluster-yml
+    config-etcd-datapartition
   fi
   if [[ "${ENABLE_APISERVER}" == "true" ]]; then
     start-kube-apiserver

@@ -1006,6 +1006,32 @@ current-context: ${component}
 EOF
 }
 
+function create-etcd-storagecluster-yml {
+  local cluster_id="${ETCD_CLUSTERID:-0}"
+  local host_name=${ETCD_HOSTNAME:-$(hostname -s)}
+  local service_address=$(python -c "import socket;print(socket.gethostbyname(\"${host_name}\"))")
+  echo "Creating etcd storagecluster yaml"
+  mkdir -p /etc/srv/kubernetes/
+  cat <<EOF >/etc/srv/kubernetes/storagecluster.yaml
+apiVersion: v1
+kind: StorageCluster
+storageClusterId: "${cluster_id}"
+serviceAddress: "${service_address}:2379"
+metadata:
+  name: "c${cluster_id}"
+EOF
+}
+
+function config-etcd-datapartition {
+  if [[ -f "/etc/srv/kubernetes/storagecluster.yaml" ]]; then
+    echo "config etcd data partition "
+    sleep 5
+    kubectl apply -f "/etc/srv/kubernetes/storagecluster.yaml"
+  else 
+    echo "failed to config etcd data partition, cannot find required yaml file"
+  fi
+}
+
 # Arg 1: the IP address of the API server
 function create-kubelet-kubeconfig() {
   local apiserver_address="${1}"
@@ -2962,8 +2988,9 @@ function wait-till-apiserver-ready() {
 function ensure-master-bootstrap-kubectl-auth {
   # By default, `kubectl` uses http://localhost:8080
   # If the insecure port is disabled, kubectl will need to use an admin-authenticated kubeconfig.
+  local master_ip=${1:-localhost}
   if [[ -n "${KUBE_BOOTSTRAP_TOKEN:-}" ]]; then
-    create-kubeconfig "kube-bootstrap" "${KUBE_BOOTSTRAP_TOKEN}"
+    create-kubeconfig "kube-bootstrap" "${KUBE_BOOTSTRAP_TOKEN}" "${master_ip}"
     export KUBECONFIG=/etc/srv/kubernetes/kube-bootstrap/kubeconfig
   fi
 }

@@ -1403,8 +1403,10 @@ STORAGE_MEDIA_TYPE: $(yaml-quote ${STORAGE_MEDIA_TYPE:-})
 ENABLE_GARBAGE_COLLECTOR: $(yaml-quote ${ENABLE_GARBAGE_COLLECTOR:-})
 ENABLE_LEGACY_ABAC: $(yaml-quote ${ENABLE_LEGACY_ABAC:-})
 MASTER_ADVERTISE_ADDRESS: $(yaml-quote ${MASTER_ADVERTISE_ADDRESS:-})
+APISERVERS_EXTRA_NUM: $(yaml-quote ${APISERVERS_EXTRA_NUM:-}) 
 APISERVER_SERVICEGROUPID: $(yaml-quote ${APISERVER_SERVICEGROUPID})
 APISERVER_ADVERTISE_ADDRESS: $(yaml-quote ${APISERVER_ADVERTISE_ADDRESS})
+APISERVER_DATAPARTITION_CONFIG: $(yaml-quote ${APISERVER_DATAPARTITION_CONFIG})
 ENABLE_KCM_LEADER_ELECT: $(yaml-quote ${ENABLE_KCM_LEADER_ELECT})
 ETCD_CLUSTERID: $(yaml-quote ${ETCD_CLUSTERID})
 ENABLE_APISERVER: $(yaml-quote ${ENABLE_APISERVER})
@@ -2752,7 +2754,6 @@ function create-master() {
 
   declare -a APISERVER_CREATED
   declare -a WORLOADSERVER_CREATED
-  
 
   TOTALSERVER_EXTRA_NUM=${TOTALSERVER_EXTRA_NUM:-0}
   ENABLE_APISERVER=${ENABLE_APISERVER:-false}
@@ -2763,6 +2764,10 @@ function create-master() {
   # add all external and internal IP to cert
   CREATE_CERT_SERVER_IP="${MASTER_RESERVED_INTERNAL_IP}"
   ###set partition server name, ip
+  if [[ "${APISERVERS_EXTRA_NUM:-0}" -gt "$(( ${#APISERVER_DATAPARTITION_CONFIG}-1 ))" ]]; then
+        echo "Only support extra apiservers number is less than lenth of datapartition config string, default is 26 lower letters!!!" >&2
+        exit 1
+  fi
   set-partitionserver true    
   echo "CREATE_CERT_SERVER_IP: ${CREATE_CERT_SERVER_IP}"
   
@@ -3965,11 +3970,10 @@ function delete-partitionserver() {
   fi
 
   echo "deleting partitionserver firewall: ${server_name}-https"
-  if gcloud compute firewall-rules describe "${server_name}-https" --network "${NETWORK}" --project "${NETWORK_PROJECT}" &>/dev/null; then
+  if gcloud compute firewall-rules describe "${server_name}-https" --project "${NETWORK_PROJECT}" &>/dev/null; then
     gcloud compute firewall-rules delete  \
       --project "${NETWORK_PROJECT}" \
       --quiet \
-      --network "${NETWORK}" \
       "${server_name}-https"
   fi
 

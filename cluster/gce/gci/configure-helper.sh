@@ -131,7 +131,16 @@ function main() {
     update-legacy-addon-node-labels &
     apply-encryption-config &
     start-cluster-networking   ####start cluster networking if not using default kubenet
-
+    ### if multi apiserver, config datapartition
+    if [[ "${APISERVERS_EXTRA_NUM:-0}" -gt "0" ]]; then
+      APISERVER_RANGESTART=${APISERVER_RANGESTART:-"${APISERVER_DATAPARTITION_CONFIG:0:1}"}
+      APISERVER_RANGEEND=${APISERVER_RANGEEND:-"${APISERVER_DATAPARTITION_CONFIG:$(( ${#APISERVER_DATAPARTITION_CONFIG}-1 )):1}"}
+      APISERVER_ISRANGESTART_VALID=${APISERVER_ISRANGESTART_VALID:-true}
+      APISERVER_ISRANGEEND_VALID=${APISERVER_ISRANGEEND_VALID:-true}
+      set-apiserver-datapartition
+      create-apiserver-datapartition-yml
+      config-apiserver-datapartition
+    fi
   else
     if [[ "${KUBE_PROXY_DAEMONSET:-}" != "true" ]]; then
       start-kube-proxy

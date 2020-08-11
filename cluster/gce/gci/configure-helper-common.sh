@@ -1006,6 +1006,61 @@ current-context: ${component}
 EOF
 }
 
+##set apiserver datapartition config by apiserver total number
+function set-apiserver-datapartition() {
+  
+  local total_server=$((APISERVER_EXTRA_NUM+1))
+  local range_interval=$(( ${#APISERVER_DATAPARTITION_CONFIG}/total_server ))
+  echo "total_server:${total_server}, range_interval: ${range_interval}"
+  
+  if [[ "${APISERVER_SERVICEGROUPID}" -eq "0" ]]; then
+    APISERVER_ISRANGESTART_VALID=false
+    APISERVER_ISRANGEEND_VALID=true
+    APISERVER_RANGESTART=${APISERVER_DATAPARTITION_CONFIG:0:1}
+    APISERVER_RANGEEND=${APISERVER_DATAPARTITION_CONFIG:$(( range_interval*APISERVER_SERVICEGROUPID+range_interval-1 )):1}
+  else 
+    if [[ "${APISERVER_SERVICEGROUPID}" -eq "${APISERVER_EXTRA_NUM}" ]]; then
+      APISERVER_ISRANGESTART_VALID=true
+      APISERVER_ISRANGEEND_VALID=false
+      APISERVER_RANGESTART=${APISERVER_DATAPARTITION_CONFIG:$(( range_interval*APISERVER_SERVICEGROUPID )):1}
+      APISERVER_RANGEEND=${APISERVER_DATAPARTITION_CONFIG:$(( ${#APISERVER_DATAPARTITION_CONFIG}-1 )):1}
+    else
+      APISERVER_ISRANGESTART_VALID=true
+      APISERVER_ISRANGEEND_VALID=true
+      APISERVER_RANGESTART=${APISERVER_DATAPARTITION_CONFIG:$(( range_interval*APISERVER_SERVICEGROUPID )):1}
+      APISERVER_RANGEEND=${APISERVER_DATAPARTITION_CONFIG:$(( range_interval*APISERVER_SERVICEGROUPID+range_interval-1 )):1}
+    fi
+  fi
+  
+  echo "APISERVER_RANGESTART:${APISERVER_RANGESTART}，APISERVER_ISRANGESTART_VALID:${APISERVER_ISRANGESTART_VALID}，APISERVER_RANGEEND:${APISERVER_RANGEEND}，APISERVER_ISRANGEEND_VALID:${APISERVER_ISRANGEEND_VALID}"
+}
+
+function create-apiserver-datapartition-yml {
+  echo "Creating apiserver datapartition yaml"
+  mkdir -p /etc/srv/kubernetes/
+  cat <<EOF >/etc/srv/kubernetes/apidatapartition.yaml
+apiVersion: v1
+kind: DataPartitionConfig
+serviceGroupId: "${APISERVER_SERVICEGROUPID}"
+rangeStart: "${APISERVER_RANGESTART}"
+isRangeStartValid: ${APISERVER_ISRANGESTART_VALID}
+rangeEnd: "${APISERVER_RANGEEND}"
+isRangeEndValid: ${APISERVER_ISRANGEEND_VALID}
+metadata:
+  name: "partition-${APISERVER_SERVICEGROUPID}"
+EOF
+}
+
+function config-apiserver-datapartition {
+  if [[ -f "/etc/srv/kubernetes/apidatapartition.yaml" ]]; then
+    echo "config apiserver datapartition "
+    sleep 5
+    kubectl apply -f "/etc/srv/kubernetes/apidatapartition.yaml"
+  else 
+    echo "failed to config apiserver datapartition, cannot find required yaml file"
+  fi
+}
+
 # Arg 1: the IP address of the API server
 function create-kubelet-kubeconfig() {
   local apiserver_address="${1}"
@@ -2959,8 +3014,9 @@ function wait-till-apiserver-ready() {
 function ensure-master-bootstrap-kubectl-auth {
   # By default, `kubectl` uses http://localhost:8080
   # If the insecure port is disabled, kubectl will need to use an admin-authenticated kubeconfig.
+  local master_ip=${1:-localhost}  ##optional
   if [[ -n "${KUBE_BOOTSTRAP_TOKEN:-}" ]]; then
-    create-kubeconfig "kube-bootstrap" "${KUBE_BOOTSTRAP_TOKEN}"
+    create-kubeconfig "kube-bootstrap" "${KUBE_BOOTSTRAP_TOKEN}" "${master_ip}"
     export KUBECONFIG=/etc/srv/kubernetes/kube-bootstrap/kubeconfig
   fi
 }

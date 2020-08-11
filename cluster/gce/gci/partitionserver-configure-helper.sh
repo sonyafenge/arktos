@@ -86,7 +86,7 @@ function main() {
     create-node-pki
     create-master-pki
     create-master-auth
-    ensure-master-bootstrap-kubectl-auth
+    ensure-master-bootstrap-kubectl-auth ${KUBERNETES_MASTER_INTERNAL_IP}
     create-master-kubelet-auth
     create-master-etcd-auth
     create-master-etcd-apiserver-auth
@@ -122,6 +122,13 @@ function main() {
   if [[ "${ENABLE_APISERVER}" == "true" ]]; then
     start-kube-apiserver
     wait-till-apiserver-ready
+    APISERVER_RANGESTART=${APISERVER_RANGESTART:-"${APISERVER_DATAPARTITION_CONFIG:0:1}"}
+    APISERVER_RANGEEND=${APISERVER_RANGEEND:-"${APISERVER_DATAPARTITION_CONFIG:$(( ${#APISERVER_DATAPARTITION_CONFIG}-1 )):1}"}
+    APISERVER_ISRANGESTART_VALID=${APISERVER_ISRANGESTART_VALID:-true}
+    APISERVER_ISRANGEEND_VALID=${APISERVER_ISRANGEEND_VALID:-true}
+    set-apiserver-datapartition
+    create-apiserver-datapartition-yml
+    config-apiserver-datapartition
   fi
   if [[ "${ENABLE_KUBECONTROLLER}" == "true" ]]; then
     start-kube-controller-manager

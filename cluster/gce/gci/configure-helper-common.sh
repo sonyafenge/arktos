@@ -1834,6 +1834,7 @@ function start-kube-apiserver {
   fi
   authorization_mode="Node,${authorization_mode}"
   params+=" --authorization-mode=${authorization_mode}"
+  params+=" --http2-max-streams-per-connection=1000"
 
   local container_env=""
   if [[ -n "${ENABLE_CACHE_MUTATION_DETECTOR:-}" ]]; then

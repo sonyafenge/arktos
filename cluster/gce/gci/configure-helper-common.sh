@@ -1838,6 +1838,8 @@ function start-kube-apiserver {
   authorization_mode="Node,${authorization_mode}"
   params+=" --authorization-mode=${authorization_mode}"
 
+  params+=" --max-mutating-requests-inflight=20000 --max-requests-inflight=40000"
+
   local container_env=""
   if [[ -n "${ENABLE_CACHE_MUTATION_DETECTOR:-}" ]]; then
     container_env+="{\"name\": \"KUBE_CACHE_MUTATION_DETECTOR\", \"value\": \"${ENABLE_CACHE_MUTATION_DETECTOR}\"}"
@@ -2104,6 +2106,8 @@ function start-kube-controller-manager {
     params+=" --controllers=${RUN_CONTROLLERS}"
   fi
 
+  params+=" --kube-api-qps=2000 --kube-api-burst=4000 --concurrent-deployment-syncs=500 --concurrent-replicaset-syncs=500 --concurrent_rc_syncs=500 --concurrent-endpoint-syncs=500 --concurrent-gc-syncs=2000 --concurrent-namespace-syncs=1000 --concurrent-resource-quota-syncs=500 --concurrent-service-syncs=100 --concurrent-serviceaccount-token-syncs=500 --concurrent-ttl-after-finished-syncs=500"
+
   local -r kube_rc_docker_tag=$(cat /home/kubernetes/kube-docker-files/kube-controller-manager.docker_tag)
   local container_env=""
   if [[ -n "${ENABLE_CACHE_MUTATION_DETECTOR:-}" ]]; then
@@ -2205,6 +2209,9 @@ function start-kube-scheduler {
     params+=" --use-legacy-policy-config"
     params+=" --policy-config-file=/etc/srv/kubernetes/kube-scheduler/policy-config"
   fi
+
+  params+=" --kube-api-qps=2000 --kube-api-burst=4000"
+
   local -r kube_scheduler_docker_tag=$(cat "${KUBE_HOME}/kube-docker-files/kube-scheduler.docker_tag")
 
   # Remove salt comments and replace variables with values.

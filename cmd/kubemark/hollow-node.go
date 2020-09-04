@@ -54,6 +54,7 @@ import (
 	_ "k8s.io/kubernetes/pkg/version/prometheus" // for version metric registration
 	"k8s.io/kubernetes/pkg/version/verflag"
 	fakeexec "k8s.io/utils/exec/testing"
+	arktos "k8s.io/arktos-ext/pkg/generated/clientset/versioned"
 )
 
 type hollowNodeConfig struct {
@@ -211,9 +212,17 @@ func run(config *hollowNodeConfig) {
 			WithTraceDisabled: true,
 		}
 
+		arktosExtClientConfig := *clientConfigs
+		for _, cfg := range arktosExtClientConfig.GetAllConfigs() {
+			cfg.ContentType = "application/json"
+			cfg.AcceptContentTypes = "application/json"
+		}
+		arktosExtClient, _ := arktos.NewForConfig(&arktosExtClientConfig)
+
 		hollowKubelet := kubemark.NewHollowKubelet(
 			f, c,
 			client,
+			arktosExtClient,
 			heartbeatClient,
 			cadvisorInterface,
 			fakeDockerClientConfig,

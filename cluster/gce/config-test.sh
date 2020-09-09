@@ -206,9 +206,9 @@ HEAPSTER_MACHINE_TYPE="${HEAPSTER_MACHINE_TYPE:-}"
 
 # Set etcd image (e.g. k8s.gcr.io/etcd) and version (e.g. 3.4.4-arktos.1-1) if you need
 # non-default version.
-ETCD_IMAGE="${ETCD_IMAGE:-}"
+ETCD_IMAGE="${ETCD_IMAGE:-3.4.3.0}"
 ETCD_DOCKER_REPOSITORY="${ETCD_DOCKER_REPOSITORY:-}"
-ETCD_VERSION="${ETCD_VERSION:-3.4.4-arktos.1}"
+ETCD_VERSION="${ETCD_VERSION:-3.4.3}"
 
 # Default Log level for all components in test clusters and variables to override it in specific components.
 TEST_CLUSTER_LOG_LEVEL="${TEST_CLUSTER_LOG_LEVEL:---v=4}"

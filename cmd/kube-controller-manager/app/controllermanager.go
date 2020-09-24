@@ -25,15 +25,16 @@ import (
 	"context"
 	"fmt"
 	"io/ioutil"
-	"k8s.io/client-go/datapartition"
 	"math/rand"
 	"net/http"
 	"os"
 	"time"
 
+	"k8s.io/client-go/datapartition"
+
 	"github.com/spf13/cobra"
 
-	"k8s.io/api/core/v1"
+	v1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
 	"k8s.io/apimachinery/pkg/util/sets"
@@ -391,8 +392,8 @@ func NewControllerInitializers(loopMode ControllerLoopMode) map[string]InitFunc 
 	controllers["garbagecollector"] = startGarbageCollectorController
 	controllers["daemonset"] = startDaemonSetController
 	controllers["job"] = startJobController
-	//controllers["deployment"] = startDeploymentController
-	//controllers["replicaset"] = startReplicaSetController
+	controllers["deployment"] = startDeploymentController
+	controllers["replicaset"] = startReplicaSetController
 	controllers["horizontalpodautoscaling"] = startHPAController
 	controllers["disruption"] = startDisruptionController
 	controllers["statefulset"] = startStatefulSetController

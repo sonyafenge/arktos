@@ -143,6 +143,7 @@ function main() {
   reset-motd
   prepare-mounter-rootfs
   modprobe configs
+  ulimit -c unlimited
   echo "Done for the configuration for kubernetes"
 }
 

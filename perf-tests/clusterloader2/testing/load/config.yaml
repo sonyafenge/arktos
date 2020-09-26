@@ -135,6 +135,16 @@ steps:
     - basename: small-service
       objectTemplatePath: service.yaml
 
+- name: Starting measurement for waiting for pods
+  measurements:
+  - Identifier: WaitForRunningDeployments
+    Method: WaitForControlledPodsRunning
+    Params:
+      action: start
+      apiVersion: apps/v1
+      kind: Deployment
+      labelSelector: group = load
+      operationTimeout: 15m
 
 - name: Creating objects
   phases:
@@ -205,18 +215,6 @@ steps:
     Method: WaitForControlledPodsRunning
     Params:
       action: gather
-  - Identifier: WaitForRunningStatefulSets
-    Method: WaitForControlledPodsRunning
-    Params:
-      action: gather
-  - Identifier: WaitForRunningDaemonSets
-    Method: WaitForControlledPodsRunning
-    Params:
-      action: gather
-  - Identifier: WaitForRunningJobs
-    Method: WaitForControlledPodsRunning
-    Params:
-      action: gather
 
 - name: Scaling and updating objects
   phases:
@@ -260,18 +258,6 @@ steps:
 - name: Waiting for objects to become scaled
   measurements:
   - Identifier: WaitForRunningDeployments
-    Method: WaitForControlledPodsRunning
-    Params:
-      action: gather
-  - Identifier: WaitForRunningStatefulSets
-    Method: WaitForControlledPodsRunning
-    Params:
-      action: gather
-  - Identifier: WaitForRunningDaemonSets
-    Method: WaitForControlledPodsRunning
-    Params:
-      action: gather
-  - Identifier: WaitForRunningJobs
     Method: WaitForControlledPodsRunning
     Params:
       action: gather
@@ -326,8 +312,6 @@ steps:
     - basename: small-deployment
       objectTemplatePath: networkpolicy.yaml
     {{end}}
-  # If both StatefulSets and PVs were enabled we need to delete PVs manually.
-  {{if $ENABLE_PVS}}
 
 - name: Waiting for pods to be deleted
   measurements:
@@ -335,27 +319,6 @@ steps:
     Method: WaitForControlledPodsRunning
     Params:
       action: gather
-  - Identifier: WaitForRunningStatefulSets
-    Method: WaitForControlledPodsRunning
-    Params:
-      action: gather
-  - Identifier: WaitForRunningDaemonSets
-    Method: WaitForControlledPodsRunning
-    Params:
-      action: gather
-  - Identifier: WaitForRunningJobs
-    Method: WaitForControlledPodsRunning
-    Params:
-      action: gather
-  {{if $ENABLE_PVS}}
-  - Identifier: WaitForPVCsToBeDeleted
-    Method: WaitForBoundPVCs
-    Params:
-      desiredPVCCount: 0
-      labelSelector: group = load
-      timeout: 15m
-  {{end}}
-
 
 - name: Deleting SVCs
   phases:

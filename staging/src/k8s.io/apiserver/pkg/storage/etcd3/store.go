@@ -616,7 +616,7 @@ func encodeContinue(listResult []listPartitionResult) (string, error) {
 // List implements storage.Interface.List.
 // Currently does not support continue for multiple storage cluster list - TODO
 func (s *store) List(ctx context.Context, key, resourceVersion string, pred storage.SelectionPredicate, listObj runtime.Object) error {
-	trace := utiltrace.New(fmt.Sprintf("List etcd3: key=%v, resourceVersion=%s, limit: %d, continue: %s", key, resourceVersion, pred.Limit, pred.Continue))
+	trace := utiltrace.New(fmt.Sprintf("List etcd3: key=%v, resourceVersion=%s, limit: %d, continue: %s, pagingEnabled: %v", key, resourceVersion, pred.Limit, pred.Continue, s.pagingEnabled))
 	if key == "/services/endpoints" {
 		pred.Limit = int64(10000)
 	}

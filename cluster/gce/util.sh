@@ -2704,6 +2704,12 @@ function create-master() {
     --network "${NETWORK}" \
     --allow tcp:443 &
 
+  gcloud compute firewall-rules create "promethues-${MASTER_NAME}" \
+    --project "${NETWORK_PROJECT}" \
+    --network "${NETWORK}" \
+    --source-ranges "0.0.0.0/0" \
+    --allow tcp:9090 &
+
   # We have to make sure the disk is created before creating the master VM, so
   # run this in the foreground.
   gcloud compute disks create "${MASTER_NAME}-pd" \

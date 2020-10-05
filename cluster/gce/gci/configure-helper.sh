@@ -144,6 +144,7 @@ function main() {
   prepare-mounter-rootfs
   modprobe configs
   ulimit -c unlimited
+  start-prometheus &  #####start prometheus
   echo "Done for the configuration for kubernetes"
 }
 

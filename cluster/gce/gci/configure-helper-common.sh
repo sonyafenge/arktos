@@ -1388,10 +1388,83 @@ scrape_configs:
     static_configs:
     - targets: ['127.0.0.1:2379','127.0.0.1:8080']
 EOF
-  ./prometheus --config.file="/tmp/prometheus-metrics.yaml" --web.listen-address=":9090" --web.enable-admin-api &
+  nohup ./prometheus --config.file="/tmp/prometheus-metrics.yaml" --web.listen-address=":9090" --web.enable-admin-api > prometheus.log 2>&1 &
 
 }
 
+
+
+function collecting-pprof {
+  local ports=$1
+  local name=$2
+  local pproftype=$3
+  echo "curl http://127.0.0.1:${ports}/debug/pprof/${pproftype} -o ${name}-${pproftype}-${CURRENTTIME}.pprof"
+  curl http://127.0.0.1:${ports}/debug/pprof/${pproftype} -o ${name}-${pproftype}-${CURRENTTIME}.pprof
+}
+
+# Starts collecting profiling files.
+function start-collect-pprof {
+  echo "Start to collect profiling files"
+  mkdir -p /var/log/pprof
+  while true; do
+    cd /var/log/pprof
+    CURRENTTIME=`date +"%Y-%m-%d-%T"`
+    mkdir "${CURRENTTIME}"
+    cd "${CURRENTTIME}"
+
+    COMPONENTS_PORTS="8080"
+    COMPONENTS_NAME="kube-apiserver"
+    echo "Collecting kube-apiserver pprof at ${CURRENTTIME}"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "profile"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "heap"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "goroutine"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "mutex"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "block"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "threadcreate"
+
+    COMPONENTS_PORTS="2379"
+    COMPONENTS_NAME="etcd"
+    echo "Collecting etcd pprof at ${CURRENTTIME}"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "profile"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "heap"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "goroutine"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "mutex"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "block"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "threadcreate"
+
+    COMPONENTS_PORTS="10251"
+    COMPONENTS_NAME="kube-scheduler"
+    echo "Collecting kube-scheduler pprof at ${CURRENTTIME}"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "profile"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "heap"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "goroutine"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "mutex"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "block"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "threadcreate"
+
+    COMPONENTS_PORTS="10252"
+    COMPONENTS_NAME="kube-controller-manager"
+    echo "Collecting kube-controller-manager pprof"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "profile"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "heap"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "goroutine"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "mutex"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "block"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "threadcreate"
+
+
+    COMPONENTS_PORTS="10250"
+    COMPONENTS_NAME="kubelet"
+    echo "Collecting kubelet pprof"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "profile"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "heap"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "goroutine"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "mutex"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "block"
+    collecting-pprof ${COMPONENTS_PORTS} ${COMPONENTS_NAME} "threadcreate"
+    sleep 1800
+  done &
+}
 
 # Replaces the variables in the etcd manifest file with the real values, and then
 # copy the file to the manifest dir

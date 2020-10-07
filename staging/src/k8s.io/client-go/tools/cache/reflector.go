@@ -281,7 +281,7 @@ func (r *Reflector) ListAndWatch(stopCh <-chan struct{}) error {
 
 	// LIST
 	if err := func() error {
-		initTrace := trace.New("Reflector " + r.name + " ListAndWatch")
+		initTrace := trace.New(fmt.Sprintf("Reflector %s ListAndWatch. pagesize %d", r.name, r.WatchListPageSize))
 		defer initTrace.LogIfLong(10 * time.Second)
 		var list runtime.Object
 		var err error

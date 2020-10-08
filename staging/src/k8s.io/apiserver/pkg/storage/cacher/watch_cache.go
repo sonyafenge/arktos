@@ -19,7 +19,6 @@ package cacher
 
 import (
 	"fmt"
-	"k8s.io/apimachinery/pkg/util/diff"
 	"sort"
 	"sync"
 	"time"
@@ -101,16 +100,12 @@ type watchCache struct {
 	// getAttrsFunc is used to get labels and fields of an object.
 	getAttrsFunc func(runtime.Object) (labels.Set, fields.Set, error)
 
-	// cache is from revision # to event
-	// size of the cache is limited by capacity
-	cache map[uint64]*watchCacheEvent
-
-	// revCache is used a cyclic buffer - its first element (with the smallest
+	// cache is used a cyclic buffer - its first element (with the smallest
 	// resourceVersion) is defined by startIndex, its last element is defined
 	// by endIndex (if cache is full it will be startIndex + capacity).
 	// Both startIndex and endIndex can be greater than buffer capacity -
 	// you should always apply modulo capacity to get an index in cache array.
-	revCache   []uint64
+	cache      []*watchCacheEvent
 	startIndex int
 	endIndex   int
 
@@ -147,14 +142,10 @@ func newWatchCache(
 	getAttrsFunc func(runtime.Object) (labels.Set, fields.Set, error),
 	versioner storage.Versioner) *watchCache {
 	wc := &watchCache{
-		capacity:     capacity,
-		keyFunc:      keyFunc,
-		getAttrsFunc: getAttrsFunc,
-
-		// One extra slot is needed because we delete old item after
-		// inserting new item.
-		cache:               make(map[uint64]*watchCacheEvent, capacity+1),
-		revCache:            make([]uint64, capacity),
+		capacity:            capacity,
+		keyFunc:             keyFunc,
+		getAttrsFunc:        getAttrsFunc,
+		cache:               make([]*watchCacheEvent, capacity),
 		startIndex:          0,
 		endIndex:            0,
 		store:               cache.NewStore(storeElementKey),
@@ -277,22 +268,12 @@ func (w *watchCache) processEvent(event watch.Event, resourceVersion uint64, upd
 
 // Assumes that lock is already held for write.
 func (w *watchCache) updateCache(event *watchCacheEvent) {
-	var toRemove bool
-	var revToRemove uint64
-
 	if w.endIndex == w.startIndex+w.capacity {
 		// Cache is full - remove the oldest element.
-		revToRemove = w.revCache[w.startIndex%w.capacity]
-		toRemove = true
 		w.startIndex++
 	}
-	w.cache[event.ResourceVersion] = event
-	w.revCache[w.endIndex%w.capacity] = event.ResourceVersion
+	w.cache[w.endIndex%w.capacity] = event
 	w.endIndex++
-
-	if toRemove {
-		delete(w.cache, revToRemove)
-	}
 }
 
 // List returns list of pointers to <storeElement> objects.
@@ -439,7 +420,7 @@ func (w *watchCache) GetAllEventsSinceThreadUnsafe(resourceVersion uint64) ([]*w
 	case size >= w.capacity:
 		// Once the watch event buffer is full, the oldest watch event we can deliver
 		// is the first one in the buffer.
-		oldest = w.revCache[w.startIndex%w.capacity]
+		oldest = w.cache[w.startIndex%w.capacity].ResourceVersion
 	case w.listResourceVersion > 0:
 		// If the watch event buffer isn't full, the oldest watch event we can deliver
 		// is one greater than the resource version of the last full list.
@@ -449,7 +430,7 @@ func (w *watchCache) GetAllEventsSinceThreadUnsafe(resourceVersion uint64) ([]*w
 		// in the buffer.
 		// This should only happen in unit tests that populate the buffer without
 		// performing list/replace operations.
-		oldest = w.revCache[w.startIndex%w.capacity]
+		oldest = w.cache[w.startIndex%w.capacity].ResourceVersion
 	default:
 		return nil, fmt.Errorf("watch cache isn't correctly initialized")
 	}
@@ -489,20 +470,14 @@ func (w *watchCache) GetAllEventsSinceThreadUnsafe(resourceVersion uint64) ([]*w
 
 	// Binary search the smallest index at which resourceVersion is greater than the given one.
 	f := func(i int) bool {
-		return diff.RevisionIsNewer(w.revCache[(w.startIndex+i)%w.capacity], resourceVersion)
+		return w.cache[(w.startIndex+i)%w.capacity].ResourceVersion > resourceVersion
 	}
 	first := sort.Search(size, f)
-	results := make([]*watchCacheEvent, size-first)
+	result := make([]*watchCacheEvent, size-first)
 	for i := 0; i < size-first; i++ {
-		rev := w.revCache[(w.startIndex+first+i)%w.capacity]
-		result, isOK := w.cache[rev]
-		if !isOK {
-			return nil, fmt.Errorf("Expected event not found in cache. Rev %v", rev)
-		} else {
-			results[i] = result
-		}
+		result[i] = w.cache[(w.startIndex+first+i)%w.capacity]
 	}
-	return results, nil
+	return result, nil
 }
 
 func (w *watchCache) GetAllEventsSince(resourceVersion uint64) ([]*watchCacheEvent, error) {

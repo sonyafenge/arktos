@@ -339,6 +339,7 @@ func NewCacherFromConfig(config Config) *Cacher {
 		config.CacheCapacity, config.KeyFunc, cacher.processEvent, config.GetAttrsFunc, config.Versioner)
 	listerWatcher := NewCacherListerWatcher(config.Storage, config.ResourcePrefix, config.NewListFunc)
 	reflectorName := "storage/cacher.go:" + config.ResourcePrefix
+	klog.Infof("Created a watchcache %p. capacity %v. Type %s", watchCache, watchCache.capacity, reflectorName)
 
 	reflector := cache.NewNamedReflector(reflectorName, listerWatcher, obj, watchCache, 0, false)
 	// Configure reflector's pager to for an appropriate pagination chunk size for fetching data from

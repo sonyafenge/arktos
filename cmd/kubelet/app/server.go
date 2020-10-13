@@ -24,7 +24,6 @@ import (
 	"errors"
 	"fmt"
 	arktos "k8s.io/arktos-ext/pkg/generated/clientset/versioned"
-	"k8s.io/client-go/datapartition"
 	"math/rand"
 	"net"
 	"net/http"
@@ -754,7 +753,7 @@ func run(s *options.KubeletServer, kubeDeps *kubelet.Dependencies, stopCh <-chan
 	}
 
 	// Start APIServerConfigManager
-	go datapartition.StartAPIServerConfigManagerAndInformerFactory(kubeDeps.KubeClient, stopCh)
+	//go datapartition.StartAPIServerConfigManagerAndInformerFactory(kubeDeps.KubeClient, stopCh)
 
 	if err = RunKubelet(s, kubeDeps, s.RunOnce); err != nil {
 		return err

@@ -94,6 +94,10 @@ type Config struct {
 	// needs to process an incoming event.
 	IndexerFuncs storage.IndexerFuncs
 
+	// Indexers is used to accelerate the list operation, falls back to regular list
+	// operation if no indexer found.
+	Indexers *cache.Indexers
+
 	// NewFunc is a function that creates new empty object storing a object of type Type.
 	NewFunc func() runtime.Object
 
@@ -314,7 +318,7 @@ func NewCacherFromConfig(config Config) *Cacher {
 			// https://github.com/kubernetes/kubernetes/commit/ee13be28845e8c55f6e2a2207ca4f46cd67fdb4e
 			// Propagate error from creating cacher and storage decorators up
 			// Jul 15, 2019
- 
+
 			//return nil, fmt.Errorf("cacher %s doesn't support more than one IndexerFuncs: ", reflect.TypeOf(obj).String())
 			return nil
 		}
@@ -364,7 +368,7 @@ func NewCacherFromConfig(config Config) *Cacher {
 	}
 
 	watchCache := newWatchCache(
-		config.CacheCapacity, config.KeyFunc, cacher.processEvent, config.GetAttrsFunc, config.Versioner)
+		config.CacheCapacity, config.KeyFunc, cacher.processEvent, config.GetAttrsFunc, config.Versioner, config.Indexers)
 	listerWatcher := NewCacherListerWatcher(config.Storage, config.ResourcePrefix, config.NewListFunc)
 	reflectorName := "storage/cacher.go:" + config.ResourcePrefix
 	klog.Infof("Created a watchcache %p. capacity %v. Type %s", watchCache, watchCache.capacity, reflectorName)
@@ -695,7 +699,7 @@ func (c *Cacher) List(ctx context.Context, key string, resourceVersion string, p
 	}
 	filter := filterWithAttrsFunction(key, pred)
 
-	objs, readResourceVersion, err := c.watchCache.WaitUntilFreshAndList(listRV, trace)
+	objs, readResourceVersion, err := c.watchCache.WaitUntilFreshAndList(listRV, pred.MatcherIndex(), trace)
 	if err != nil {
 		return err
 	}

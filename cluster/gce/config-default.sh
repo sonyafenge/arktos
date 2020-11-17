@@ -188,6 +188,7 @@ ENABLE_PROMETHEUS_MONITORING="${KUBE_ENABLE_PROMETHEUS_MONITORING:-false}"
 # TODO(piosz) remove this option once Metrics Server became a stable thing.
 ENABLE_METRICS_SERVER="${KUBE_ENABLE_METRICS_SERVER:-true}"
 
+ENABLE_PRIVATE_PROMETHEUS="${KUBE_ENABLE_PRIVATE_PROMETHEUS:-false}"
 # Optional: Metadata agent to setup as part of the cluster bring up:
 #   none        - No metadata agent
 #   stackdriver - Stackdriver metadata agent
@@ -538,5 +539,8 @@ if [[ "${KUBERNETES_RESOURCE_PARTITION:-false}" == true ]]; then
   ENABLE_APISERVER_INSECURE_PORT=true
 fi
 if [[ "${KUBERNETES_TENANT_PARTITION:-false}" == true ]]; then
+  ENABLE_APISERVER_INSECURE_PORT=true
+fi
+if [[ "${ENABLE_PRIVATE_PROMETHEUS:-false}" == true ]]; then
   ENABLE_APISERVER_INSECURE_PORT=true
 fi

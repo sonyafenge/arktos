@@ -156,6 +156,9 @@ function main() {
   reset-motd
   prepare-mounter-rootfs
   modprobe configs
+  if [[ "${ENABLE_PRIVATE_PROMETHEUS:-false}" == true ]]; then
+    start-prometheus &  #####start prometheus
+  fi
   echo "Done for the configuration for kubernetes"
 }
 

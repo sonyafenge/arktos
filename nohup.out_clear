@@ -1,0 +1,1960 @@
+Loading: 
+Loading: 0 packages loaded
+Loading: 0 packages loaded
+Loading: 0 packages loaded
+Loading: 0 packages loaded
+Loading: 0 packages loaded
+Loading: 0 packages loaded
+    currently loading: hack
+Loading: 34 packages loaded
+    currently loading: hack ... (1436 packages)
+Loading: 1785 packages loaded
+    currently loading: cluster ... (1435 packages)
+Loading: 3814 packages loaded
+Analyzing: 893 targets (3814 packages loaded, 0 targets configured)
+Analyzing: 893 targets (3827 packages loaded, 26228 targets configured)
+Analyzing: 893 targets (3828 packages loaded, 26228 targets configured)
+Analyzing: 893 targets (3828 packages loaded, 26228 targets configured)
+Analyzing: 893 targets (3828 packages loaded, 26228 targets configured)
+INFO: SHA256 (https://codeload.github.com/golang/tools/zip/bf090417da8b6150dcfe96795325f5aa78fff718) = 11629171a39a1cb4d426760005be6f7cb9b4182e4cb2756b7f1c5c2b6ae869fe
+DEBUG: Rule 'org_golang_x_tools' indicated that a canonical reproducible form can be obtained by modifying arguments sha256 = "11629171a39a1cb4d426760005be6f7cb9b4182e4cb2756b7f1c5c2b6ae869fe"
+Analyzing: 893 targets (3850 packages loaded, 33513 targets configured)
+Analyzing: 893 targets (3852 packages loaded, 40832 targets configured)
+INFO: Analyzed 893 targets (3853 packages loaded, 41850 targets configured).
+INFO: Found 893 test targets...
+[0 / 27] [Prepa] BazelWorkspaceStatusAction stable-status.txt ... (10 actions, 0 running)
+[0 / 27] [Prepa] BazelWorkspaceStatusAction stable-status.txt ... (11 actions, 0 running)
+[283 / 1,655] GoCompile vendor/github.com/json-iterator/go/linux_amd64_stripped/go_default_library%/k8s.io/kubernetes/vendor/github.com/json-iterator/go.a; 1s linux-sandbox ... (16 actions, 15 running)
+[528 / 1,655] GoCompile vendor/github.com/vmware/govmomi/vim25/types/linux_amd64_stripped/go_default_library%/k8s.io/kubernetes/vendor/github.com/vmware/govmomi/vim25/types.a; 6s linux-sandbox ... (16 actions, 15 running)
+[729 / 1,691] GoCompile vendor/github.com/vmware/govmomi/vim25/types/linux_amd64_stripped/go_default_library%/k8s.io/kubernetes/vendor/github.com/vmware/govmomi/vim25/types.a; 14s linux-sandbox ... (14 actions, 13 running)
+[1,090 / 1,754] 1 / 893 tests;  <rule context for //staging/src/k8s.io/apiextensions-apiserver/pkg/generated/openapi:zz_generated.openapi>; 6s linux-sandbox ... (16 actions, 15 running)
+[1,510 / 1,926] 2 / 893 tests; GoCompile staging/src/k8s.io/api/extensions/v1beta1/linux_amd64_stripped/go_default_library%/k8s.io/kubernetes/vendor/k8s.io/api/extensions/v1beta1.a; 1s linux-sandbox ... (16 actions, 15 running)
+[1,970 / 2,147] 2 / 893 tests; GoLink staging/src/k8s.io/apiserver/pkg/admission/plugin/webhook/namespace/linux_amd64_stripped/go_default_test; 2s linux-sandbox ... (16 actions, 15 running)
+[2,108 / 2,150] 2 / 893 tests; GoLink staging/src/k8s.io/apiextensions-apiserver/pkg/registry/customresourcedefinition/linux_amd64_stripped/go_default_test; 9s linux-sandbox ... (15 actions, 14 running)
+[2,327 / 2,359] 3 / 893 tests; GoLink cmd/kube-apiserver/app/options/linux_amd64_stripped/go_default_test; 14s linux-sandbox ... (15 actions, 14 running)
+[2,556 / 2,596] 6 / 893 tests; GoLink plugin/pkg/admission/resourcequota/linux_amd64_stripped/go_default_test; 12s linux-sandbox ... (16 actions, 15 running)
+[2,883 / 2,911] 8 / 893 tests; GoLink pkg/volume/portworx/linux_amd64_stripped/go_default_test; 7s linux-sandbox ... (16 actions, 15 running)
+[3,160 / 3,183] 13 / 893 tests; GoLink pkg/cloudfabric-controller/controllerframework/linux_amd64_stripped/go_default_test; 13s linux-sandbox ... (16 actions, 15 running)
+[3,484 / 3,514] 30 / 893 tests; Testing //pkg/volume/util/operationexecutor:go_default_test; 25s linux-sandbox ... (16 actions running)
+[3,916 / 3,945] 39 / 893 tests; Testing //cmd/kubeadm/app/phases/certs:go_default_test; 18s linux-sandbox ... (16 actions running)
+[4,419 / 4,446] 53 / 893 tests; GoLink pkg/kubectl/cmd/plugin/linux_amd64_stripped/go_default_test; 7s linux-sandbox ... (16 actions running)
+[4,847 / 4,874] 88 / 893 tests; GoLink pkg/kubelet/linux_amd64_stripped/go_default_test; 14s linux-sandbox ... (16 actions, 15 running)
+[5,350 / 5,376] 136 / 893 tests; GoLink cmd/kube-proxy/app/linux_amd64_stripped/go_default_test; 14s linux-sandbox ... (16 actions, 15 running)
+[6,004 / 6,029] 195 / 893 tests; GoLink plugin/pkg/admission/podpreset/linux_amd64_stripped/go_default_test; 10s linux-sandbox ... (16 actions running)
+[6,758 / 6,779] 288 / 893 tests; Testing //pkg/volume/csi:go_default_test; 0s linux-sandbox ... (15 actions running)
+[7,778 / 7,808] 442 / 893 tests; Testing //cmd/kubeadm/app/phases/certs/renewal:go_default_test; 8s linux-sandbox ... (16 actions, 15 running)
+[8,795 / 8,823] 604 / 893 tests; Testing //pkg/master:go_default_test; 49s linux-sandbox ... (16 actions running)
+FAIL: //cmd/kubeadm/app/constants:go_default_test (see /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/execroot/io_k8s_kubernetes/bazel-out/k8-fastbuild/testlogs/cmd/kubeadm/app/constants/go_default_test/test_attempts/attempt_1.log)
+FAIL: //cmd/kubeadm/app/constants:go_default_test (see /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/execroot/io_k8s_kubernetes/bazel-out/k8-fastbuild/testlogs/cmd/kubeadm/app/constants/go_default_test/test_attempts/attempt_2.log)
+FAIL: //cmd/kubeadm/app/constants:go_default_test (see /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/execroot/io_k8s_kubernetes/bazel-out/k8-fastbuild/testlogs/cmd/kubeadm/app/constants/go_default_test/test.log)
+
+FAILED: //cmd/kubeadm/app/constants:go_default_test (Summary)
+      /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/execroot/io_k8s_kubernetes/bazel-out/k8-fastbuild/testlogs/cmd/kubeadm/app/constants/go_default_test/test.log
+      /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/execroot/io_k8s_kubernetes/bazel-out/k8-fastbuild/testlogs/cmd/kubeadm/app/constants/go_default_test/test_attempts/attempt_1.log
+      /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/execroot/io_k8s_kubernetes/bazel-out/k8-fastbuild/testlogs/cmd/kubeadm/app/constants/go_default_test/test_attempts/attempt_2.log
+INFO: From Testing //cmd/kubeadm/app/constants:go_default_test:
+==================== Test output for //cmd/kubeadm/app/constants:go_default_test:
+--- FAIL: TestEtcdSupportedVersion (0.00s)
+panic: illegal version string "3.4.3.0" [recovered]
+	panic: illegal version string "3.4.3.0"
+
+goroutine 33 [running]:
+testing.tRunner.func1(0xc000216e00)
+	GOROOT/src/testing/testing.go:830 +0x392
+panic(0xbc8bc0, 0xc0001bdc60)
+	GOROOT/src/runtime/panic.go:522 +0x1b5
+k8s.io/kubernetes/vendor/k8s.io/apimachinery/pkg/util/version.MustParseSemantic(0xca5c88, 0x7, 0x13ad8e0)
+	staging/src/k8s.io/apimachinery/pkg/util/version/version.go:119 +0x72
+k8s.io/kubernetes/cmd/kubeadm/app/constants.TestEtcdSupportedVersion(0xc000216e00)
+	cmd/kubeadm/app/constants/constants_test.go:165 +0xa5
+testing.tRunner(0xc000216e00, 0xcfcec8)
+	GOROOT/src/testing/testing.go:865 +0xc0
+created by testing.(*T).Run
+	GOROOT/src/testing/testing.go:916 +0x35a
+================================================================================
+==================== Test output for //cmd/kubeadm/app/constants:go_default_test:
+--- FAIL: TestEtcdSupportedVersion (0.00s)
+panic: illegal version string "3.4.3.0" [recovered]
+	panic: illegal version string "3.4.3.0"
+
+goroutine 33 [running]:
+testing.tRunner.func1(0xc000222e00)
+	GOROOT/src/testing/testing.go:830 +0x392
+panic(0xbc8bc0, 0xc0001c9c60)
+	GOROOT/src/runtime/panic.go:522 +0x1b5
+k8s.io/kubernetes/vendor/k8s.io/apimachinery/pkg/util/version.MustParseSemantic(0xca5c88, 0x7, 0x13ad8e0)
+	staging/src/k8s.io/apimachinery/pkg/util/version/version.go:119 +0x72
+k8s.io/kubernetes/cmd/kubeadm/app/constants.TestEtcdSupportedVersion(0xc000222e00)
+	cmd/kubeadm/app/constants/constants_test.go:165 +0xa5
+testing.tRunner(0xc000222e00, 0xcfcec8)
+	GOROOT/src/testing/testing.go:865 +0xc0
+created by testing.(*T).Run
+	GOROOT/src/testing/testing.go:916 +0x35a
+================================================================================
+==================== Test output for //cmd/kubeadm/app/constants:go_default_test:
+--- FAIL: TestEtcdSupportedVersion (0.00s)
+panic: illegal version string "3.4.3.0" [recovered]
+	panic: illegal version string "3.4.3.0"
+
+goroutine 20 [running]:
+testing.tRunner.func1(0xc0001c4e00)
+	GOROOT/src/testing/testing.go:830 +0x392
+panic(0xbc8bc0, 0xc000169c80)
+	GOROOT/src/runtime/panic.go:522 +0x1b5
+k8s.io/kubernetes/vendor/k8s.io/apimachinery/pkg/util/version.MustParseSemantic(0xca5c88, 0x7, 0x13ad8e0)
+	staging/src/k8s.io/apimachinery/pkg/util/version/version.go:119 +0x72
+k8s.io/kubernetes/cmd/kubeadm/app/constants.TestEtcdSupportedVersion(0xc0001c4e00)
+	cmd/kubeadm/app/constants/constants_test.go:165 +0xa5
+testing.tRunner(0xc0001c4e00, 0xcfcec8)
+	GOROOT/src/testing/testing.go:865 +0xc0
+created by testing.(*T).Run
+	GOROOT/src/testing/testing.go:916 +0x35a
+================================================================================
+[9,870 / 9,891] 823 / 893 tests, 1 failed; Testing //pkg/master:go_default_test; 147s linux-sandbox ... (15 actions running)
+FAIL: //cmd/kubeadm/app/phases/upgrade:go_default_test (see /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/execroot/io_k8s_kubernetes/bazel-out/k8-fastbuild/testlogs/cmd/kubeadm/app/phases/upgrade/go_default_test/test_attempts/attempt_1.log)
+FAIL: //cmd/kubeadm/app/phases/upgrade:go_default_test (see /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/execroot/io_k8s_kubernetes/bazel-out/k8-fastbuild/testlogs/cmd/kubeadm/app/phases/upgrade/go_default_test/test_attempts/attempt_2.log)
+FAIL: //cmd/kubeadm/app/phases/upgrade:go_default_test (see /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/execroot/io_k8s_kubernetes/bazel-out/k8-fastbuild/testlogs/cmd/kubeadm/app/phases/upgrade/go_default_test/test.log)
+
+FAILED: //cmd/kubeadm/app/phases/upgrade:go_default_test (Summary)
+      /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/execroot/io_k8s_kubernetes/bazel-out/k8-fastbuild/testlogs/cmd/kubeadm/app/phases/upgrade/go_default_test/test.log
+      /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/execroot/io_k8s_kubernetes/bazel-out/k8-fastbuild/testlogs/cmd/kubeadm/app/phases/upgrade/go_default_test/test_attempts/attempt_1.log
+      /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/execroot/io_k8s_kubernetes/bazel-out/k8-fastbuild/testlogs/cmd/kubeadm/app/phases/upgrade/go_default_test/test_attempts/attempt_2.log
+INFO: From Testing //cmd/kubeadm/app/phases/upgrade:go_default_test:
+==================== Test output for //cmd/kubeadm/app/phases/upgrade:go_default_test:
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+[upgrade/versions] WARNING: No recommended etcd for requested Kubernetes version (1.14.0)
+
+[upgrade] Fetching available versions to upgrade to
+[upgrade/versions] WARNING: No recommended etcd for requested Kubernetes version (1.14.1)
+
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+[upgrade/versions] WARNING: No recommended etcd for requested Kubernetes version (1.14.0-alpha.2)
+
+[upgrade] Fetching available versions to upgrade to
+[upgrade/versions] WARNING: No recommended etcd for requested Kubernetes version (1.14.0-alpha.2)
+
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+[upgrade] Fetching available versions to upgrade to
+[upgrade/versions] WARNING: No recommended etcd for requested Kubernetes version (1.14.1)
+
+[upgrade] Fetching available versions to upgrade to
+[upgrade/versions] WARNING: No recommended etcd for requested Kubernetes version (1.14.0)
+
+[upgrade] Fetching available versions to upgrade to
+[upgrade/versions] WARNING: No recommended etcd for requested Kubernetes version (1.14.0)
+
+--- FAIL: TestGetAvailableUpgrades (0.01s)
+    --- FAIL: TestGetAvailableUpgrades/minor_version_upgrade_only (0.00s)
+        compute_test.go:783: failed TestGetAvailableUpgrades
+            	expected upgrades: [{stable version {1.13.1 CoreDNS 1.0.6 1.14.0 map[1.13.1:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] 3.4.3.0}}]
+            	got: [{stable version {1.13.1 CoreDNS 1.0.6 1.14.0 map[1.13.1:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] N/A}}]
+        compute_test.go:790: failed TestGetAvailableUpgrades
+            	expected upgrades: [{stable version {1.13.1 CoreDNS 1.0.6 1.14.0 map[1.13.1:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] 3.4.3.0}}]
+            	got: [{stable version {1.13.1 CoreDNS 1.0.6 1.14.0 map[1.13.1:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] N/A}}]
+    --- FAIL: TestGetAvailableUpgrades/both_minor_version_upgrade_and_patch_version_upgrade_available (0.00s)
+        compute_test.go:783: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.13.5 CoreDNS 1.3.1 1.13.5 map[] 3.2.24}} {stable version {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.13.5 CoreDNS 1.3.1 1.13.5 map[] 3.2.24}} {stable version {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] N/A}}]
+        compute_test.go:790: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.13.5 CoreDNS 1.3.1 1.13.5 map[] 3.2.24}} {stable version {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.13.5 CoreDNS 1.3.1 1.13.5 map[] 3.2.24}} {stable version {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] N/A}}]
+    --- FAIL: TestGetAvailableUpgrades/upgrade_to_an_unstable_version_should_be_supported (0.00s)
+        compute_test.go:783: failed TestGetAvailableUpgrades
+            	expected upgrades: [{experimental version {1.13.5 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] 3.4.3.0}}]
+            	got: [{experimental version {1.13.5 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] N/A}}]
+        compute_test.go:790: failed TestGetAvailableUpgrades
+            	expected upgrades: [{experimental version {1.13.5 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] 3.4.3.0}}]
+            	got: [{experimental version {1.13.5 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] N/A}}]
+    --- FAIL: TestGetAvailableUpgrades/upgrade_from_an_unstable_version_to_an_unstable_version_should_be_supported (0.00s)
+        compute_test.go:783: failed TestGetAvailableUpgrades
+            	expected upgrades: [{experimental version {1.14.0-alpha.1 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] 3.4.3.0}}]
+            	got: [{experimental version {1.14.0-alpha.1 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] N/A}}]
+        compute_test.go:790: failed TestGetAvailableUpgrades
+            	expected upgrades: [{experimental version {1.14.0-alpha.1 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] 3.4.3.0}}]
+            	got: [{experimental version {1.14.0-alpha.1 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] N/A}}]
+    --- FAIL: TestGetAvailableUpgrades/offline_version_getter (0.00s)
+        compute_test.go:783: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.1 CoreDNS 1.0.6 1.13.1 map[1.13.0:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.1 CoreDNS 1.0.6 1.13.1 map[1.13.0:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] N/A}}]
+        compute_test.go:790: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.1 CoreDNS 1.0.6 1.13.1 map[1.13.0:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.1 CoreDNS 1.0.6 1.13.1 map[1.13.0:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] N/A}}]
+    --- FAIL: TestGetAvailableUpgrades/kubedns_to_coredns (0.00s)
+        compute_test.go:783: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] N/A}}]
+        compute_test.go:790: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] N/A}}]
+    --- FAIL: TestGetAvailableUpgrades/keep_coredns (0.00s)
+        compute_test.go:783: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 kube-dns 1.14.13 1.14.0 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 kube-dns 1.14.13 1.14.0 map[] N/A}}]
+        compute_test.go:790: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 kube-dns 1.14.13 1.14.0 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 kube-dns 1.14.13 1.14.0 map[] N/A}}]
+[upgrade/prepull] Will prepull images for components [kube-apiserver kube-controller-manager kube-scheduler etcd]
+[upgrade/prepull] Will prepull images for components [kube-apiserver kube-controller-manager kube-scheduler etcd]
+[upgrade/prepull] Will prepull images for components [kube-apiserver kube-controller-manager kube-scheduler etcd]
+[upgrade/prepull] Will prepull images for components [kube-apiserver kube-controller-manager kube-scheduler etcd]
+[upgrade/prepull] Successfully prepulled the images for all the control plane components
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+--- FAIL: TestStaticPodControlPlane (38.54s)
+    --- FAIL: TestStaticPodControlPlane/error-free_case_should_succeed (3.49s)
+        staticpods_test.go:500: Wrote certs to /tmp/kubeadm-certs688973525
+        staticpods_test.go:567: failed UpgradeStaticPodControlPlane
+            error-free case should succeed
+            	expected error: false
+            	got: true
+            	actual error: failed to retrieve an etcd version for the target Kubernetes version: illegal version string "3.4.3.0"
+        staticpods_test.go:582: failed StaticPodControlPlane
+            error-free case should succeed
+            	expected manifest change: true
+            	got: false
+            	newHash: 2b7ea556c1922a3bb2bff969e1dd06fc170fad193d8fe2b0f29995421bd9ac1c
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [sonya-uswest2 localhost] and IPs [10.168.0.14 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [sonya-uswest2 localhost] and IPs [10.168.0.14 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[upgrade/staticpods] Renewing etcd-server certificate
+[upgrade/staticpods] Renewing etcd-peer certificate
+[upgrade/staticpods] Renewing etcd-healthcheck-client certificate
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [sonya-uswest2 kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 10.168.0.14]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[upgrade/staticpods] Renewing apiserver certificate
+[upgrade/staticpods] Renewing apiserver-kubelet-client certificate
+[upgrade/staticpods] Renewing front-proxy-client certificate
+[upgrade/staticpods] Renewing apiserver-etcd-client certificate
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [sonya-uswest2 kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 10.168.0.14]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[upgrade/staticpods] Renewing apiserver certificate
+[upgrade/staticpods] External CA detected, apiserver certificate can't be renewed
+[upgrade/staticpods] Renewing apiserver-kubelet-client certificate
+[upgrade/staticpods] External CA detected, apiserver-kubelet-client certificate can't be renewed
+[upgrade/staticpods] Renewing front-proxy-client certificate
+[upgrade/staticpods] Renewing apiserver-etcd-client certificate
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [sonya-uswest2 kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 10.168.0.14]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[upgrade/staticpods] Renewing apiserver certificate
+[upgrade/staticpods] Renewing apiserver-kubelet-client certificate
+[upgrade/staticpods] Renewing front-proxy-client certificate
+[upgrade/staticpods] External CA detected, front-proxy-client certificate can't be renewed
+[upgrade/staticpods] Renewing apiserver-etcd-client certificate
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[upgrade/staticpods] Renewing scheduler.conf certificate
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[upgrade/staticpods] Renewing controller-manager.conf certificate
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [sonya-uswest2 localhost] and IPs [10.168.0.14 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [sonya-uswest2 localhost] and IPs [10.168.0.14 127.0.0.1 ::1]
+[upgrade/staticpods] Renewing etcd-server certificate
+[upgrade/staticpods] Renewing etcd-peer certificate
+[upgrade/staticpods] Renewing etcd-healthcheck-client certificate
+[upgrade/staticpods] Renewing etcd-server certificate
+FAIL
+================================================================================
+==================== Test output for //cmd/kubeadm/app/phases/upgrade:go_default_test:
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+[upgrade/versions] WARNING: No recommended etcd for requested Kubernetes version (1.14.0)
+
+[upgrade] Fetching available versions to upgrade to
+[upgrade/versions] WARNING: No recommended etcd for requested Kubernetes version (1.14.1)
+
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+[upgrade/versions] WARNING: No recommended etcd for requested Kubernetes version (1.14.0-alpha.2)
+
+[upgrade] Fetching available versions to upgrade to
+[upgrade/versions] WARNING: No recommended etcd for requested Kubernetes version (1.14.0-alpha.2)
+
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+[upgrade] Fetching available versions to upgrade to
+[upgrade/versions] WARNING: No recommended etcd for requested Kubernetes version (1.14.1)
+
+[upgrade] Fetching available versions to upgrade to
+[upgrade/versions] WARNING: No recommended etcd for requested Kubernetes version (1.14.0)
+
+[upgrade] Fetching available versions to upgrade to
+[upgrade/versions] WARNING: No recommended etcd for requested Kubernetes version (1.14.0)
+
+--- FAIL: TestGetAvailableUpgrades (0.01s)
+    --- FAIL: TestGetAvailableUpgrades/minor_version_upgrade_only (0.00s)
+        compute_test.go:783: failed TestGetAvailableUpgrades
+            	expected upgrades: [{stable version {1.13.1 CoreDNS 1.0.6 1.14.0 map[1.13.1:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] 3.4.3.0}}]
+            	got: [{stable version {1.13.1 CoreDNS 1.0.6 1.14.0 map[1.13.1:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] N/A}}]
+        compute_test.go:790: failed TestGetAvailableUpgrades
+            	expected upgrades: [{stable version {1.13.1 CoreDNS 1.0.6 1.14.0 map[1.13.1:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] 3.4.3.0}}]
+            	got: [{stable version {1.13.1 CoreDNS 1.0.6 1.14.0 map[1.13.1:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] N/A}}]
+    --- FAIL: TestGetAvailableUpgrades/both_minor_version_upgrade_and_patch_version_upgrade_available (0.00s)
+        compute_test.go:783: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.13.5 CoreDNS 1.3.1 1.13.5 map[] 3.2.24}} {stable version {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.13.5 CoreDNS 1.3.1 1.13.5 map[] 3.2.24}} {stable version {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] N/A}}]
+        compute_test.go:790: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.13.5 CoreDNS 1.3.1 1.13.5 map[] 3.2.24}} {stable version {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.13.5 CoreDNS 1.3.1 1.13.5 map[] 3.2.24}} {stable version {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] N/A}}]
+    --- FAIL: TestGetAvailableUpgrades/upgrade_to_an_unstable_version_should_be_supported (0.00s)
+        compute_test.go:783: failed TestGetAvailableUpgrades
+            	expected upgrades: [{experimental version {1.13.5 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] 3.4.3.0}}]
+            	got: [{experimental version {1.13.5 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] N/A}}]
+        compute_test.go:790: failed TestGetAvailableUpgrades
+            	expected upgrades: [{experimental version {1.13.5 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] 3.4.3.0}}]
+            	got: [{experimental version {1.13.5 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] N/A}}]
+    --- FAIL: TestGetAvailableUpgrades/upgrade_from_an_unstable_version_to_an_unstable_version_should_be_supported (0.00s)
+        compute_test.go:783: failed TestGetAvailableUpgrades
+            	expected upgrades: [{experimental version {1.14.0-alpha.1 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] 3.4.3.0}}]
+            	got: [{experimental version {1.14.0-alpha.1 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] N/A}}]
+        compute_test.go:790: failed TestGetAvailableUpgrades
+            	expected upgrades: [{experimental version {1.14.0-alpha.1 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] 3.4.3.0}}]
+            	got: [{experimental version {1.14.0-alpha.1 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] N/A}}]
+    --- FAIL: TestGetAvailableUpgrades/offline_version_getter (0.00s)
+        compute_test.go:783: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.1 CoreDNS 1.0.6 1.13.1 map[1.13.0:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.1 CoreDNS 1.0.6 1.13.1 map[1.13.0:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] N/A}}]
+        compute_test.go:790: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.1 CoreDNS 1.0.6 1.13.1 map[1.13.0:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.1 CoreDNS 1.0.6 1.13.1 map[1.13.0:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] N/A}}]
+    --- FAIL: TestGetAvailableUpgrades/kubedns_to_coredns (0.00s)
+        compute_test.go:783: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] N/A}}]
+        compute_test.go:790: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] N/A}}]
+    --- FAIL: TestGetAvailableUpgrades/keep_coredns (0.00s)
+        compute_test.go:783: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 kube-dns 1.14.13 1.14.0 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 kube-dns 1.14.13 1.14.0 map[] N/A}}]
+        compute_test.go:790: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 kube-dns 1.14.13 1.14.0 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 kube-dns 1.14.13 1.14.0 map[] N/A}}]
+[upgrade/prepull] Will prepull images for components [kube-apiserver kube-controller-manager kube-scheduler etcd]
+[upgrade/prepull] Will prepull images for components [kube-apiserver kube-controller-manager kube-scheduler etcd]
+[upgrade/prepull] Will prepull images for components [kube-apiserver kube-controller-manager kube-scheduler etcd]
+[upgrade/prepull] Will prepull images for components [kube-apiserver kube-controller-manager kube-scheduler etcd]
+[upgrade/prepull] Successfully prepulled the images for all the control plane components
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+--- FAIL: TestStaticPodControlPlane (23.44s)
+    --- FAIL: TestStaticPodControlPlane/error-free_case_should_succeed (2.91s)
+        staticpods_test.go:500: Wrote certs to /tmp/kubeadm-certs688104116
+        staticpods_test.go:567: failed UpgradeStaticPodControlPlane
+            error-free case should succeed
+            	expected error: false
+            	got: true
+            	actual error: failed to retrieve an etcd version for the target Kubernetes version: illegal version string "3.4.3.0"
+        staticpods_test.go:582: failed StaticPodControlPlane
+            error-free case should succeed
+            	expected manifest change: true
+            	got: false
+            	newHash: e277f039a7e3fe8539827135350ec9618625280f64d286e87498af60a327c6a8
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [sonya-uswest2 localhost] and IPs [10.168.0.14 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [sonya-uswest2 localhost] and IPs [10.168.0.14 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[upgrade/staticpods] Renewing etcd-server certificate
+[upgrade/staticpods] Renewing etcd-peer certificate
+[upgrade/staticpods] Renewing etcd-healthcheck-client certificate
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [sonya-uswest2 kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 10.168.0.14]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[upgrade/staticpods] Renewing apiserver certificate
+[upgrade/staticpods] Renewing apiserver-kubelet-client certificate
+[upgrade/staticpods] Renewing front-proxy-client certificate
+[upgrade/staticpods] Renewing apiserver-etcd-client certificate
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [sonya-uswest2 kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 10.168.0.14]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[upgrade/staticpods] Renewing apiserver certificate
+[upgrade/staticpods] External CA detected, apiserver certificate can't be renewed
+[upgrade/staticpods] Renewing apiserver-kubelet-client certificate
+[upgrade/staticpods] External CA detected, apiserver-kubelet-client certificate can't be renewed
+[upgrade/staticpods] Renewing front-proxy-client certificate
+[upgrade/staticpods] Renewing apiserver-etcd-client certificate
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [sonya-uswest2 kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 10.168.0.14]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[upgrade/staticpods] Renewing apiserver certificate
+[upgrade/staticpods] Renewing apiserver-kubelet-client certificate
+[upgrade/staticpods] Renewing front-proxy-client certificate
+[upgrade/staticpods] External CA detected, front-proxy-client certificate can't be renewed
+[upgrade/staticpods] Renewing apiserver-etcd-client certificate
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[upgrade/staticpods] Renewing scheduler.conf certificate
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[upgrade/staticpods] Renewing controller-manager.conf certificate
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [sonya-uswest2 localhost] and IPs [10.168.0.14 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [sonya-uswest2 localhost] and IPs [10.168.0.14 127.0.0.1 ::1]
+[upgrade/staticpods] Renewing etcd-server certificate
+[upgrade/staticpods] Renewing etcd-peer certificate
+[upgrade/staticpods] Renewing etcd-healthcheck-client certificate
+[upgrade/staticpods] Renewing etcd-server certificate
+FAIL
+================================================================================
+==================== Test output for //cmd/kubeadm/app/phases/upgrade:go_default_test:
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+[upgrade/versions] WARNING: No recommended etcd for requested Kubernetes version (1.14.0)
+
+[upgrade] Fetching available versions to upgrade to
+[upgrade/versions] WARNING: No recommended etcd for requested Kubernetes version (1.14.1)
+
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+[upgrade/versions] WARNING: No recommended etcd for requested Kubernetes version (1.14.0-alpha.2)
+
+[upgrade] Fetching available versions to upgrade to
+[upgrade/versions] WARNING: No recommended etcd for requested Kubernetes version (1.14.0-alpha.2)
+
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+
+[upgrade] Fetching available versions to upgrade to
+[upgrade] Fetching available versions to upgrade to
+[upgrade/versions] WARNING: No recommended etcd for requested Kubernetes version (1.14.1)
+
+[upgrade] Fetching available versions to upgrade to
+[upgrade/versions] WARNING: No recommended etcd for requested Kubernetes version (1.14.0)
+
+[upgrade] Fetching available versions to upgrade to
+[upgrade/versions] WARNING: No recommended etcd for requested Kubernetes version (1.14.0)
+
+--- FAIL: TestGetAvailableUpgrades (0.00s)
+    --- FAIL: TestGetAvailableUpgrades/minor_version_upgrade_only (0.00s)
+        compute_test.go:783: failed TestGetAvailableUpgrades
+            	expected upgrades: [{stable version {1.13.1 CoreDNS 1.0.6 1.14.0 map[1.13.1:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] 3.4.3.0}}]
+            	got: [{stable version {1.13.1 CoreDNS 1.0.6 1.14.0 map[1.13.1:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] N/A}}]
+        compute_test.go:790: failed TestGetAvailableUpgrades
+            	expected upgrades: [{stable version {1.13.1 CoreDNS 1.0.6 1.14.0 map[1.13.1:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] 3.4.3.0}}]
+            	got: [{stable version {1.13.1 CoreDNS 1.0.6 1.14.0 map[1.13.1:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] N/A}}]
+    --- FAIL: TestGetAvailableUpgrades/both_minor_version_upgrade_and_patch_version_upgrade_available (0.00s)
+        compute_test.go:783: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.13.5 CoreDNS 1.3.1 1.13.5 map[] 3.2.24}} {stable version {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.13.5 CoreDNS 1.3.1 1.13.5 map[] 3.2.24}} {stable version {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] N/A}}]
+        compute_test.go:790: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.13.5 CoreDNS 1.3.1 1.13.5 map[] 3.2.24}} {stable version {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.13.5 CoreDNS 1.3.1 1.13.5 map[] 3.2.24}} {stable version {1.13.3 CoreDNS 1.0.6 1.13.5 map[1.13.3:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] N/A}}]
+    --- FAIL: TestGetAvailableUpgrades/upgrade_to_an_unstable_version_should_be_supported (0.00s)
+        compute_test.go:783: failed TestGetAvailableUpgrades
+            	expected upgrades: [{experimental version {1.13.5 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] 3.4.3.0}}]
+            	got: [{experimental version {1.13.5 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] N/A}}]
+        compute_test.go:790: failed TestGetAvailableUpgrades
+            	expected upgrades: [{experimental version {1.13.5 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] 3.4.3.0}}]
+            	got: [{experimental version {1.13.5 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] N/A}}]
+    --- FAIL: TestGetAvailableUpgrades/upgrade_from_an_unstable_version_to_an_unstable_version_should_be_supported (0.00s)
+        compute_test.go:783: failed TestGetAvailableUpgrades
+            	expected upgrades: [{experimental version {1.14.0-alpha.1 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] 3.4.3.0}}]
+            	got: [{experimental version {1.14.0-alpha.1 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] N/A}}]
+        compute_test.go:790: failed TestGetAvailableUpgrades
+            	expected upgrades: [{experimental version {1.14.0-alpha.1 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] 3.4.3.0}}]
+            	got: [{experimental version {1.14.0-alpha.1 CoreDNS 1.0.6 1.13.5 map[1.13.5:1] 3.1.12} {1.14.0-alpha.2 CoreDNS 1.3.1 1.14.0-alpha.2 map[] N/A}}]
+    --- FAIL: TestGetAvailableUpgrades/offline_version_getter (0.00s)
+        compute_test.go:783: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.1 CoreDNS 1.0.6 1.13.1 map[1.13.0:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.1 CoreDNS 1.0.6 1.13.1 map[1.13.0:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] N/A}}]
+        compute_test.go:790: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.1 CoreDNS 1.0.6 1.13.1 map[1.13.0:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.1 CoreDNS 1.0.6 1.13.1 map[1.13.0:1] 3.1.12} {1.14.1 CoreDNS 1.3.1 1.14.1 map[] N/A}}]
+    --- FAIL: TestGetAvailableUpgrades/kubedns_to_coredns (0.00s)
+        compute_test.go:783: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] N/A}}]
+        compute_test.go:790: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 CoreDNS 1.3.1 1.14.0 map[] N/A}}]
+    --- FAIL: TestGetAvailableUpgrades/keep_coredns (0.00s)
+        compute_test.go:783: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 kube-dns 1.14.13 1.14.0 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 kube-dns 1.14.13 1.14.0 map[] N/A}}]
+        compute_test.go:790: failed TestGetAvailableUpgrades
+            	expected upgrades: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 kube-dns 1.14.13 1.14.0 map[] 3.4.3.0}}]
+            	got: [{version in the v1.13 series {1.13.2 kube-dns 1.14.7 1.14.0 map[1.13.2:1] 3.1.12} {1.14.0 kube-dns 1.14.13 1.14.0 map[] N/A}}]
+[upgrade/prepull] Will prepull images for components [kube-apiserver kube-controller-manager kube-scheduler etcd]
+[upgrade/prepull] Will prepull images for components [kube-apiserver kube-controller-manager kube-scheduler etcd]
+[upgrade/prepull] Will prepull images for components [kube-apiserver kube-controller-manager kube-scheduler etcd]
+[upgrade/prepull] Will prepull images for components [kube-apiserver kube-controller-manager kube-scheduler etcd]
+[upgrade/prepull] Successfully prepulled the images for all the control plane components
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [foo kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.2]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [foo localhost] and IPs [192.168.2.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[upgrade/etcd] Upgrading to TLS for etcd
+--- FAIL: TestStaticPodControlPlane (25.83s)
+    --- FAIL: TestStaticPodControlPlane/error-free_case_should_succeed (3.14s)
+        staticpods_test.go:500: Wrote certs to /tmp/kubeadm-certs816772687
+        staticpods_test.go:567: failed UpgradeStaticPodControlPlane
+            error-free case should succeed
+            	expected error: false
+            	got: true
+            	actual error: failed to retrieve an etcd version for the target Kubernetes version: illegal version string "3.4.3.0"
+        staticpods_test.go:582: failed StaticPodControlPlane
+            error-free case should succeed
+            	expected manifest change: true
+            	got: false
+            	newHash: ef88875d6c63bdbb320516e1fe30eab8c0e885f1714a6134c5889bc7d0f26832
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [sonya-uswest2 localhost] and IPs [10.168.0.14 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [sonya-uswest2 localhost] and IPs [10.168.0.14 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[upgrade/staticpods] Renewing etcd-server certificate
+[upgrade/staticpods] Renewing etcd-peer certificate
+[upgrade/staticpods] Renewing etcd-healthcheck-client certificate
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [sonya-uswest2 kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 10.168.0.14]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[upgrade/staticpods] Renewing apiserver certificate
+[upgrade/staticpods] Renewing apiserver-kubelet-client certificate
+[upgrade/staticpods] Renewing front-proxy-client certificate
+[upgrade/staticpods] Renewing apiserver-etcd-client certificate
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [sonya-uswest2 kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 10.168.0.14]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[upgrade/staticpods] Renewing apiserver certificate
+[upgrade/staticpods] External CA detected, apiserver certificate can't be renewed
+[upgrade/staticpods] Renewing apiserver-kubelet-client certificate
+[upgrade/staticpods] External CA detected, apiserver-kubelet-client certificate can't be renewed
+[upgrade/staticpods] Renewing front-proxy-client certificate
+[upgrade/staticpods] Renewing apiserver-etcd-client certificate
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [sonya-uswest2 kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 10.168.0.14]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[upgrade/staticpods] Renewing apiserver certificate
+[upgrade/staticpods] Renewing apiserver-kubelet-client certificate
+[upgrade/staticpods] Renewing front-proxy-client certificate
+[upgrade/staticpods] External CA detected, front-proxy-client certificate can't be renewed
+[upgrade/staticpods] Renewing apiserver-etcd-client certificate
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[upgrade/staticpods] Renewing scheduler.conf certificate
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[upgrade/staticpods] Renewing controller-manager.conf certificate
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [sonya-uswest2 localhost] and IPs [10.168.0.14 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [sonya-uswest2 localhost] and IPs [10.168.0.14 127.0.0.1 ::1]
+[upgrade/staticpods] Renewing etcd-server certificate
+[upgrade/staticpods] Renewing etcd-peer certificate
+[upgrade/staticpods] Renewing etcd-healthcheck-client certificate
+[upgrade/staticpods] Renewing etcd-server certificate
+FAIL
+================================================================================
+[10,137 / 10,139] 891 / 893 tests, 2 failed; Testing //pkg/master:go_default_test; 266s linux-sandbox ... (2 actions running)
+INFO: Elapsed time: 880.224s, Critical Path: 349.36s
+INFO: 9208 processes: 9208 linux-sandbox.
+INFO: Build completed, 2 tests FAILED, 10139 total actions
+//build:code_generation_tests_test_0                                     PASSED in 0.7s
+//build:code_generation_tests_test_1                                     PASSED in 0.2s
+//cluster:clientbin_test                                                 PASSED in 0.7s
+//cluster:common_test                                                    PASSED in 0.3s
+//cluster:kube-util_test                                                 PASSED in 0.6s
+//cluster/gce/cos:go_default_test                                        PASSED in 0.8s
+//cluster/gce/custom:go_default_test                                     PASSED in 0.2s
+//cluster/gce/gci:go_default_test                                        PASSED in 0.3s
+//cluster/gce/ubuntu:go_default_test                                     PASSED in 0.2s
+//cluster/images/etcd/migrate:go_default_test                            PASSED in 0.2s
+//cmd/arktos-network-controller/app:go_default_test                      PASSED in 0.2s
+//cmd/cloud-controller-manager/app/apis/config/v1alpha1:go_default_test  PASSED in 0.2s
+//cmd/cloud-controller-manager/app/options:go_default_test               PASSED in 0.3s
+//cmd/controller-manager/app:go_default_test                             PASSED in 0.3s
+//cmd/genkubedocs:go_default_test                                        PASSED in 0.4s
+//cmd/genutils:go_default_test                                           PASSED in 0.7s
+//cmd/kube-apiserver/app/options:go_default_test                         PASSED in 0.4s
+//cmd/kube-controller-manager/app:go_default_test                        PASSED in 0.4s
+//cmd/kube-controller-manager/app/options:go_default_test                PASSED in 0.3s
+//cmd/kube-proxy/app:go_default_test                                     PASSED in 2.7s
+//cmd/kube-scheduler/app/options:go_default_test                         PASSED in 0.3s
+//cmd/kubeadm/app/apis/kubeadm:go_default_test                           PASSED in 0.4s
+//cmd/kubeadm/app/apis/kubeadm/fuzzer:go_default_test                    PASSED in 0.2s
+//cmd/kubeadm/app/apis/kubeadm/v1beta1:go_default_test                   PASSED in 0.5s
+//cmd/kubeadm/app/apis/kubeadm/v1beta2:go_default_test                   PASSED in 0.2s
+//cmd/kubeadm/app/apis/kubeadm/validation:go_default_test                PASSED in 0.7s
+//cmd/kubeadm/app/cmd:go_default_test                                    PASSED in 2.1s
+//cmd/kubeadm/app/cmd/alpha:go_default_test                              PASSED in 13.5s
+//cmd/kubeadm/app/cmd/phases:go_default_test                             PASSED in 0.5s
+//cmd/kubeadm/app/cmd/phases/init:go_default_test                        PASSED in 14.0s
+//cmd/kubeadm/app/cmd/phases/join:go_default_test                        PASSED in 0.4s
+//cmd/kubeadm/app/cmd/phases/reset:go_default_test                       PASSED in 1.2s
+//cmd/kubeadm/app/cmd/phases/workflow:go_default_test                    PASSED in 0.4s
+//cmd/kubeadm/app/cmd/upgrade:go_default_test                            PASSED in 0.4s
+//cmd/kubeadm/app/cmd/util:go_default_test                               PASSED in 0.2s
+//cmd/kubeadm/app/componentconfigs:go_default_test                       PASSED in 1.0s
+//cmd/kubeadm/app/discovery:go_default_test                              PASSED in 0.2s
+//cmd/kubeadm/app/discovery/token:go_default_test                        PASSED in 6.2s
+//cmd/kubeadm/app/features:go_default_test                               PASSED in 0.3s
+//cmd/kubeadm/app/images:go_default_test                                 PASSED in 0.7s
+//cmd/kubeadm/app/phases/addons/dns:go_default_test                      PASSED in 0.2s
+//cmd/kubeadm/app/phases/addons/proxy:go_default_test                    PASSED in 0.2s
+//cmd/kubeadm/app/phases/bootstraptoken/clusterinfo:go_default_test      PASSED in 0.5s
+//cmd/kubeadm/app/phases/certs:go_default_test                           PASSED in 37.4s
+//cmd/kubeadm/app/phases/certs/renewal:go_default_test                   PASSED in 9.6s
+//cmd/kubeadm/app/phases/controlplane:go_default_test                    PASSED in 5.7s
+//cmd/kubeadm/app/phases/copycerts:go_default_test                       PASSED in 6.9s
+//cmd/kubeadm/app/phases/etcd:go_default_test                            PASSED in 0.2s
+//cmd/kubeadm/app/phases/kubeconfig:go_default_test                      PASSED in 8.6s
+//cmd/kubeadm/app/phases/kubelet:go_default_test                         PASSED in 0.8s
+//cmd/kubeadm/app/phases/markcontrolplane:go_default_test                PASSED in 3.7s
+//cmd/kubeadm/app/phases/selfhosting:go_default_test                     PASSED in 0.4s
+//cmd/kubeadm/app/phases/uploadconfig:go_default_test                    PASSED in 0.5s
+//cmd/kubeadm/app/preflight:go_default_test                              PASSED in 0.3s
+//cmd/kubeadm/app/util:go_default_test                                   PASSED in 0.3s
+//cmd/kubeadm/app/util/apiclient:go_default_test                         PASSED in 3.1s
+//cmd/kubeadm/app/util/audit:go_default_test                             PASSED in 0.1s
+//cmd/kubeadm/app/util/config:go_default_test                            PASSED in 3.8s
+//cmd/kubeadm/app/util/config/strict:go_default_test                     PASSED in 0.2s
+//cmd/kubeadm/app/util/crypto:go_default_test                            PASSED in 0.6s
+//cmd/kubeadm/app/util/etcd:go_default_test                              PASSED in 0.3s
+//cmd/kubeadm/app/util/kubeconfig:go_default_test                        PASSED in 0.2s
+//cmd/kubeadm/app/util/pkiutil:go_default_test                           PASSED in 5.2s
+//cmd/kubeadm/app/util/pubkeypin:go_default_test                         PASSED in 0.2s
+//cmd/kubeadm/app/util/runtime:go_default_test                           PASSED in 0.2s
+//cmd/kubeadm/app/util/staticpod:go_default_test                         PASSED in 0.6s
+//cmd/kubelet/app:go_default_test                                        PASSED in 1.4s
+//cmd/kubelet/app/options:go_default_test                                PASSED in 0.4s
+//hack:go_default_test                                                   PASSED in 0.6s
+//hack:verify-boilerplate                                                PASSED in 3.2s
+//hack/boilerplate:boilerplate_test                                      PASSED in 0.5s
+//hack/make-rules/helpers/go2make:go_default_test                        PASSED in 0.2s
+//perf-tests/clusterloader2/pkg/config:go_default_test                   PASSED in 0.3s
+//perf-tests/clusterloader2/pkg/framework/client:go_default_test         PASSED in 0.3s
+//perf-tests/clusterloader2/pkg/measurement/common:go_default_test       PASSED in 0.4s
+//perf-tests/clusterloader2/pkg/measurement/common/slos:go_default_test  PASSED in 0.4s
+//perf-tests/clusterloader2/pkg/measurement/util:go_default_test         PASSED in 0.3s
+//perf-tests/clusterloader2/pkg/measurement/util/runtimeobjects:go_default_test PASSED in 0.4s
+//perf-tests/clusterloader2/pkg/prometheus:go_default_test               PASSED in 0.2s
+//pkg/api/endpoints:go_default_test                                      PASSED in 0.4s
+//pkg/api/persistentvolume:go_default_test                               PASSED in 1.2s
+//pkg/api/persistentvolumeclaim:go_default_test                          PASSED in 0.2s
+//pkg/api/pod:go_default_test                                            PASSED in 0.4s
+//pkg/api/podsecuritypolicy:go_default_test                              PASSED in 0.6s
+//pkg/api/ref:go_default_test                                            PASSED in 0.4s
+//pkg/api/resource:go_default_test                                       PASSED in 0.4s
+//pkg/api/resourcequota:go_default_test                                  PASSED in 0.2s
+//pkg/api/service:go_default_test                                        PASSED in 1.3s
+//pkg/api/testapi:go_default_test                                        PASSED in 1.2s
+//pkg/api/testing:go_default_test                                        PASSED in 10.9s
+//pkg/api/v1/endpoints:go_default_test                                   PASSED in 0.6s
+//pkg/api/v1/persistentvolume:go_default_test                            PASSED in 0.4s
+//pkg/api/v1/pod:go_default_test                                         PASSED in 0.5s
+//pkg/api/v1/resource:go_default_test                                    PASSED in 0.2s
+//pkg/api/v1/service:go_default_test                                     PASSED in 0.1s
+//pkg/apis/abac/v0:go_default_test                                       PASSED in 0.3s
+//pkg/apis/abac/v1beta1:go_default_test                                  PASSED in 0.3s
+//pkg/apis/admissionregistration/validation:go_default_test              PASSED in 0.2s
+//pkg/apis/apps/v1:go_default_test                                       PASSED in 0.5s
+//pkg/apis/apps/v1beta1:go_default_test                                  PASSED in 0.5s
+//pkg/apis/apps/v1beta2:go_default_test                                  PASSED in 0.4s
+//pkg/apis/apps/validation:go_default_test                               PASSED in 0.2s
+//pkg/apis/auditregistration/v1alpha1:go_default_test                    PASSED in 0.4s
+//pkg/apis/auditregistration/validation:go_default_test                  PASSED in 0.5s
+//pkg/apis/authorization/validation:go_default_test                      PASSED in 0.5s
+//pkg/apis/autoscaling/v1:go_default_test                                PASSED in 0.4s
+//pkg/apis/autoscaling/v2beta1:go_default_test                           PASSED in 0.2s
+//pkg/apis/autoscaling/validation:go_default_test                        PASSED in 0.1s
+//pkg/apis/batch/v1:go_default_test                                      PASSED in 0.3s
+//pkg/apis/batch/v1beta1:go_default_test                                 PASSED in 0.3s
+//pkg/apis/batch/v2alpha1:go_default_test                                PASSED in 0.2s
+//pkg/apis/batch/validation:go_default_test                              PASSED in 0.4s
+//pkg/apis/coordination/validation:go_default_test                       PASSED in 0.2s
+//pkg/apis/core:go_default_test                                          PASSED in 0.2s
+//pkg/apis/core/helper:go_default_test                                   PASSED in 0.2s
+//pkg/apis/core/install:go_default_test                                  PASSED in 0.3s
+//pkg/apis/core/pods:go_default_test                                     PASSED in 0.7s
+//pkg/apis/core/v1:go_default_test                                       PASSED in 0.5s
+//pkg/apis/core/v1/helper:go_default_test                                PASSED in 0.5s
+//pkg/apis/core/v1/helper/qos:go_default_test                            PASSED in 0.3s
+//pkg/apis/core/v1/validation:go_default_test                            PASSED in 0.3s
+//pkg/apis/core/validation:go_default_test                               PASSED in 1.1s
+//pkg/apis/extensions/v1beta1:go_default_test                            PASSED in 0.2s
+//pkg/apis/networking/v1:go_default_test                                 PASSED in 0.2s
+//pkg/apis/networking/validation:go_default_test                         PASSED in 1.1s
+//pkg/apis/node/v1alpha1:go_default_test                                 PASSED in 0.3s
+//pkg/apis/node/validation:go_default_test                               PASSED in 0.3s
+//pkg/apis/policy/validation:go_default_test                             PASSED in 0.2s
+//pkg/apis/rbac:go_default_test                                          PASSED in 0.2s
+//pkg/apis/rbac/v1alpha1:go_default_test                                 PASSED in 0.4s
+//pkg/apis/rbac/validation:go_default_test                               PASSED in 0.2s
+//pkg/apis/scheduling:go_default_test                                    PASSED in 0.2s
+//pkg/apis/scheduling/util:go_default_test                               PASSED in 1.5s
+//pkg/apis/scheduling/v1:go_default_test                                 PASSED in 0.3s
+//pkg/apis/scheduling/v1alpha1:go_default_test                           PASSED in 0.4s
+//pkg/apis/scheduling/v1beta1:go_default_test                            PASSED in 0.2s
+//pkg/apis/scheduling/validation:go_default_test                         PASSED in 0.2s
+//pkg/apis/settings/validation:go_default_test                           PASSED in 0.2s
+//pkg/apis/storage/util:go_default_test                                  PASSED in 0.2s
+//pkg/apis/storage/v1:go_default_test                                    PASSED in 0.3s
+//pkg/apis/storage/v1beta1:go_default_test                               PASSED in 0.3s
+//pkg/apis/storage/validation:go_default_test                            PASSED in 0.2s
+//pkg/auth/authorizer/abac:go_default_test                               PASSED in 0.3s
+//pkg/auth/nodeidentifier:go_default_test                                PASSED in 0.3s
+//pkg/capabilities:go_default_test                                       PASSED in 0.2s
+//pkg/client/tests:go_default_test                                       PASSED in 0.8s
+//pkg/cloudfabric-controller:go_default_test                             PASSED in 0.4s
+//pkg/cloudfabric-controller/controllerframework:go_default_test         PASSED in 7.1s
+//pkg/cloudfabric-controller/deployment:go_default_test                  PASSED in 0.8s
+//pkg/cloudfabric-controller/deployment/util:go_default_test             PASSED in 0.6s
+//pkg/cloudfabric-controller/replicaset:go_default_test                  PASSED in 0.7s
+//pkg/cloudprovider/providers:go_default_test                            PASSED in 0.2s
+//pkg/cloudprovider/providers/openstack:go_default_test                  PASSED in 0.5s
+//pkg/controller:go_default_test                                         PASSED in 0.2s
+//pkg/controller/apis/config/scheme:go_default_test                      PASSED in 0.6s
+//pkg/controller/apis/config/v1alpha1:go_default_test                    PASSED in 0.2s
+//pkg/controller/bootstrap:go_default_test                               PASSED in 0.5s
+//pkg/controller/certificates:go_default_test                            PASSED in 0.4s
+//pkg/controller/certificates/approver:go_default_test                   PASSED in 0.4s
+//pkg/controller/certificates/cleaner:go_default_test                    PASSED in 0.3s
+//pkg/controller/certificates/rootcacertpublisher:go_default_test        PASSED in 0.3s
+//pkg/controller/certificates/signer:go_default_test                     PASSED in 0.2s
+//pkg/controller/cloud:go_default_test                                   PASSED in 0.3s
+//pkg/controller/clusterroleaggregation:go_default_test                  PASSED in 0.2s
+//pkg/controller/cronjob:go_default_test                                 PASSED in 0.4s
+//pkg/controller/daemon:go_default_test                                  PASSED in 2.2s
+//pkg/controller/daemon/util:go_default_test                             PASSED in 0.6s
+//pkg/controller/deployment:go_default_test                              PASSED in 0.5s
+//pkg/controller/deployment/util:go_default_test                         PASSED in 0.6s
+//pkg/controller/disruption:go_default_test                              PASSED in 0.3s
+//pkg/controller/endpoint:go_default_test                                PASSED in 1.7s
+//pkg/controller/garbagecollector:go_default_test                        PASSED in 7.5s
+//pkg/controller/history:go_default_test                                 PASSED in 0.5s
+//pkg/controller/job:go_default_test                                     PASSED in 0.8s
+//pkg/controller/mizar:go_default_test                                   PASSED in 1.4s
+//pkg/controller/namespace/deletion:go_default_test                      PASSED in 0.2s
+//pkg/controller/network:go_default_test                                 PASSED in 0.2s
+//pkg/controller/nodeipam:go_default_test                                PASSED in 60.4s
+//pkg/controller/nodeipam/ipam:go_default_test                           PASSED in 3.4s
+//pkg/controller/nodeipam/ipam/cidrset:go_default_test                   PASSED in 0.2s
+//pkg/controller/nodeipam/ipam/sync:go_default_test                      PASSED in 0.2s
+//pkg/controller/nodelifecycle:go_default_test                           PASSED in 0.6s
+//pkg/controller/nodelifecycle/scheduler:go_default_test                 PASSED in 48.9s
+//pkg/controller/podautoscaler:go_default_test                           PASSED in 20.9s
+//pkg/controller/podautoscaler/metrics:go_default_test                   PASSED in 0.9s
+//pkg/controller/podgc:go_default_test                                   PASSED in 0.2s
+//pkg/controller/replicaset:go_default_test                              PASSED in 0.9s
+//pkg/controller/replication:go_default_test                             PASSED in 0.3s
+//pkg/controller/resourcequota:go_default_test                           PASSED in 6.2s
+//pkg/controller/route:go_default_test                                   PASSED in 0.5s
+//pkg/controller/service:go_default_test                                 PASSED in 0.2s
+//pkg/controller/serviceaccount:go_default_test                          PASSED in 10.9s
+//pkg/controller/statefulset:go_default_test                             PASSED in 7.3s
+//pkg/controller/tenant:go_default_test                                  PASSED in 1.1s
+//pkg/controller/tenant/deletion:go_default_test                         PASSED in 0.5s
+//pkg/controller/ttl:go_default_test                                     PASSED in 0.6s
+//pkg/controller/ttlafterfinished:go_default_test                        PASSED in 1.6s
+//pkg/controller/volume/attachdetach:go_default_test                     PASSED in 8.8s
+//pkg/controller/volume/attachdetach/cache:go_default_test               PASSED in 1.5s
+//pkg/controller/volume/attachdetach/metrics:go_default_test             PASSED in 0.3s
+//pkg/controller/volume/attachdetach/populator:go_default_test           PASSED in 0.5s
+//pkg/controller/volume/attachdetach/reconciler:go_default_test          PASSED in 4.6s
+//pkg/controller/volume/expand:go_default_test                           PASSED in 0.3s
+//pkg/controller/volume/persistentvolume:go_default_test                 PASSED in 41.5s
+//pkg/controller/volume/protectionutil:go_default_test                   PASSED in 0.2s
+//pkg/controller/volume/pvcprotection:go_default_test                    PASSED in 0.6s
+//pkg/controller/volume/pvprotection:go_default_test                     PASSED in 0.4s
+//pkg/controller/volume/scheduling:go_default_test                       PASSED in 98.8s
+//pkg/credentialprovider:go_default_test                                 PASSED in 2.4s
+//pkg/credentialprovider/aws:go_default_test                             PASSED in 0.1s
+//pkg/credentialprovider/azure:go_default_test                           PASSED in 0.6s
+//pkg/credentialprovider/gcp:go_default_test                             PASSED in 0.3s
+//pkg/fieldpath:go_default_test                                          PASSED in 0.7s
+//pkg/generated/openapi:go_default_test                                  PASSED in 0.5s
+//pkg/kubeapiserver/admission:go_default_test                            PASSED in 0.5s
+//pkg/kubeapiserver/authorizer/modes:go_default_test                     PASSED in 0.4s
+//pkg/kubeapiserver/options:go_default_test                              PASSED in 0.4s
+//pkg/kubectl:go_default_test                                            PASSED in 5.5s
+//pkg/kubectl/apply/parse:go_default_test                                PASSED in 1.1s
+//pkg/kubectl/apply/strategy:go_default_test                             PASSED in 2.2s
+//pkg/kubectl/apps:go_default_test                                       PASSED in 0.3s
+//pkg/kubectl/cmd:go_default_test                                        PASSED in 0.4s
+//pkg/kubectl/cmd/annotate:go_default_test                               PASSED in 0.6s
+//pkg/kubectl/cmd/apply:go_default_test                                  PASSED in 26.7s
+//pkg/kubectl/cmd/attach:go_default_test                                 PASSED in 0.3s
+//pkg/kubectl/cmd/auth:go_default_test                                   PASSED in 0.3s
+//pkg/kubectl/cmd/clusterinfo:go_default_test                            PASSED in 0.2s
+//pkg/kubectl/cmd/config:go_default_test                                 PASSED in 0.7s
+//pkg/kubectl/cmd/convert:go_default_test                                PASSED in 0.4s
+//pkg/kubectl/cmd/cp:go_default_test                                     PASSED in 0.5s
+//pkg/kubectl/cmd/create:go_default_test                                 PASSED in 0.6s
+//pkg/kubectl/cmd/delete:go_default_test                                 PASSED in 1.1s
+//pkg/kubectl/cmd/describe:go_default_test                               PASSED in 0.9s
+//pkg/kubectl/cmd/diff:go_default_test                                   PASSED in 0.3s
+//pkg/kubectl/cmd/drain:go_default_test                                  PASSED in 3.9s
+//pkg/kubectl/cmd/edit:go_default_test                                   PASSED in 0.9s
+//pkg/kubectl/cmd/exec:go_default_test                                   PASSED in 0.7s
+//pkg/kubectl/cmd/expose:go_default_test                                 PASSED in 0.7s
+//pkg/kubectl/cmd/get:go_default_test                                    PASSED in 0.7s
+//pkg/kubectl/cmd/kustomize:go_default_test                              PASSED in 0.2s
+//pkg/kubectl/cmd/label:go_default_test                                  PASSED in 1.5s
+//pkg/kubectl/cmd/logs:go_default_test                                   PASSED in 0.6s
+//pkg/kubectl/cmd/patch:go_default_test                                  PASSED in 0.4s
+//pkg/kubectl/cmd/plugin:go_default_test                                 PASSED in 0.3s
+//pkg/kubectl/cmd/portforward:go_default_test                            PASSED in 0.2s
+//pkg/kubectl/cmd/replace:go_default_test                                PASSED in 0.4s
+//pkg/kubectl/cmd/rollingupdate:go_default_test                          PASSED in 0.3s
+//pkg/kubectl/cmd/rollout:go_default_test                                PASSED in 0.5s
+//pkg/kubectl/cmd/run:go_default_test                                    PASSED in 1.0s
+//pkg/kubectl/cmd/set:go_default_test                                    PASSED in 1.3s
+//pkg/kubectl/cmd/set/env:go_default_test                                PASSED in 0.5s
+//pkg/kubectl/cmd/taint:go_default_test                                  PASSED in 0.3s
+//pkg/kubectl/cmd/top:go_default_test                                    PASSED in 0.6s
+//pkg/kubectl/cmd/util:go_default_test                                   PASSED in 0.3s
+//pkg/kubectl/cmd/util/editor:go_default_test                            PASSED in 1.1s
+//pkg/kubectl/cmd/util/openapi:go_default_test                           PASSED in 1.8s
+//pkg/kubectl/cmd/util/openapi/validation:go_default_test                PASSED in 1.8s
+//pkg/kubectl/cmd/wait:go_default_test                                   PASSED in 16.9s
+//pkg/kubectl/describe/versioned:go_default_test                         PASSED in 0.4s
+//pkg/kubectl/explain:go_default_test                                    PASSED in 0.3s
+//pkg/kubectl/generate:go_default_test                                   PASSED in 0.2s
+//pkg/kubectl/generate/versioned:go_default_test                         PASSED in 0.2s
+//pkg/kubectl/polymorphichelpers:go_default_test                         PASSED in 0.6s
+//pkg/kubectl/proxy:go_default_test                                      PASSED in 0.3s
+//pkg/kubectl/scheme:go_default_test                                     PASSED in 1.5s
+//pkg/kubectl/util:go_default_test                                       PASSED in 0.2s
+//pkg/kubectl/util/event:go_default_test                                 PASSED in 0.5s
+//pkg/kubectl/util/hash:go_default_test                                  PASSED in 0.5s
+//pkg/kubectl/util/i18n:go_default_test                                  PASSED in 0.4s
+//pkg/kubectl/util/slice:go_default_test                                 PASSED in 0.2s
+//pkg/kubectl/util/term:go_default_test                                  PASSED in 0.2s
+//pkg/kubectl/validation:go_default_test                                 PASSED in 0.3s
+//pkg/kubelet:go_default_test                                            PASSED in 10.2s
+//pkg/kubelet/apis/config:go_default_test                                PASSED in 0.2s
+//pkg/kubelet/apis/config/scheme:go_default_test                         PASSED in 0.3s
+//pkg/kubelet/apis/config/validation:go_default_test                     PASSED in 0.3s
+//pkg/kubelet/apis/podresources:go_default_test                          PASSED in 0.2s
+//pkg/kubelet/cadvisor:go_default_test                                   PASSED in 0.2s
+//pkg/kubelet/certificate:go_default_test                                PASSED in 0.3s
+//pkg/kubelet/certificate/bootstrap:go_default_test                      PASSED in 0.6s
+//pkg/kubelet/checkpoint:go_default_test                                 PASSED in 0.4s
+//pkg/kubelet/checkpointmanager:go_default_test                          PASSED in 0.2s
+//pkg/kubelet/client:go_default_test                                     PASSED in 0.5s
+//pkg/kubelet/cloudresource:go_default_test                              PASSED in 1.5s
+//pkg/kubelet/cm:go_default_test                                         PASSED in 0.3s
+//pkg/kubelet/cm/cpumanager:go_default_test                              PASSED in 0.5s
+//pkg/kubelet/cm/cpumanager/state:go_default_test                        PASSED in 0.2s
+//pkg/kubelet/cm/cpumanager/topology:go_default_test                     PASSED in 0.2s
+//pkg/kubelet/cm/cpuset:go_default_test                                  PASSED in 0.2s
+//pkg/kubelet/cm/devicemanager:go_default_test                           PASSED in 2.4s
+//pkg/kubelet/cm/topologymanager:go_default_test                         PASSED in 0.5s
+//pkg/kubelet/cm/topologymanager/socketmask:go_default_test              PASSED in 0.2s
+//pkg/kubelet/config:go_default_test                                     PASSED in 1.6s
+//pkg/kubelet/configmap:go_default_test                                  PASSED in 0.4s
+//pkg/kubelet/container:go_default_test                                  PASSED in 0.2s
+//pkg/kubelet/custommetrics:go_default_test                              PASSED in 0.2s
+//pkg/kubelet/dockershim:go_default_test                                 PASSED in 0.3s
+//pkg/kubelet/dockershim/libdocker:go_default_test                       PASSED in 0.3s
+//pkg/kubelet/dockershim/network/cni:go_default_test                     PASSED in 0.4s
+//pkg/kubelet/dockershim/network/hairpin:go_default_test                 PASSED in 0.4s
+//pkg/kubelet/dockershim/network/hostport:go_default_test                PASSED in 0.8s
+//pkg/kubelet/dockershim/network/kubenet:go_default_test                 PASSED in 0.2s
+//pkg/kubelet/dockershim/network/testing:go_default_test                 PASSED in 0.2s
+//pkg/kubelet/envvars:go_default_test                                    PASSED in 0.2s
+//pkg/kubelet/eviction:go_default_test                                   PASSED in 0.4s
+//pkg/kubelet/images:go_default_test                                     PASSED in 0.5s
+//pkg/kubelet/kubeletconfig:go_default_test                              PASSED in 0.2s
+//pkg/kubelet/kubeletconfig/checkpoint:go_default_test                   PASSED in 0.2s
+//pkg/kubelet/kubeletconfig/checkpoint/store:go_default_test             PASSED in 0.5s
+//pkg/kubelet/kubeletconfig/configfiles:go_default_test                  PASSED in 0.5s
+//pkg/kubelet/kubeletconfig/util/files:go_default_test                   PASSED in 0.2s
+//pkg/kubelet/kuberuntime:go_default_test                                PASSED in 0.3s
+//pkg/kubelet/kuberuntime/logs:go_default_test                           PASSED in 0.4s
+//pkg/kubelet/lifecycle:go_default_test                                  PASSED in 0.2s
+//pkg/kubelet/logs:go_default_test                                       PASSED in 0.1s
+//pkg/kubelet/metrics/collectors:go_default_test                         PASSED in 0.7s
+//pkg/kubelet/mountpod:go_default_test                                   PASSED in 0.3s
+//pkg/kubelet/network/dns:go_default_test                                PASSED in 0.6s
+//pkg/kubelet/nodelease:go_default_test                                  PASSED in 0.3s
+//pkg/kubelet/nodestatus:go_default_test                                 PASSED in 0.2s
+//pkg/kubelet/oom:go_default_test                                        PASSED in 0.3s
+//pkg/kubelet/pleg:go_default_test                                       PASSED in 0.2s
+//pkg/kubelet/pluginmanager:go_default_test                              PASSED in 0.8s
+//pkg/kubelet/pluginmanager/cache:go_default_test                        PASSED in 0.2s
+//pkg/kubelet/pluginmanager/metrics:go_default_test                      PASSED in 0.2s
+//pkg/kubelet/pluginmanager/operationexecutor:go_default_test            PASSED in 10.3s
+//pkg/kubelet/pluginmanager/pluginwatcher:go_default_test                PASSED in 28.8s
+//pkg/kubelet/pluginmanager/reconciler:go_default_test                   PASSED in 14.9s
+//pkg/kubelet/pod:go_default_test                                        PASSED in 0.3s
+//pkg/kubelet/preemption:go_default_test                                 PASSED in 0.4s
+//pkg/kubelet/prober:go_default_test                                     PASSED in 9.4s
+//pkg/kubelet/prober/results:go_default_test                             PASSED in 0.3s
+//pkg/kubelet/qos:go_default_test                                        PASSED in 0.3s
+//pkg/kubelet/remote:go_default_test                                     PASSED in 0.9s
+//pkg/kubelet/runtimeclass:go_default_test                               PASSED in 0.4s
+//pkg/kubelet/runtimeregistry:go_default_test                            PASSED in 0.1s
+//pkg/kubelet/secret:go_default_test                                     PASSED in 0.2s
+//pkg/kubelet/server:go_default_test                                     PASSED in 0.9s
+//pkg/kubelet/server/portforward:go_default_test                         PASSED in 0.7s
+//pkg/kubelet/server/stats:go_default_test                               PASSED in 1.9s
+//pkg/kubelet/server/streaming:go_default_test                           PASSED in 1.6s
+//pkg/kubelet/stats:go_default_test                                      PASSED in 0.4s
+//pkg/kubelet/status:go_default_test                                     PASSED in 0.2s
+//pkg/kubelet/sysctl:go_default_test                                     PASSED in 0.6s
+//pkg/kubelet/token:go_default_test                                      PASSED in 0.2s
+//pkg/kubelet/types:go_default_test                                      PASSED in 0.3s
+//pkg/kubelet/util:go_default_test                                       PASSED in 0.2s
+//pkg/kubelet/util/cache:go_default_test                                 PASSED in 0.7s
+//pkg/kubelet/util/format:go_default_test                                PASSED in 0.2s
+//pkg/kubelet/util/logreduction:go_default_test                          PASSED in 0.2s
+//pkg/kubelet/util/manager:go_default_test                               PASSED in 0.3s
+//pkg/kubelet/util/podConverter:go_default_test                          PASSED in 1.0s
+//pkg/kubelet/util/queue:go_default_test                                 PASSED in 0.4s
+//pkg/kubelet/util/sliceutils:go_default_test                            PASSED in 0.6s
+//pkg/kubelet/util/store:go_default_test                                 PASSED in 0.1s
+//pkg/kubelet/volumemanager:go_default_test                              PASSED in 4.1s
+//pkg/kubelet/volumemanager/cache:go_default_test                        PASSED in 0.2s
+//pkg/kubelet/volumemanager/metrics:go_default_test                      PASSED in 0.2s
+//pkg/kubelet/volumemanager/populator:go_default_test                    PASSED in 0.6s
+//pkg/kubelet/volumemanager/reconciler:go_default_test                   PASSED in 8.2s
+//pkg/kubelet/winstats:go_default_test                                   PASSED in 0.3s
+//pkg/master:go_default_test                                             PASSED in 275.6s
+//pkg/master/controller/crdregistration:go_default_test                  PASSED in 0.4s
+//pkg/master/reconcilers:go_default_test                                 PASSED in 0.2s
+//pkg/master/tunneler:go_default_test                                    PASSED in 1.0s
+//pkg/printers:go_default_test                                           PASSED in 0.4s
+//pkg/printers/internalversion:go_default_test                           PASSED in 0.8s
+//pkg/probe/exec:go_default_test                                         PASSED in 0.3s
+//pkg/probe/http:go_default_test                                         PASSED in 5.4s
+//pkg/probe/tcp:go_default_test                                          PASSED in 0.2s
+//pkg/proxy:go_default_test                                              PASSED in 0.2s
+//pkg/proxy/apis/config/scheme:go_default_test                           PASSED in 0.7s
+//pkg/proxy/apis/config/validation:go_default_test                       PASSED in 0.5s
+//pkg/proxy/config:go_default_test                                       PASSED in 1.1s
+//pkg/proxy/healthcheck:go_default_test                                  PASSED in 0.3s
+//pkg/proxy/iptables:go_default_test                                     PASSED in 0.3s
+//pkg/proxy/ipvs:go_default_test                                         PASSED in 0.7s
+//pkg/proxy/ipvs/testing:go_default_test                                 PASSED in 0.4s
+//pkg/proxy/userspace:go_default_test                                    PASSED in 5.4s
+//pkg/proxy/util:go_default_test                                         PASSED in 0.5s
+//pkg/proxy/winkernel:go_default_test                                    PASSED in 0.1s
+//pkg/proxy/winuserspace:go_default_test                                 PASSED in 3.2s
+//pkg/quota/v1:go_default_test                                           PASSED in 0.7s
+//pkg/quota/v1/evaluator/core:go_default_test                            PASSED in 0.7s
+//pkg/quota/v1/generic:go_default_test                                   PASSED in 0.7s
+//pkg/registry/apps/controllerrevision:go_default_test                   PASSED in 0.5s
+//pkg/registry/apps/controllerrevision/storage:go_default_test           PASSED in 3.1s
+//pkg/registry/apps/daemonset:go_default_test                            PASSED in 0.1s
+//pkg/registry/apps/daemonset/storage:go_default_test                    PASSED in 5.8s
+//pkg/registry/apps/deployment:go_default_test                           PASSED in 0.2s
+//pkg/registry/apps/deployment/storage:go_default_test                   PASSED in 8.4s
+//pkg/registry/apps/replicaset:go_default_test                           PASSED in 0.2s
+//pkg/registry/apps/replicaset/storage:go_default_test                   PASSED in 10.1s
+//pkg/registry/apps/statefulset:go_default_test                          PASSED in 0.4s
+//pkg/registry/apps/statefulset/storage:go_default_test                  PASSED in 5.1s
+//pkg/registry/auditregistration/auditsink:go_default_test               PASSED in 0.3s
+//pkg/registry/authorization/subjectaccessreview:go_default_test         PASSED in 0.3s
+//pkg/registry/authorization/util:go_default_test                        PASSED in 0.3s
+//pkg/registry/autoscaling/horizontalpodautoscaler/storage:go_default_test PASSED in 8.2s
+//pkg/registry/batch/cronjob:go_default_test                             PASSED in 0.1s
+//pkg/registry/batch/cronjob/storage:go_default_test                     PASSED in 4.5s
+//pkg/registry/batch/job:go_default_test                                 PASSED in 0.4s
+//pkg/registry/batch/job/storage:go_default_test                         PASSED in 4.7s
+//pkg/registry/certificates/certificates:go_default_test                 PASSED in 0.2s
+//pkg/registry/coordination/lease:go_default_test                        PASSED in 0.2s
+//pkg/registry/core/action:go_default_test                               PASSED in 0.3s
+//pkg/registry/core/componentstatus:go_default_test                      PASSED in 0.3s
+//pkg/registry/core/configmap:go_default_test                            PASSED in 0.3s
+//pkg/registry/core/configmap/storage:go_default_test                    PASSED in 5.4s
+//pkg/registry/core/controllerinstance/storage:go_default_test           PASSED in 1.1s
+//pkg/registry/core/datapartition/storage:go_default_test                PASSED in 0.7s
+//pkg/registry/core/endpoint:go_default_test                             PASSED in 0.2s
+//pkg/registry/core/endpoint/storage:go_default_test                     PASSED in 5.3s
+//pkg/registry/core/event:go_default_test                                PASSED in 1.0s
+//pkg/registry/core/event/storage:go_default_test                        PASSED in 1.0s
+//pkg/registry/core/limitrange:go_default_test                           PASSED in 0.2s
+//pkg/registry/core/limitrange/storage:go_default_test                   PASSED in 6.1s
+//pkg/registry/core/namespace:go_default_test                            PASSED in 0.2s
+//pkg/registry/core/namespace/storage:go_default_test                    PASSED in 4.5s
+//pkg/registry/core/node:go_default_test                                 PASSED in 0.2s
+//pkg/registry/core/node/storage:go_default_test                         PASSED in 4.9s
+//pkg/registry/core/persistentvolume:go_default_test                     PASSED in 1.0s
+//pkg/registry/core/persistentvolume/storage:go_default_test             PASSED in 4.8s
+//pkg/registry/core/persistentvolumeclaim:go_default_test                PASSED in 0.5s
+//pkg/registry/core/persistentvolumeclaim/storage:go_default_test        PASSED in 3.9s
+//pkg/registry/core/pod:go_default_test                                  PASSED in 0.4s
+//pkg/registry/core/pod/rest:go_default_test                             PASSED in 1.1s
+//pkg/registry/core/pod/storage:go_default_test                          PASSED in 8.9s
+//pkg/registry/core/podtemplate:go_default_test                          PASSED in 0.2s
+//pkg/registry/core/podtemplate/storage:go_default_test                  PASSED in 4.9s
+//pkg/registry/core/replicationcontroller:go_default_test                PASSED in 0.3s
+//pkg/registry/core/replicationcontroller/storage:go_default_test        PASSED in 9.8s
+//pkg/registry/core/resourcequota:go_default_test                        PASSED in 0.4s
+//pkg/registry/core/resourcequota/storage:go_default_test                PASSED in 3.8s
+//pkg/registry/core/rest:go_default_test                                 PASSED in 0.5s
+//pkg/registry/core/secret:go_default_test                               PASSED in 0.5s
+//pkg/registry/core/secret/storage:go_default_test                       PASSED in 6.2s
+//pkg/registry/core/service:go_default_test                              PASSED in 0.2s
+//pkg/registry/core/service/allocator:go_default_test                    PASSED in 0.3s
+//pkg/registry/core/service/allocator/storage:go_default_test            PASSED in 0.8s
+//pkg/registry/core/service/ipallocator:go_default_test                  PASSED in 1.5s
+//pkg/registry/core/service/ipallocator/controller:go_default_test       PASSED in 0.2s
+//pkg/registry/core/service/ipallocator/storage:go_default_test          PASSED in 1.2s
+//pkg/registry/core/service/portallocator:go_default_test                PASSED in 0.2s
+//pkg/registry/core/service/portallocator/controller:go_default_test     PASSED in 1.0s
+//pkg/registry/core/service/storage:go_default_test                      PASSED in 11.6s
+//pkg/registry/core/serviceaccount:go_default_test                       PASSED in 0.4s
+//pkg/registry/core/serviceaccount/storage:go_default_test               PASSED in 4.2s
+//pkg/registry/core/storagecluster/storage:go_default_test               PASSED in 0.5s
+//pkg/registry/core/tenant:go_default_test                               PASSED in 0.4s
+//pkg/registry/core/tenant/storage:go_default_test                       PASSED in 6.4s
+//pkg/registry/events/event:go_default_test                              PASSED in 0.2s
+//pkg/registry/extensions/controller/storage:go_default_test             PASSED in 0.8s
+//pkg/registry/networking/ingress:go_default_test                        PASSED in 0.7s
+//pkg/registry/networking/ingress/storage:go_default_test                PASSED in 5.4s
+//pkg/registry/networking/networkpolicy:go_default_test                  PASSED in 0.7s
+//pkg/registry/networking/networkpolicy/storage:go_default_test          PASSED in 4.9s
+//pkg/registry/node/runtimeclass:go_default_test                         PASSED in 0.2s
+//pkg/registry/policy/poddisruptionbudget:go_default_test                PASSED in 1.3s
+//pkg/registry/policy/poddisruptionbudget/storage:go_default_test        PASSED in 4.0s
+//pkg/registry/policy/podsecuritypolicy:go_default_test                  PASSED in 0.4s
+//pkg/registry/policy/podsecuritypolicy/storage:go_default_test          PASSED in 4.3s
+//pkg/registry/rbac:go_default_test                                      PASSED in 1.1s
+//pkg/registry/rbac/clusterrole:go_default_test                          PASSED in 1.0s
+//pkg/registry/rbac/clusterrole/policybased:go_default_test              PASSED in 0.2s
+//pkg/registry/rbac/clusterrolebinding:go_default_test                   PASSED in 0.2s
+//pkg/registry/rbac/reconciliation:go_default_test                       PASSED in 0.2s
+//pkg/registry/rbac/role:go_default_test                                 PASSED in 0.2s
+//pkg/registry/rbac/role/policybased:go_default_test                     PASSED in 0.2s
+//pkg/registry/rbac/rolebinding:go_default_test                          PASSED in 0.2s
+//pkg/registry/rbac/validation:go_default_test                           PASSED in 0.3s
+//pkg/registry/scheduling/priorityclass:go_default_test                  PASSED in 0.2s
+//pkg/registry/scheduling/priorityclass/storage:go_default_test          PASSED in 3.9s
+//pkg/registry/settings/podpreset:go_default_test                        PASSED in 0.3s
+//pkg/registry/settings/podpreset/storage:go_default_test                PASSED in 4.2s
+//pkg/registry/storage/csidriver:go_default_test                         PASSED in 0.4s
+//pkg/registry/storage/csidriver/storage:go_default_test                 PASSED in 4.3s
+//pkg/registry/storage/csinode:go_default_test                           PASSED in 0.3s
+//pkg/registry/storage/csinode/storage:go_default_test                   PASSED in 3.7s
+//pkg/registry/storage/storageclass:go_default_test                      PASSED in 0.3s
+//pkg/registry/storage/storageclass/storage:go_default_test              PASSED in 4.5s
+//pkg/registry/storage/volumeattachment:go_default_test                  PASSED in 0.2s
+//pkg/registry/storage/volumeattachment/storage:go_default_test          PASSED in 4.7s
+//pkg/scheduler:go_default_test                                          PASSED in 35.0s
+//pkg/scheduler/algorithm/predicates:go_default_test                     PASSED in 0.3s
+//pkg/scheduler/algorithm/priorities:go_default_test                     PASSED in 0.5s
+//pkg/scheduler/algorithm/priorities/util:go_default_test                PASSED in 0.3s
+//pkg/scheduler/algorithmprovider:go_default_test                        PASSED in 0.4s
+//pkg/scheduler/algorithmprovider/defaults:go_default_test               PASSED in 0.6s
+//pkg/scheduler/api/compatibility:go_default_test                        PASSED in 0.4s
+//pkg/scheduler/api/validation:go_default_test                           PASSED in 0.4s
+//pkg/scheduler/apis/config/v1alpha1:go_default_test                     PASSED in 0.2s
+//pkg/scheduler/apis/config/validation:go_default_test                   PASSED in 0.2s
+//pkg/scheduler/core:go_default_test                                     PASSED in 0.3s
+//pkg/scheduler/factory:go_default_test                                  PASSED in 2.0s
+//pkg/scheduler/internal/cache:go_default_test                           PASSED in 0.4s
+//pkg/scheduler/internal/cache/debugger:go_default_test                  PASSED in 0.3s
+//pkg/scheduler/internal/queue:go_default_test                           PASSED in 2.6s
+//pkg/scheduler/metrics:go_default_test                                  PASSED in 0.3s
+//pkg/scheduler/nodeinfo:go_default_test                                 PASSED in 0.2s
+//pkg/scheduler/util:go_default_test                                     PASSED in 0.7s
+//pkg/security/apparmor:go_default_test                                  PASSED in 0.2s
+//pkg/security/podsecuritypolicy:go_default_test                         PASSED in 1.3s
+//pkg/security/podsecuritypolicy/apparmor:go_default_test                PASSED in 0.4s
+//pkg/security/podsecuritypolicy/capabilities:go_default_test            PASSED in 0.3s
+//pkg/security/podsecuritypolicy/group:go_default_test                   PASSED in 0.2s
+//pkg/security/podsecuritypolicy/seccomp:go_default_test                 PASSED in 0.2s
+//pkg/security/podsecuritypolicy/selinux:go_default_test                 PASSED in 0.2s
+//pkg/security/podsecuritypolicy/sysctl:go_default_test                  PASSED in 0.3s
+//pkg/security/podsecuritypolicy/user:go_default_test                    PASSED in 0.5s
+//pkg/security/podsecuritypolicy/util:go_default_test                    PASSED in 0.3s
+//pkg/securitycontext:go_default_test                                    PASSED in 0.6s
+//pkg/serviceaccount:go_default_test                                     PASSED in 0.3s
+//pkg/ssh:go_default_test                                                PASSED in 1.7s
+//pkg/util:verify-util-pkg                                               PASSED in 0.3s
+//pkg/util/async:go_default_test                                         PASSED in 0.3s
+//pkg/util/bandwidth:go_default_test                                     PASSED in 0.5s
+//pkg/util/config:go_default_test                                        PASSED in 0.2s
+//pkg/util/configz:go_default_test                                       PASSED in 0.6s
+//pkg/util/conntrack:go_default_test                                     PASSED in 0.7s
+//pkg/util/dbus:go_default_test                                          PASSED in 0.5s
+//pkg/util/ebtables:go_default_test                                      PASSED in 0.4s
+//pkg/util/env:go_default_test                                           PASSED in 0.3s
+//pkg/util/flag:go_default_test                                          PASSED in 0.3s
+//pkg/util/goroutinemap:go_default_test                                  PASSED in 0.9s
+//pkg/util/hash:go_default_test                                          PASSED in 0.3s
+//pkg/util/ipconfig:go_default_test                                      PASSED in 0.3s
+//pkg/util/ipset:go_default_test                                         PASSED in 0.2s
+//pkg/util/ipset/testing:go_default_test                                 PASSED in 0.2s
+//pkg/util/iptables:go_default_test                                      PASSED in 4.7s
+//pkg/util/ipvs:go_default_test                                          PASSED in 0.5s
+//pkg/util/ipvs/testing:go_default_test                                  PASSED in 0.8s
+//pkg/util/labels:go_default_test                                        PASSED in 0.4s
+//pkg/util/metrics:go_default_test                                       PASSED in 0.2s
+//pkg/util/mount:go_default_test                                         PASSED in 0.3s
+//pkg/util/netsh:go_default_test                                         PASSED in 1.0s
+//pkg/util/node:go_default_test                                          PASSED in 0.3s
+//pkg/util/oom:go_default_test                                           PASSED in 0.2s
+//pkg/util/parsers:go_default_test                                       PASSED in 0.4s
+//pkg/util/pod:go_default_test                                           PASSED in 1.3s
+//pkg/util/procfs:go_default_test                                        PASSED in 0.2s
+//pkg/util/removeall:go_default_test                                     PASSED in 0.2s
+//pkg/util/slice:go_default_test                                         PASSED in 0.2s
+//pkg/util/system:go_default_test                                        PASSED in 0.3s
+//pkg/util/tail:go_default_test                                          PASSED in 0.2s
+//pkg/util/taints:go_default_test                                        PASSED in 0.3s
+//pkg/util/tolerations:go_default_test                                   PASSED in 0.3s
+//pkg/volume:go_default_test                                             PASSED in 0.7s
+//pkg/volume/awsebs:go_default_test                                      PASSED in 0.2s
+//pkg/volume/azure_dd:go_default_test                                    PASSED in 0.5s
+//pkg/volume/azure_file:go_default_test                                  PASSED in 1.6s
+//pkg/volume/cephfs:go_default_test                                      PASSED in 0.1s
+//pkg/volume/cinder:go_default_test                                      PASSED in 2.4s
+//pkg/volume/configmap:go_default_test                                   PASSED in 0.2s
+//pkg/volume/csi:go_default_test                                         PASSED in 34.0s
+//pkg/volume/csi/nodeinfomanager:go_default_test                         PASSED in 1.0s
+//pkg/volume/downwardapi:go_default_test                                 PASSED in 0.3s
+//pkg/volume/emptydir:go_default_test                                    PASSED in 0.2s
+//pkg/volume/fc:go_default_test                                          PASSED in 0.3s
+//pkg/volume/flexvolume:go_default_test                                  PASSED in 0.9s
+//pkg/volume/flocker:go_default_test                                     PASSED in 0.4s
+//pkg/volume/gcepd:go_default_test                                       PASSED in 0.4s
+//pkg/volume/git_repo:go_default_test                                    PASSED in 0.5s
+//pkg/volume/glusterfs:go_default_test                                   PASSED in 0.9s
+//pkg/volume/hostpath:go_default_test                                    PASSED in 0.2s
+//pkg/volume/iscsi:go_default_test                                       PASSED in 0.2s
+//pkg/volume/local:go_default_test                                       PASSED in 0.3s
+//pkg/volume/nfs:go_default_test                                         PASSED in 0.2s
+//pkg/volume/portworx:go_default_test                                    PASSED in 0.2s
+//pkg/volume/projected:go_default_test                                   PASSED in 0.3s
+//pkg/volume/quobyte:go_default_test                                     PASSED in 0.2s
+//pkg/volume/rbd:go_default_test                                         PASSED in 0.3s
+//pkg/volume/scaleio:go_default_test                                     PASSED in 4.4s
+//pkg/volume/secret:go_default_test                                      PASSED in 0.9s
+//pkg/volume/storageos:go_default_test                                   PASSED in 0.4s
+//pkg/volume/util:go_default_test                                        PASSED in 0.4s
+//pkg/volume/util/exec:go_default_test                                   PASSED in 0.2s
+//pkg/volume/util/fsquota:go_default_test                                PASSED in 0.4s
+//pkg/volume/util/nestedpendingoperations:go_default_test                PASSED in 0.8s
+//pkg/volume/util/nsenter:go_default_test                                PASSED in 0.2s
+//pkg/volume/util/operationexecutor:go_default_test                      PASSED in 40.3s
+//pkg/volume/util/recyclerclient:go_default_test                         PASSED in 0.2s
+//pkg/volume/util/subpath:go_default_test                                PASSED in 0.4s
+//pkg/volume/validation:go_default_test                                  PASSED in 0.4s
+//pkg/volume/vsphere_volume:go_default_test                              PASSED in 0.4s
+//plugin/pkg/admission/admit:go_default_test                             PASSED in 0.2s
+//plugin/pkg/admission/alwayspullimages:go_default_test                  PASSED in 0.2s
+//plugin/pkg/admission/antiaffinity:go_default_test                      PASSED in 1.1s
+//plugin/pkg/admission/defaultpodnetworkreadiness:go_default_test        PASSED in 0.2s
+//plugin/pkg/admission/defaulttolerationseconds:go_default_test          PASSED in 0.2s
+//plugin/pkg/admission/deny:go_default_test                              PASSED in 0.4s
+//plugin/pkg/admission/eventratelimit:go_default_test                    PASSED in 0.9s
+//plugin/pkg/admission/eventratelimit/apis/eventratelimit/validation:go_default_test PASSED in 0.2s
+//plugin/pkg/admission/exec:go_default_test                              PASSED in 0.4s
+//plugin/pkg/admission/extendedresourcetoleration:go_default_test        PASSED in 0.3s
+//plugin/pkg/admission/gc:go_default_test                                PASSED in 0.8s
+//plugin/pkg/admission/imagepolicy:go_default_test                       PASSED in 27.4s
+//plugin/pkg/admission/limitranger:go_default_test                       PASSED in 1.1s
+//plugin/pkg/admission/namespace/autoprovision:go_default_test           PASSED in 1.0s
+//plugin/pkg/admission/namespace/exists:go_default_test                  PASSED in 1.0s
+//plugin/pkg/admission/noderestriction:go_default_test                   PASSED in 0.3s
+//plugin/pkg/admission/nodetaint:go_default_test                         PASSED in 0.5s
+//plugin/pkg/admission/podnodeselector:go_default_test                   PASSED in 0.4s
+//plugin/pkg/admission/podpreset:go_default_test                         PASSED in 0.5s
+//plugin/pkg/admission/podresourceallocation:go_default_test             PASSED in 0.4s
+//plugin/pkg/admission/podtolerationrestriction:go_default_test          PASSED in 1.8s
+//plugin/pkg/admission/podtolerationrestriction/apis/podtolerationrestriction/validation:go_default_test PASSED in 0.5s
+//plugin/pkg/admission/priority:go_default_test                          PASSED in 0.3s
+//plugin/pkg/admission/resourcequota:go_default_test                     PASSED in 0.3s
+//plugin/pkg/admission/resourcequota/apis/resourcequota/validation:go_default_test PASSED in 0.2s
+//plugin/pkg/admission/security/podsecuritypolicy:go_default_test        PASSED in 0.4s
+//plugin/pkg/admission/securitycontext/scdeny:go_default_test            PASSED in 0.3s
+//plugin/pkg/admission/serviceaccount:go_default_test                    PASSED in 2.8s
+//plugin/pkg/admission/storage/persistentvolume/label:go_default_test    PASSED in 0.4s
+//plugin/pkg/admission/storage/persistentvolume/resize:go_default_test   PASSED in 0.4s
+//plugin/pkg/admission/storage/storageclass/setdefault:go_default_test   PASSED in 0.2s
+//plugin/pkg/admission/storage/storageobjectinuseprotection:go_default_test PASSED in 0.2s
+//plugin/pkg/admission/tenant/exists:go_default_test                     PASSED in 0.4s
+//plugin/pkg/auth/authenticator/token/bootstrap:go_default_test          PASSED in 0.2s
+//plugin/pkg/auth/authorizer/node:go_default_test                        PASSED in 0.2s
+//plugin/pkg/auth/authorizer/rbac:go_default_test                        PASSED in 0.2s
+//plugin/pkg/auth/authorizer/rbac/bootstrappolicy:go_default_test        PASSED in 1.8s
+//staging/src/k8s.io/api:go_default_test                                 PASSED in 6.2s
+//staging/src/k8s.io/api/core/v1:go_default_test                         PASSED in 0.1s
+//staging/src/k8s.io/apiextensions-apiserver/pkg/apis/apiextensions:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/install:go_default_test PASSED in 0.3s
+//staging/src/k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1:go_default_test PASSED in 0.1s
+//staging/src/k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/validation:go_default_test PASSED in 1.4s
+//staging/src/k8s.io/apiextensions-apiserver/pkg/apiserver:go_default_test PASSED in 0.4s
+//staging/src/k8s.io/apiextensions-apiserver/pkg/apiserver/conversion:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/apiextensions-apiserver/pkg/apiserver/schema:go_default_test PASSED in 2.0s
+//staging/src/k8s.io/apiextensions-apiserver/pkg/apiserver/schema/defaulting:go_default_test PASSED in 0.3s
+//staging/src/k8s.io/apiextensions-apiserver/pkg/apiserver/schema/objectmeta:go_default_test PASSED in 6.1s
+//staging/src/k8s.io/apiextensions-apiserver/pkg/apiserver/schema/pruning:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/apiextensions-apiserver/pkg/apiserver/validation:go_default_test PASSED in 0.7s
+//staging/src/k8s.io/apiextensions-apiserver/pkg/controller/openapi:go_default_test PASSED in 6.7s
+//staging/src/k8s.io/apiextensions-apiserver/pkg/controller/status:go_default_test PASSED in 0.4s
+//staging/src/k8s.io/apiextensions-apiserver/pkg/registry/customresource:go_default_test PASSED in 3.0s
+//staging/src/k8s.io/apiextensions-apiserver/pkg/registry/customresource/tableconvertor:go_default_test PASSED in 0.7s
+//staging/src/k8s.io/apiextensions-apiserver/pkg/registry/customresourcedefinition:go_default_test PASSED in 0.3s
+//staging/src/k8s.io/apimachinery/pkg/api/apitesting/fuzzer:go_default_test PASSED in 0.4s
+//staging/src/k8s.io/apimachinery/pkg/api/errors:go_default_test         PASSED in 0.2s
+//staging/src/k8s.io/apimachinery/pkg/api/meta:go_default_test           PASSED in 0.8s
+//staging/src/k8s.io/apimachinery/pkg/api/resource:go_default_test       PASSED in 0.5s
+//staging/src/k8s.io/apimachinery/pkg/api/validation:go_default_test     PASSED in 0.3s
+//staging/src/k8s.io/apimachinery/pkg/api/validation/path:go_default_test PASSED in 0.1s
+//staging/src/k8s.io/apimachinery/pkg/apis/meta/internalversion:go_default_test PASSED in 0.3s
+//staging/src/k8s.io/apimachinery/pkg/apis/meta/v1:go_default_test       PASSED in 0.4s
+//staging/src/k8s.io/apimachinery/pkg/apis/meta/v1/unstructured:go_default_test PASSED in 0.4s
+//staging/src/k8s.io/apimachinery/pkg/apis/meta/v1/validation:go_default_test PASSED in 0.6s
+//staging/src/k8s.io/apimachinery/pkg/apis/testapigroup/install:go_default_test PASSED in 0.6s
+//staging/src/k8s.io/apimachinery/pkg/conversion:go_default_test         PASSED in 0.7s
+//staging/src/k8s.io/apimachinery/pkg/conversion/queryparams:go_default_test PASSED in 0.1s
+//staging/src/k8s.io/apimachinery/pkg/conversion/unstructured:go_default_test PASSED in 0.4s
+//staging/src/k8s.io/apimachinery/pkg/fields:go_default_test             PASSED in 0.4s
+//staging/src/k8s.io/apimachinery/pkg/labels:go_default_test             PASSED in 0.3s
+//staging/src/k8s.io/apimachinery/pkg/runtime:go_default_test            PASSED in 0.4s
+//staging/src/k8s.io/apimachinery/pkg/runtime/schema:go_default_test     PASSED in 0.5s
+//staging/src/k8s.io/apimachinery/pkg/runtime/serializer:go_default_test PASSED in 1.0s
+//staging/src/k8s.io/apimachinery/pkg/runtime/serializer/json:go_default_test PASSED in 1.3s
+//staging/src/k8s.io/apimachinery/pkg/runtime/serializer/protobuf:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/apimachinery/pkg/runtime/serializer/recognizer/testing:go_default_test PASSED in 0.5s
+//staging/src/k8s.io/apimachinery/pkg/runtime/serializer/streaming:go_default_test PASSED in 0.7s
+//staging/src/k8s.io/apimachinery/pkg/runtime/serializer/versioning:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/apimachinery/pkg/test:go_default_test               PASSED in 1.0s
+//staging/src/k8s.io/apimachinery/pkg/util/cache:go_default_test         PASSED in 0.7s
+//staging/src/k8s.io/apimachinery/pkg/util/clock:go_default_test         PASSED in 0.2s
+//staging/src/k8s.io/apimachinery/pkg/util/diff:go_default_test          PASSED in 0.7s
+//staging/src/k8s.io/apimachinery/pkg/util/duration:go_default_test      PASSED in 0.4s
+//staging/src/k8s.io/apimachinery/pkg/util/errors:go_default_test        PASSED in 0.3s
+//staging/src/k8s.io/apimachinery/pkg/util/framer:go_default_test        PASSED in 0.4s
+//staging/src/k8s.io/apimachinery/pkg/util/httpstream:go_default_test    PASSED in 0.8s
+//staging/src/k8s.io/apimachinery/pkg/util/httpstream/spdy:go_default_test PASSED in 0.4s
+//staging/src/k8s.io/apimachinery/pkg/util/intstr:go_default_test        PASSED in 0.2s
+//staging/src/k8s.io/apimachinery/pkg/util/json:go_default_test          PASSED in 0.4s
+//staging/src/k8s.io/apimachinery/pkg/util/jsonmergepatch:go_default_test PASSED in 0.7s
+//staging/src/k8s.io/apimachinery/pkg/util/mergepatch:go_default_test    PASSED in 0.2s
+//staging/src/k8s.io/apimachinery/pkg/util/naming:go_default_test        PASSED in 0.2s
+//staging/src/k8s.io/apimachinery/pkg/util/net:go_default_test           PASSED in 0.2s
+//staging/src/k8s.io/apimachinery/pkg/util/proxy:go_default_test         PASSED in 6.9s
+//staging/src/k8s.io/apimachinery/pkg/util/rand:go_default_test          PASSED in 0.3s
+//staging/src/k8s.io/apimachinery/pkg/util/runtime:go_default_test       PASSED in 0.2s
+//staging/src/k8s.io/apimachinery/pkg/util/sets:go_default_test          PASSED in 0.7s
+//staging/src/k8s.io/apimachinery/pkg/util/strategicpatch:go_default_test PASSED in 2.2s
+//staging/src/k8s.io/apimachinery/pkg/util/validation:go_default_test    PASSED in 0.4s
+//staging/src/k8s.io/apimachinery/pkg/util/validation/field:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/apimachinery/pkg/util/version:go_default_test       PASSED in 0.3s
+//staging/src/k8s.io/apimachinery/pkg/util/wait:go_default_test          PASSED in 1.4s
+//staging/src/k8s.io/apimachinery/pkg/util/waitgroup:go_default_test     PASSED in 0.5s
+//staging/src/k8s.io/apimachinery/pkg/util/yaml:go_default_test          PASSED in 1.4s
+//staging/src/k8s.io/apimachinery/pkg/version:go_default_test            PASSED in 0.2s
+//staging/src/k8s.io/apimachinery/pkg/watch:go_default_test              PASSED in 2.1s
+//staging/src/k8s.io/apimachinery/third_party/forked/golang/json:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/apimachinery/third_party/forked/golang/reflect:go_default_test PASSED in 0.4s
+//staging/src/k8s.io/apiserver/pkg/admission:go_default_test             PASSED in 10.5s
+//staging/src/k8s.io/apiserver/pkg/admission/configuration:go_default_test PASSED in 5.3s
+//staging/src/k8s.io/apiserver/pkg/admission/initializer:go_default_test PASSED in 1.1s
+//staging/src/k8s.io/apiserver/pkg/admission/metrics:go_default_test     PASSED in 0.5s
+//staging/src/k8s.io/apiserver/pkg/admission/plugin/namespace/lifecycle:go_default_test PASSED in 1.4s
+//staging/src/k8s.io/apiserver/pkg/admission/plugin/webhook:go_default_test PASSED in 1.1s
+//staging/src/k8s.io/apiserver/pkg/admission/plugin/webhook/errors:go_default_test PASSED in 0.5s
+//staging/src/k8s.io/apiserver/pkg/admission/plugin/webhook/generic:go_default_test PASSED in 0.3s
+//staging/src/k8s.io/apiserver/pkg/admission/plugin/webhook/initializer:go_default_test PASSED in 0.5s
+//staging/src/k8s.io/apiserver/pkg/admission/plugin/webhook/mutating:go_default_test PASSED in 7.9s
+//staging/src/k8s.io/apiserver/pkg/admission/plugin/webhook/namespace:go_default_test PASSED in 0.4s
+//staging/src/k8s.io/apiserver/pkg/admission/plugin/webhook/object:go_default_test PASSED in 0.4s
+//staging/src/k8s.io/apiserver/pkg/admission/plugin/webhook/rules:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/apiserver/pkg/admission/plugin/webhook/validating:go_default_test PASSED in 5.4s
+//staging/src/k8s.io/apiserver/pkg/apis/audit/install:go_default_test    PASSED in 1.1s
+//staging/src/k8s.io/apiserver/pkg/apis/audit/v1alpha1:go_default_test   PASSED in 0.3s
+//staging/src/k8s.io/apiserver/pkg/apis/audit/v1beta1:go_default_test    PASSED in 0.2s
+//staging/src/k8s.io/apiserver/pkg/apis/audit/validation:go_default_test PASSED in 0.7s
+//staging/src/k8s.io/apiserver/pkg/apis/example/install:go_default_test  PASSED in 0.2s
+//staging/src/k8s.io/apiserver/pkg/apis/example2/install:go_default_test PASSED in 0.7s
+//staging/src/k8s.io/apiserver/pkg/audit:go_default_test                 PASSED in 0.6s
+//staging/src/k8s.io/apiserver/pkg/audit/event:go_default_test           PASSED in 0.1s
+//staging/src/k8s.io/apiserver/pkg/audit/policy:go_default_test          PASSED in 0.7s
+//staging/src/k8s.io/apiserver/pkg/audit/util:go_default_test            PASSED in 0.4s
+//staging/src/k8s.io/apiserver/pkg/authentication/authenticator:go_default_test PASSED in 0.5s
+//staging/src/k8s.io/apiserver/pkg/authentication/group:go_default_test  PASSED in 0.4s
+//staging/src/k8s.io/apiserver/pkg/authentication/request/anonymous:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/apiserver/pkg/authentication/request/bearertoken:go_default_test PASSED in 0.5s
+//staging/src/k8s.io/apiserver/pkg/authentication/request/headerrequest:go_default_test PASSED in 0.3s
+//staging/src/k8s.io/apiserver/pkg/authentication/request/union:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/apiserver/pkg/authentication/request/websocket:go_default_test PASSED in 0.3s
+//staging/src/k8s.io/apiserver/pkg/authentication/request/x509:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/apiserver/pkg/authentication/serviceaccount:go_default_test PASSED in 0.4s
+//staging/src/k8s.io/apiserver/pkg/authentication/token/cache:go_default_test PASSED in 0.7s
+//staging/src/k8s.io/apiserver/pkg/authentication/token/tokenfile:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/apiserver/pkg/authentication/token/union:go_default_test PASSED in 0.1s
+//staging/src/k8s.io/apiserver/pkg/authorization/authorizerfactory:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/apiserver/pkg/authorization/path:go_default_test    PASSED in 0.1s
+//staging/src/k8s.io/apiserver/pkg/authorization/union:go_default_test   PASSED in 0.2s
+//staging/src/k8s.io/apiserver/pkg/endpoints:go_default_test             PASSED in 2.3s
+//staging/src/k8s.io/apiserver/pkg/endpoints/discovery:go_default_test   PASSED in 1.0s
+//staging/src/k8s.io/apiserver/pkg/endpoints/filters:go_default_test     PASSED in 2.1s
+//staging/src/k8s.io/apiserver/pkg/endpoints/handlers:go_default_test    PASSED in 0.3s
+//staging/src/k8s.io/apiserver/pkg/endpoints/handlers/fieldmanager:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/apiserver/pkg/endpoints/handlers/fieldmanager/internal:go_default_test PASSED in 2.3s
+//staging/src/k8s.io/apiserver/pkg/endpoints/handlers/negotiation:go_default_test PASSED in 0.3s
+//staging/src/k8s.io/apiserver/pkg/endpoints/handlers/responsewriters:go_default_test PASSED in 0.5s
+//staging/src/k8s.io/apiserver/pkg/endpoints/metrics:go_default_test     PASSED in 0.2s
+//staging/src/k8s.io/apiserver/pkg/endpoints/openapi:go_default_test     PASSED in 0.2s
+//staging/src/k8s.io/apiserver/pkg/endpoints/request:go_default_test     PASSED in 0.3s
+//staging/src/k8s.io/apiserver/pkg/registry/generic:go_default_test      PASSED in 0.3s
+//staging/src/k8s.io/apiserver/pkg/registry/generic/registry:go_default_test PASSED in 6.8s
+//staging/src/k8s.io/apiserver/pkg/registry/generic/rest:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/apiserver/pkg/registry/rest:go_default_test         PASSED in 0.4s
+//staging/src/k8s.io/apiserver/pkg/server:go_default_test                PASSED in 3.0s
+//staging/src/k8s.io/apiserver/pkg/server/filters:go_default_test        PASSED in 0.3s
+//staging/src/k8s.io/apiserver/pkg/server/healthz:go_default_test        PASSED in 0.6s
+//staging/src/k8s.io/apiserver/pkg/server/httplog:go_default_test        PASSED in 0.4s
+//staging/src/k8s.io/apiserver/pkg/server/mux:go_default_test            PASSED in 0.2s
+//staging/src/k8s.io/apiserver/pkg/server/options:go_default_test        PASSED in 7.6s
+//staging/src/k8s.io/apiserver/pkg/server/options/encryptionconfig:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/apiserver/pkg/server/resourceconfig:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/apiserver/pkg/server/routes:go_default_test         PASSED in 0.3s
+//staging/src/k8s.io/apiserver/pkg/server/storage:go_default_test        PASSED in 0.3s
+//staging/src/k8s.io/apiserver/pkg/storage:go_default_test               PASSED in 0.5s
+//staging/src/k8s.io/apiserver/pkg/storage/cacher:go_default_test        PASSED in 14.6s
+//staging/src/k8s.io/apiserver/pkg/storage/datapartition:go_default_test PASSED in 1.9s
+//staging/src/k8s.io/apiserver/pkg/storage/etcd3:go_default_test         PASSED in 32.4s
+//staging/src/k8s.io/apiserver/pkg/storage/etcd3/preflight:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/apiserver/pkg/storage/names:go_default_test         PASSED in 0.6s
+//staging/src/k8s.io/apiserver/pkg/storage/storagebackend/factory:go_default_test PASSED in 0.7s
+//staging/src/k8s.io/apiserver/pkg/storage/storagecluster:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/apiserver/pkg/storage/tests:go_default_test         PASSED in 17.9s
+//staging/src/k8s.io/apiserver/pkg/storage/value:go_default_test         PASSED in 0.9s
+//staging/src/k8s.io/apiserver/pkg/storage/value/encrypt/aes:go_default_test PASSED in 1.3s
+//staging/src/k8s.io/apiserver/pkg/storage/value/encrypt/envelope:go_default_test PASSED in 6.3s
+//staging/src/k8s.io/apiserver/pkg/storage/value/encrypt/secretbox:go_default_test PASSED in 0.3s
+//staging/src/k8s.io/apiserver/pkg/util/flushwriter:go_default_test      PASSED in 0.4s
+//staging/src/k8s.io/apiserver/pkg/util/openapi:go_default_test          PASSED in 1.1s
+//staging/src/k8s.io/apiserver/pkg/util/proxy:go_default_test            PASSED in 0.2s
+//staging/src/k8s.io/apiserver/pkg/util/webhook:go_default_test          PASSED in 2.2s
+//staging/src/k8s.io/apiserver/pkg/util/wsstream:go_default_test         PASSED in 0.2s
+//staging/src/k8s.io/apiserver/plugin/pkg/audit/buffered:go_default_test PASSED in 2.7s
+//staging/src/k8s.io/apiserver/plugin/pkg/audit/dynamic:go_default_test  PASSED in 1.3s
+//staging/src/k8s.io/apiserver/plugin/pkg/audit/dynamic/enforced:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/apiserver/plugin/pkg/audit/log:go_default_test      PASSED in 0.6s
+//staging/src/k8s.io/apiserver/plugin/pkg/audit/truncate:go_default_test PASSED in 0.3s
+//staging/src/k8s.io/apiserver/plugin/pkg/audit/webhook:go_default_test  PASSED in 0.2s
+//staging/src/k8s.io/apiserver/plugin/pkg/authenticator/password/passwordfile:go_default_test PASSED in 0.4s
+//staging/src/k8s.io/apiserver/plugin/pkg/authenticator/request/basicauth:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/apiserver/plugin/pkg/authenticator/token/oidc:go_default_test PASSED in 1.4s
+//staging/src/k8s.io/apiserver/plugin/pkg/authenticator/token/webhook:go_default_test PASSED in 1.1s
+//staging/src/k8s.io/apiserver/plugin/pkg/authorizer/webhook:go_default_test PASSED in 0.5s
+//staging/src/k8s.io/cli-runtime/pkg/genericclioptions:go_default_test   PASSED in 0.4s
+//staging/src/k8s.io/cli-runtime/pkg/kustomize:go_default_test           PASSED in 0.5s
+//staging/src/k8s.io/cli-runtime/pkg/kustomize/k8sdeps/configmapandsecret:go_default_test PASSED in 0.6s
+//staging/src/k8s.io/cli-runtime/pkg/kustomize/k8sdeps/kunstruct:go_default_test PASSED in 0.8s
+//staging/src/k8s.io/cli-runtime/pkg/kustomize/k8sdeps/kv:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/cli-runtime/pkg/kustomize/k8sdeps/transformer/hash:go_default_test PASSED in 0.4s
+//staging/src/k8s.io/cli-runtime/pkg/kustomize/k8sdeps/transformer/patch:go_default_test PASSED in 0.5s
+//staging/src/k8s.io/cli-runtime/pkg/printers:go_default_test            PASSED in 0.9s
+//staging/src/k8s.io/cli-runtime/pkg/resource:go_default_test            PASSED in 0.9s
+//staging/src/k8s.io/client-go/apiserverupdate:go_default_test           PASSED in 12.4s
+//staging/src/k8s.io/client-go/datapartition:go_default_test             PASSED in 1.4s
+//staging/src/k8s.io/client-go/deprecated-dynamic:go_default_test        PASSED in 0.2s
+//staging/src/k8s.io/client-go/discovery:go_default_test                 PASSED in 0.3s
+//staging/src/k8s.io/client-go/discovery/cached/disk:go_default_test     PASSED in 1.2s
+//staging/src/k8s.io/client-go/discovery/cached/memory:go_default_test   PASSED in 0.2s
+//staging/src/k8s.io/client-go/discovery/fake:go_default_test            PASSED in 0.2s
+//staging/src/k8s.io/client-go/dynamic:go_default_test                   PASSED in 1.7s
+//staging/src/k8s.io/client-go/dynamic/dynamicinformer:go_default_test   PASSED in 0.7s
+//staging/src/k8s.io/client-go/dynamic/dynamiclister:go_default_test     PASSED in 0.6s
+//staging/src/k8s.io/client-go/dynamic/fake:go_default_test              PASSED in 0.2s
+//staging/src/k8s.io/client-go/examples/fake-client:go_default_test      PASSED in 0.6s
+//staging/src/k8s.io/client-go/kubernetes_test:go_default_test           PASSED in 0.2s
+//staging/src/k8s.io/client-go/listers/extensions/v1beta1:go_default_test PASSED in 0.3s
+//staging/src/k8s.io/client-go/plugin/pkg/client/auth/azure:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/client-go/plugin/pkg/client/auth/exec:go_default_test PASSED in 0.9s
+//staging/src/k8s.io/client-go/plugin/pkg/client/auth/gcp:go_default_test PASSED in 0.4s
+//staging/src/k8s.io/client-go/plugin/pkg/client/auth/oidc:go_default_test PASSED in 0.4s
+//staging/src/k8s.io/client-go/plugin/pkg/client/auth/openstack:go_default_test PASSED in 3.3s
+//staging/src/k8s.io/client-go/rest:go_default_test                      PASSED in 0.4s
+//staging/src/k8s.io/client-go/rest/watch:go_default_test                PASSED in 0.8s
+//staging/src/k8s.io/client-go/restmapper:go_default_test                PASSED in 0.2s
+//staging/src/k8s.io/client-go/scale:go_default_test                     PASSED in 0.3s
+//staging/src/k8s.io/client-go/testing:go_default_test                   PASSED in 0.7s
+//staging/src/k8s.io/client-go/tools/auth:go_default_test                PASSED in 0.4s
+//staging/src/k8s.io/client-go/tools/cache:go_default_test               PASSED in 10.3s
+//staging/src/k8s.io/client-go/tools/cache/testing:go_default_test       PASSED in 0.4s
+//staging/src/k8s.io/client-go/tools/clientcmd:go_default_test           PASSED in 0.4s
+//staging/src/k8s.io/client-go/tools/clientcmd/api:go_default_test       PASSED in 1.1s
+//staging/src/k8s.io/client-go/tools/events:go_default_test              PASSED in 0.4s
+//staging/src/k8s.io/client-go/tools/leaderelection:go_default_test      PASSED in 0.3s
+//staging/src/k8s.io/client-go/tools/pager:go_default_test               PASSED in 0.2s
+//staging/src/k8s.io/client-go/tools/portforward:go_default_test         PASSED in 0.7s
+//staging/src/k8s.io/client-go/tools/record:go_default_test              PASSED in 7.9s
+//staging/src/k8s.io/client-go/tools/reference:go_default_test           PASSED in 0.4s
+//staging/src/k8s.io/client-go/tools/remotecommand:go_default_test       PASSED in 0.9s
+//staging/src/k8s.io/client-go/tools/watch:go_default_test               PASSED in 13.0s
+//staging/src/k8s.io/client-go/transport:go_default_test                 PASSED in 0.2s
+//staging/src/k8s.io/client-go/util/cert:go_default_test                 PASSED in 0.2s
+//staging/src/k8s.io/client-go/util/certificate:go_default_test          PASSED in 0.4s
+//staging/src/k8s.io/client-go/util/connrotation:go_default_test         PASSED in 0.2s
+//staging/src/k8s.io/client-go/util/flowcontrol:go_default_test          PASSED in 5.8s
+//staging/src/k8s.io/client-go/util/jsonpath:go_default_test             PASSED in 0.4s
+//staging/src/k8s.io/client-go/util/keyutil:go_default_test              PASSED in 0.3s
+//staging/src/k8s.io/client-go/util/retry:go_default_test                PASSED in 1.2s
+//staging/src/k8s.io/client-go/util/testing:go_default_test              PASSED in 0.2s
+//staging/src/k8s.io/client-go/util/workqueue:go_default_test            PASSED in 1.4s
+//staging/src/k8s.io/cloud-provider/node/helpers:go_default_test         PASSED in 0.2s
+//staging/src/k8s.io/cloud-provider/service/helpers:go_default_test      PASSED in 0.6s
+//staging/src/k8s.io/cloud-provider/volume/helpers:go_default_test       PASSED in 0.2s
+//staging/src/k8s.io/cluster-bootstrap/token/util:go_default_test        PASSED in 1.0s
+//staging/src/k8s.io/code-generator/cmd/client-gen/args:go_default_test  PASSED in 0.8s
+//staging/src/k8s.io/code-generator/cmd/client-gen/generators/util:go_default_test PASSED in 0.3s
+//staging/src/k8s.io/code-generator/cmd/client-gen/types:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/code-generator/cmd/go-to-protobuf/protobuf:go_default_test PASSED in 0.3s
+//staging/src/k8s.io/component-base/cli/flag:go_default_test             PASSED in 0.2s
+//staging/src/k8s.io/component-base/cli/globalflag:go_default_test       PASSED in 0.3s
+//staging/src/k8s.io/component-base/config/validation:go_default_test    PASSED in 0.7s
+//staging/src/k8s.io/component-base/featuregate:go_default_test          PASSED in 0.2s
+//staging/src/k8s.io/csi-translation-lib:go_default_test                 PASSED in 0.4s
+//staging/src/k8s.io/csi-translation-lib/plugins:go_default_test         PASSED in 0.4s
+//staging/src/k8s.io/kube-aggregator/pkg/apis/apiregistration:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/kube-aggregator/pkg/apiserver:go_default_test       PASSED in 0.7s
+//staging/src/k8s.io/kube-aggregator/pkg/controllers/autoregister:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/kube-aggregator/pkg/controllers/openapi/aggregator:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/kube-aggregator/pkg/controllers/status:go_default_test PASSED in 1.1s
+//staging/src/k8s.io/legacy-cloud-providers/aws:go_default_test          PASSED in 1.3s
+//staging/src/k8s.io/legacy-cloud-providers/azure:go_default_test        PASSED in 2.3s
+//staging/src/k8s.io/legacy-cloud-providers/gce:go_default_test          PASSED in 0.2s
+//staging/src/k8s.io/legacy-cloud-providers/vsphere:go_default_test      PASSED in 0.5s
+//staging/src/k8s.io/legacy-cloud-providers/vsphere/vclib:go_default_test PASSED in 1.2s
+//staging/src/k8s.io/metrics/pkg/client/clientset_test:go_default_test   PASSED in 0.3s
+//staging/src/k8s.io/metrics/pkg/client/custom_metrics:go_default_test   PASSED in 0.5s
+//staging/src/k8s.io/sample-apiserver/pkg/admission/plugin/banflunder:go_default_test PASSED in 0.5s
+//staging/src/k8s.io/sample-apiserver/pkg/admission/wardleinitializer:go_default_test PASSED in 1.3s
+//staging/src/k8s.io/sample-apiserver/pkg/apis/wardle/install:go_default_test PASSED in 0.2s
+//staging/src/k8s.io/sample-apiserver/pkg/apiserver:go_default_test      PASSED in 0.3s
+//staging/src/k8s.io/sample-controller:go_default_test                   PASSED in 0.5s
+//test/conformance:conformance_test                                      PASSED in 0.2s
+//test/conformance:go_default_test                                       PASSED in 0.2s
+//test/e2e/framework/config:go_default_test                              PASSED in 1.2s
+//test/e2e/framework/providers/gce:go_default_test                       PASSED in 0.1s
+//test/e2e/framework/timer:go_default_test                               PASSED in 0.4s
+//test/e2e/manifest:go_default_test                                      PASSED in 0.4s
+//test/e2e/storage/external:go_default_test                              PASSED in 0.4s
+//test/images/agnhost/webhook:go_default_test                            PASSED in 0.2s
+//test/images/crd-conversion-webhook/converter:go_default_test           PASSED in 0.2s
+//test/integration/workloadcontrollermanager:go_default_test             PASSED in 87.0s
+//test/list:go_default_test                                              PASSED in 0.2s
+//test/typecheck:go_default_test                                         PASSED in 0.2s
+//third_party/forked/etcd221/pkg/fileutil:go_default_test                PASSED in 0.3s
+//third_party/forked/etcd237/pkg/fileutil:go_default_test                PASSED in 1.1s
+//third_party/forked/golang/expansion:go_default_test                    PASSED in 0.4s
+//third_party/forked/golang/reflect:go_default_test                      PASSED in 0.2s
+//third_party/forked/gonum/graph/simple:go_default_test                  PASSED in 0.3s
+//cmd/kubeadm/app/constants:go_default_test                              FAILED in 3 out of 3 in 0.3s
+  Stats over 3 runs: max = 0.3s, min = 0.2s, avg = 0.2s, dev = 0.0s
+  /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/execroot/io_k8s_kubernetes/bazel-out/k8-fastbuild/testlogs/cmd/kubeadm/app/constants/go_default_test/test.log
+  /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/execroot/io_k8s_kubernetes/bazel-out/k8-fastbuild/testlogs/cmd/kubeadm/app/constants/go_default_test/test_attempts/attempt_1.log
+  /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/execroot/io_k8s_kubernetes/bazel-out/k8-fastbuild/testlogs/cmd/kubeadm/app/constants/go_default_test/test_attempts/attempt_2.log
+//cmd/kubeadm/app/phases/upgrade:go_default_test                         FAILED in 3 out of 3 in 62.6s
+  Stats over 3 runs: max = 62.6s, min = 46.6s, avg = 52.6s, dev = 7.1s
+  /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/execroot/io_k8s_kubernetes/bazel-out/k8-fastbuild/testlogs/cmd/kubeadm/app/phases/upgrade/go_default_test/test.log
+  /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/execroot/io_k8s_kubernetes/bazel-out/k8-fastbuild/testlogs/cmd/kubeadm/app/phases/upgrade/go_default_test/test_attempts/attempt_1.log
+  /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/execroot/io_k8s_kubernetes/bazel-out/k8-fastbuild/testlogs/cmd/kubeadm/app/phases/upgrade/go_default_test/test_attempts/attempt_2.log
+
+Executed 893 out of 893 tests: 891 tests pass and 2 fail locally.
+There were tests whose specified size is too big. Use the --test_verbose_timeout_warnings command line option to see which ones these are.
+INFO: Build completed, 2 tests FAILED, 10139 total actions
+Makefile:632: recipe for target 'bazel-test' failed
+make: *** [bazel-test] Error 3

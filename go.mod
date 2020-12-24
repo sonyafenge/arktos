@@ -58,6 +58,7 @@ require (
 	github.com/exponent-io/jsonpath v0.0.0-20151013193312-d6023ce2651d
 	github.com/fatih/camelcase v0.0.0-20160318181535-f6a740d52f96
 	github.com/fsnotify/fsnotify v1.4.7
+	github.com/go-bindata/go-bindata v3.1.2+incompatible
 	github.com/go-openapi/loads v0.19.4
 	github.com/go-openapi/spec v0.19.3
 	github.com/go-openapi/strfmt v0.19.3
@@ -86,9 +87,6 @@ require (
 	github.com/heketi/utils v0.0.0-20170317161834-435bc5bdfa64 // indirect
 	github.com/jonboulle/clockwork v0.1.0
 	github.com/json-iterator/go v1.1.8
-	github.com/jstemmer/go-junit-report v0.0.0-20190106144839-af01ea7f8024
-	github.com/jteeuwen/go-bindata v0.0.0-20151023091102-a0ff2567cfb7
-	github.com/kardianos/osext v0.0.0-20150410034420-8fef92e41e22
 	github.com/karrick/godirwalk v1.7.5 // indirect
 	github.com/kr/fs v0.0.0-20131111012553-2788f0dbd169 // indirect
 	github.com/kr/pretty v0.2.0 // indirect
@@ -162,6 +160,8 @@ require (
 	gopkg.in/gcfg.v1 v1.2.0
 	gopkg.in/square/go-jose.v2 v2.3.1
 	gopkg.in/yaml.v2 v2.2.8
+	gotest.tools v2.2.0+incompatible
+	gotest.tools/gotestsum v0.3.5
 	k8s.io/api v0.0.0
 	k8s.io/apiextensions-apiserver v0.0.0
 	k8s.io/apimachinery v0.0.0
@@ -294,6 +294,7 @@ replace (
 	github.com/globalsign/mgo => github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8
 	github.com/go-acme/lego => github.com/go-acme/lego v2.5.0+incompatible
 	github.com/go-acme/lego/v3 => github.com/go-acme/lego/v3 v3.2.0
+	github.com/go-bindata/go-bindata => github.com/go-bindata/go-bindata v3.1.2+incompatible
 	github.com/go-cmd/cmd => github.com/go-cmd/cmd v1.0.5
 	github.com/go-errors/errors => github.com/go-errors/errors v1.0.1
 	github.com/go-ini/ini => github.com/go-ini/ini v1.44.0

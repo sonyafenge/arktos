@@ -459,7 +459,7 @@ filegroup(
         "//vendor/k8s.io/kube-openapi/pkg/handler:all-srcs",
         "//vendor/k8s.io/kube-openapi/pkg/schemaconv:all-srcs",
         "//vendor/k8s.io/kube-openapi/pkg/util:all-srcs",
-        "//vendor/k8s.io/repo-infra/kazel:all-srcs",
+        "//vendor/k8s.io/repo-infra/cmd/kazel:all-srcs",
         "//vendor/k8s.io/utils/buffer:all-srcs",
         "//vendor/k8s.io/utils/clock:all-srcs",
         "//vendor/k8s.io/utils/exec:all-srcs",

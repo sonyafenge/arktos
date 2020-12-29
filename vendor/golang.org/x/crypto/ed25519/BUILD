@@ -9,9 +9,7 @@ go_library(
     importmap = "k8s.io/kubernetes/vendor/golang.org/x/crypto/ed25519",
     importpath = "golang.org/x/crypto/ed25519",
     visibility = ["//visibility:public"],
-    deps = [
-        "//vendor/golang.org/x/crypto/ed25519/internal/edwards25519:go_default_library",
-    ],
+    deps = ["//vendor/golang.org/x/crypto/ed25519/internal/edwards25519:go_default_library"],
 )
 
 filegroup(

@@ -1,32 +1,25 @@
 Loading: 
 Loading: 0 packages loaded
-Loading: 5 packages loaded
-    currently loading: hack ... (20 packages)
-Loading: 570 packages loaded
-    currently loading: build/release-tars ... (13 packages)
-Loading: 1520 packages loaded
-    currently loading: staging/src/k8s.io/code-generator/cmd/set-gen
-Loading: 2725 packages loaded
-    currently loading: vendor/sigs.k8s.io/structured-merge-diff/fieldpath
-Analyzing: 891 targets (3804 packages loaded)
-Analyzing: 891 targets (3804 packages loaded, 0 targets configured)
-Analyzing: 891 targets (3819 packages loaded, 26202 targets configured)
-Analyzing: 891 targets (3842 packages loaded, 33189 targets configured)
-INFO: Call stack for the definition of repository 'com_coreos_etcd_amd64' which is a http_archive (rule definition at /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/external/bazel_tools/tools/build_defs/repo/http.bzl:229:16):
- - /home/sonyali/go/src/k8s.io/arktos/build/workspace.bzl:137:9
- - /home/sonyali/go/src/k8s.io/arktos/build/workspace.bzl:52:5
- - /home/sonyali/go/src/k8s.io/arktos/WORKSPACE:85:1
-INFO: Repository 'com_coreos_etcd_amd64' used the following cache hits instead of downloading the corresponding file.
- * Hash '35abe668022073dfe6239aa42fd15ded9810f7ccee281af0b9d0646dd270de47' for https://storage.googleapis.com/k8s-bazel-cache/https://github.com/coreos/etcd/releases/download/v3.4.3/etcd-v3.4.3-linux-amd64.tar.gz
-If the definition of 'com_coreos_etcd_amd64' was updated, verify that the hashes were also updated.
-ERROR: An error occurred during the fetch of repository 'com_coreos_etcd_amd64':
-   java.io.IOException: Error extracting /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/external/com_coreos_etcd_amd64/etcd-v3.4.3-linux-amd64.tar.gz to /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/external/com_coreos_etcd_amd64: Prefix "etcd-v3.4.3-linux-amd64" was given, but not found in the archive. Here are possible prefixes for this archive: "etcd-v3.4.4-linux-amd64".
-ERROR: /home/sonyali/go/src/k8s.io/arktos/test/integration/framework/BUILD:9:1: no such package '@com_coreos_etcd_amd64//': java.io.IOException: Error extracting /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/external/com_coreos_etcd_amd64/etcd-v3.4.3-linux-amd64.tar.gz to /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/external/com_coreos_etcd_amd64: Prefix "etcd-v3.4.3-linux-amd64" was given, but not found in the archive. Here are possible prefixes for this archive: "etcd-v3.4.4-linux-amd64". and referenced by '//test/integration/framework:go_default_library'
-ERROR: Analysis of target '//test/integration/workloadcontrollermanager:go_default_test' failed; build aborted: no such package '@com_coreos_etcd_amd64//': java.io.IOException: Error extracting /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/external/com_coreos_etcd_amd64/etcd-v3.4.3-linux-amd64.tar.gz to /home/sonyali/.cache/bazel/_bazel_sonyali/763218b3d5e8478e78a1ef7294936696/external/com_coreos_etcd_amd64: Prefix "etcd-v3.4.3-linux-amd64" was given, but not found in the archive. Here are possible prefixes for this archive: "etcd-v3.4.4-linux-amd64".
-INFO: Elapsed time: 8.741s
+Loading: 0 packages loaded
+Loading: 0 packages loaded
+Loading: 0 packages loaded
+    currently loading: hack ... (46 packages)
+Loading: 873 packages loaded
+    currently loading: pkg/volume/util/types
+Loading: 2236 packages loaded
+    currently loading: staging/src/k8s.io/apiextensions-apiserver/pkg/generated/openapi ... (4 packages)
+Analyzing: 892 targets (3810 packages loaded)
+Analyzing: 892 targets (3810 packages loaded, 0 targets configured)
+Analyzing: 892 targets (3824 packages loaded, 26315 targets configured)
+Analyzing: 892 targets (3824 packages loaded, 26315 targets configured)
+Analyzing: 892 targets (3824 packages loaded, 26315 targets configured)
+Analyzing: 892 targets (3824 packages loaded, 26315 targets configured)
+ERROR: /home/sonyali/go/src/k8s.io/arktos/vendor/golang.org/x/crypto/ed25519/BUILD:3:1: no such package 'vendor/crypto/ed25519': BUILD file not found on package path and referenced by '//vendor/golang.org/x/crypto/ed25519:go_default_library'
+ERROR: Analysis of target '//pkg/controller/endpoint:go_default_test' failed; build aborted: no such package 'vendor/crypto/ed25519': BUILD file not found on package path
+INFO: Elapsed time: 19.453s
 INFO: 0 processes.
-FAILED: Build did NOT complete successfully (3842 packages loaded, 33237 targets configured)
+FAILED: Build did NOT complete successfully (3842 packages loaded, 26888 targets configured)
 ERROR: Couldn't start the build. Unable to run tests
-FAILED: Build did NOT complete successfully (3842 packages loaded, 33237 targets configured)
+FAILED: Build did NOT complete successfully (3842 packages loaded, 26888 targets configured)
 Makefile:632: recipe for target 'bazel-test' failed
 make: *** [bazel-test] Error 1

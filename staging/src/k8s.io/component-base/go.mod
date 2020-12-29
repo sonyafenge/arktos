@@ -32,7 +32,6 @@ replace (
 	github.com/prometheus/client_golang => github.com/prometheus/client_golang v0.9.2
 	github.com/prometheus/client_model => github.com/prometheus/client_model v0.0.0-20180712105110-5c3871d89910
 	github.com/prometheus/common => github.com/prometheus/common v0.0.0-20181126121408-4724e9255275
-	github.com/spf13/pflag => github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify => github.com/stretchr/testify v1.2.2
 	golang.org/x/crypto => golang.org/x/crypto v0.0.0-20200220183623-bac4c82f6975
 	golang.org/x/sync => golang.org/x/sync v0.0.0-20181108010431-42b317875d0f

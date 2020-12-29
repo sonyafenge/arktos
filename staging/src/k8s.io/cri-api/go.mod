@@ -13,10 +13,12 @@ require (
 	golang.org/x/net v0.0.0-20201008223702-a5fa9d4b7c91
 	golang.org/x/sys v0.0.0-20200622214017-ed371f2e16b4 // indirect
 	golang.org/x/text v0.3.2 // indirect
+	google.golang.org/genproto v0.0.0-20190502173448-54afdca5d873 // indirect
 	google.golang.org/grpc v1.26.0
 )
 
 replace (
+	cloud.google.com/go => cloud.google.com/go v0.34.0
 	github.com/BurntSushi/toml => github.com/BurntSushi/toml v0.3.0
 	github.com/gogo/protobuf => github.com/gogo/protobuf v0.0.0-20171007142547-342cbe0a0415
 	github.com/golang/mock => github.com/golang/mock v0.0.0-20160127222235-bd3c8e81be01

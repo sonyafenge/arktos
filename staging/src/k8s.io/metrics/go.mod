@@ -15,6 +15,7 @@ require (
 )
 
 replace (
+	cloud.google.com/go => cloud.google.com/go v0.34.0
 	github.com/dgrijalva/jwt-go => github.com/dgrijalva/jwt-go v0.0.0-20160705203006-01aeca54ebda
 	github.com/elazarl/goproxy => github.com/elazarl/goproxy v0.0.0-20170405201442-c4fc26588b6e
 	github.com/evanphx/json-patch => github.com/evanphx/json-patch v0.0.0-20190203023257-5858425f7550
@@ -27,7 +28,6 @@ replace (
 	github.com/json-iterator/go => github.com/json-iterator/go v0.0.0-20180701071628-ab8a2e0c74be
 	github.com/onsi/ginkgo => github.com/onsi/ginkgo v1.6.0
 	github.com/onsi/gomega => github.com/onsi/gomega v0.0.0-20190113212917-5533ce8a0da3
-	github.com/spf13/pflag => github.com/spf13/pflag v1.0.1
 	github.com/stretchr/testify => github.com/stretchr/testify v1.2.2
 	golang.org/x/crypto => golang.org/x/crypto v0.0.0-20200220183623-bac4c82f6975
 	golang.org/x/sync => golang.org/x/sync v0.0.0-20181108010431-42b317875d0f

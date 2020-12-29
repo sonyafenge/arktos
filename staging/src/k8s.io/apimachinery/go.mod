@@ -50,7 +50,6 @@ replace (
 	github.com/json-iterator/go => github.com/json-iterator/go v0.0.0-20180701071628-ab8a2e0c74be
 	github.com/onsi/ginkgo => github.com/onsi/ginkgo v1.6.0
 	github.com/onsi/gomega => github.com/onsi/gomega v0.0.0-20190113212917-5533ce8a0da3
-	github.com/spf13/pflag => github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify => github.com/stretchr/testify v1.2.2
 	golang.org/x/crypto => golang.org/x/crypto v0.0.0-20200220183623-bac4c82f6975
 	golang.org/x/sync => golang.org/x/sync v0.0.0-20181108010431-42b317875d0f
@@ -61,5 +60,3 @@ replace (
 	k8s.io/kube-openapi => k8s.io/kube-openapi v0.0.0-20190228160746-b3a7cee44a30
 	sigs.k8s.io/yaml => sigs.k8s.io/yaml v1.1.0
 )
-
-replace gopkg.in/inf.v0 => gopkg.in/inf.v0 v0.9.1

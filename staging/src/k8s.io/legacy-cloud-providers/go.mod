@@ -5,7 +5,7 @@ module k8s.io/legacy-cloud-providers
 go 1.12
 
 require (
-	cloud.google.com/go v0.34.0
+	cloud.google.com/go v0.38.0
 	github.com/Azure/azure-sdk-for-go v35.0.0+incompatible
 	github.com/Azure/go-autorest/autorest v0.9.0
 	github.com/Azure/go-autorest/autorest/adal v0.5.0
@@ -38,6 +38,7 @@ require (
 )
 
 replace (
+	cloud.google.com/go => cloud.google.com/go v0.34.0
 	github.com/GoogleCloudPlatform/k8s-cloud-provider => github.com/GoogleCloudPlatform/k8s-cloud-provider v0.0.0-20181220005116-f8e995905100
 	github.com/aws/aws-sdk-go => github.com/aws/aws-sdk-go v1.16.26
 	github.com/dgrijalva/jwt-go => github.com/dgrijalva/jwt-go v0.0.0-20160705203006-01aeca54ebda
@@ -55,7 +56,6 @@ replace (
 	github.com/prometheus/client_golang => github.com/prometheus/client_golang v0.9.2
 	github.com/prometheus/client_model => github.com/prometheus/client_model v0.0.0-20180712105110-5c3871d89910
 	github.com/prometheus/common => github.com/prometheus/common v0.0.0-20181126121408-4724e9255275
-	github.com/spf13/pflag => github.com/spf13/pflag v1.0.1
 	github.com/stretchr/testify => github.com/stretchr/testify v1.2.2
 	github.com/vmware/govmomi => github.com/vmware/govmomi v0.20.1
 	golang.org/x/crypto => golang.org/x/crypto v0.0.0-20200220183623-bac4c82f6975

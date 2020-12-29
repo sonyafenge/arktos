@@ -80,7 +80,6 @@ require (
 	github.com/gorilla/context v1.1.1 // indirect
 	github.com/grafov/bcast v0.0.0-20190217190352-1447f067e08d
 	github.com/hashicorp/golang-lru v0.5.3
-	github.com/hashicorp/hcl v0.0.0-20160711231752-d8c773c4cba1 // indirect
 	github.com/heketi/heketi v9.0.1-0.20190917153846-c2e2a4ab7ab9+incompatible
 	github.com/heketi/tests v0.0.0-20151005000721-f3775cbcefd6 // indirect
 	github.com/jonboulle/clockwork v0.1.0
@@ -93,7 +92,6 @@ require (
 	github.com/liggitt/tabwriter v0.0.0-20181228230101-89fcab3d43de
 	github.com/lithammer/dedent v1.1.0
 	github.com/lpabon/godbc v0.1.1 // indirect
-	github.com/magiconair/properties v1.8.1 // indirect
 	github.com/mattn/go-shellwords v1.0.5 // indirect
 	github.com/mesos/mesos-go v0.0.9 // indirect
 	github.com/miekg/dns v1.1.15
@@ -115,7 +113,7 @@ require (
 	github.com/opencontainers/selinux v1.3.1-0.20190929122143-5215b1806f52
 	github.com/pborman/uuid v1.2.0
 	github.com/pelletier/go-toml v1.2.0 // indirect
-	github.com/pkg/errors v0.8.1
+	github.com/pkg/errors v0.9.1
 	github.com/pkg/sftp v0.0.0-20160930220758-4d0e916071f6 // indirect
 	github.com/pmezard/go-difflib v1.0.0
 	github.com/pquerna/ffjson v0.0.0-20180717144149-af8b230fcd20 // indirect
@@ -129,7 +127,6 @@ require (
 	github.com/sigma/go-inotify v0.0.0-20181102212354-c87b6cf5033d
 	github.com/smartystreets/goconvey v1.6.4 // indirect
 	github.com/spf13/afero v1.2.2
-	github.com/spf13/cast v0.0.0-20160730092037-e31f36ffc91a // indirect
 	github.com/spf13/cobra v0.0.5
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.5
@@ -305,7 +302,7 @@ replace (
 	github.com/go-openapi/runtime => github.com/go-openapi/runtime v0.17.2
 	github.com/go-openapi/spec => github.com/go-openapi/spec v0.17.2
 	github.com/go-openapi/strfmt => github.com/go-openapi/strfmt v0.17.0
-	github.com/go-openapi/swag => github.com/go-openapi/swag v0.17.2
+	github.com/go-openapi/swag => github.com/go-openapi/swag v0.19.5
 	github.com/go-openapi/validate => github.com/go-openapi/validate v0.18.0
 	github.com/go-ozzo/ozzo-validation => github.com/go-ozzo/ozzo-validation v3.5.0+incompatible
 	github.com/godbus/dbus => github.com/godbus/dbus v0.0.0-20151105175453-c7fdd8b5cd55
@@ -333,7 +330,7 @@ replace (
 	github.com/gorilla/mux => github.com/gorilla/mux v1.7.0
 	github.com/gorilla/websocket => github.com/gorilla/websocket v0.0.0-20170926233335-4201258b820c
 	github.com/grafov/bcast => github.com/grafov/bcast v0.0.0-20190217190352-1447f067e08d
-	github.com/gregjones/httpcache => github.com/gregjones/httpcache v0.0.0-20170728041850-787624de3eb7
+	github.com/gregjones/httpcache => github.com/gregjones/httpcache v0.0.0-20180305231024-9cad4c3443a7
 	github.com/grpc-ecosystem/go-grpc-middleware => github.com/grpc-ecosystem/go-grpc-middleware v0.0.0-20190222133341-cfaf5686ec79
 	github.com/grpc-ecosystem/go-grpc-prometheus => github.com/grpc-ecosystem/go-grpc-prometheus v0.0.0-20170330212424-2500245aa611
 	github.com/grpc-ecosystem/grpc-gateway => github.com/grpc-ecosystem/grpc-gateway v1.3.0
@@ -374,13 +371,13 @@ replace (
 	github.com/lpabon/godbc => github.com/lpabon/godbc v0.1.1
 	github.com/lucas-clemente/quic-go => github.com/lucas-clemente/quic-go v0.13.1
 	github.com/magiconair/properties => github.com/magiconair/properties v0.0.0-20160816085511-61b492c03cf4
-	github.com/mailru/easyjson => github.com/mailru/easyjson v0.0.0-20180823135443-60711f1a8329
+	github.com/mailru/easyjson => github.com/mailru/easyjson v0.0.0-20190626092158-b2ccc519800e
 	github.com/marstr/guid => github.com/marstr/guid v0.0.0-20170427235115-8bdf7d1a087c
 	github.com/marten-seemann/chacha20 => github.com/marten-seemann/chacha20 v0.2.0
 	github.com/marten-seemann/qpack => github.com/marten-seemann/qpack v0.1.0
 	github.com/marten-seemann/qtls => github.com/marten-seemann/qtls v0.4.1
 	github.com/mattn/go-colorable => github.com/mattn/go-colorable v0.0.9
-	github.com/mattn/go-isatty => github.com/mattn/go-isatty v0.0.4
+	github.com/mattn/go-isatty => github.com/mattn/go-isatty v0.0.9
 	github.com/mattn/go-runewidth => github.com/mattn/go-runewidth v0.0.2
 	github.com/mattn/go-shellwords => github.com/mattn/go-shellwords v0.0.0-20180605041737-f8471b0a71de
 	github.com/mattn/go-tty => github.com/mattn/go-tty v0.0.0-20180219170247-931426f7535a
@@ -423,7 +420,7 @@ replace (
 	github.com/pborman/uuid => github.com/pborman/uuid v1.2.0
 	github.com/pelletier/go-toml => github.com/pelletier/go-toml v1.2.0
 	github.com/peterbourgon/diskv => github.com/peterbourgon/diskv v2.0.1+incompatible
-	github.com/pkg/errors => github.com/pkg/errors v0.8.0
+	github.com/pkg/errors => github.com/pkg/errors v0.9.1
 	github.com/pkg/sftp => github.com/pkg/sftp v0.0.0-20160930220758-4d0e916071f6
 	github.com/pmezard/go-difflib => github.com/pmezard/go-difflib v1.0.0
 	github.com/pquerna/cachecontrol => github.com/pquerna/cachecontrol v0.0.0-20171018203845-0dec1b30a021
@@ -452,7 +449,7 @@ replace (
 	github.com/spf13/cast => github.com/spf13/cast v0.0.0-20160730092037-e31f36ffc91a
 	github.com/spf13/cobra => github.com/spf13/cobra v0.0.0-20180319062004-c439c4fa0937
 	github.com/spf13/jwalterweatherman => github.com/spf13/jwalterweatherman v0.0.0-20160311093646-33c24e77fb80
-	github.com/spf13/pflag => github.com/spf13/pflag v1.0.1
+	github.com/spf13/pflag => github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper => github.com/spf13/viper v0.0.0-20160820190039-7fb2782df3d8
 	github.com/storageos/go-api => github.com/storageos/go-api v0.0.0-20180912212459-343b3eff91fc
 	github.com/stretchr/objx => github.com/stretchr/objx v0.1.1
@@ -508,7 +505,7 @@ replace (
 	gopkg.in/gcfg.v1 => gopkg.in/gcfg.v1 v1.2.0
 	gopkg.in/gemnasium/logrus-airbrake-hook.v2 => gopkg.in/gemnasium/logrus-airbrake-hook.v2 v2.1.2
 	gopkg.in/h2non/gock.v1 => gopkg.in/h2non/gock.v1 v1.0.15
-	gopkg.in/inf.v0 => gopkg.in/inf.v0 v0.9.0
+	gopkg.in/inf.v0 => gopkg.in/inf.v0 v0.9.1
 	gopkg.in/ini.v1 => gopkg.in/ini.v1 v1.44.0
 	gopkg.in/mcuadros/go-syslog.v2 => gopkg.in/mcuadros/go-syslog.v2 v2.2.1
 	gopkg.in/natefinch/lumberjack.v2 => gopkg.in/natefinch/lumberjack.v2 v2.0.0-20150622162204-20b71e5b60d7
@@ -548,7 +545,7 @@ replace (
 	k8s.io/legacy-cloud-providers => ./staging/src/k8s.io/legacy-cloud-providers
 	k8s.io/metrics => ./staging/src/k8s.io/metrics
 	k8s.io/node-api => ./staging/src/k8s.io/node-api
-	k8s.io/repo-infra => k8s.io/repo-infra v0.0.0-20181204233714-00fe14e3d1a3
+	k8s.io/repo-infra => k8s.io/repo-infra v0.0.1-alpha.1
 	k8s.io/sample-apiserver => ./staging/src/k8s.io/sample-apiserver
 	k8s.io/sample-cli-plugin => ./staging/src/k8s.io/sample-cli-plugin
 	k8s.io/sample-controller => ./staging/src/k8s.io/sample-controller

@@ -31,7 +31,7 @@ require (
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822
 	github.com/natefinch/lumberjack v2.0.0+incompatible // indirect
 	github.com/pborman/uuid v1.2.0
-	github.com/pkg/errors v0.8.1 // indirect
+	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pquerna/cachecontrol v0.0.0-20171018203845-0dec1b30a021 // indirect
 	github.com/prometheus/client_golang v1.1.0
 	github.com/prometheus/client_model v0.2.0
@@ -88,14 +88,14 @@ replace (
 	github.com/munnerz/goautoneg => github.com/munnerz/goautoneg v0.0.0-20120707110453-a547fc61f48d
 	github.com/onsi/ginkgo => github.com/onsi/ginkgo v1.6.0
 	github.com/onsi/gomega => github.com/onsi/gomega v0.0.0-20190113212917-5533ce8a0da3
-	github.com/pkg/errors => github.com/pkg/errors v0.8.0
+	github.com/pkg/errors => github.com/pkg/errors v0.9.1
 	github.com/prometheus/client_golang => github.com/prometheus/client_golang v0.9.2
 	github.com/prometheus/client_model => github.com/prometheus/client_model v0.0.0-20180712105110-5c3871d89910
 	github.com/prometheus/common => github.com/prometheus/common v0.0.0-20181126121408-4724e9255275
 	github.com/sirupsen/logrus => github.com/sirupsen/logrus v1.2.0
 	github.com/soheilhy/cmux => github.com/soheilhy/cmux v0.1.3
 	github.com/spf13/cobra => github.com/spf13/cobra v0.0.0-20180319062004-c439c4fa0937
-	github.com/spf13/pflag => github.com/spf13/pflag v1.0.1
+	github.com/spf13/pflag => github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify => github.com/stretchr/testify v1.2.2
 	github.com/xiang90/probing => github.com/xiang90/probing v0.0.0-20160813154853-07dd2e8dfe18
 	go.uber.org/atomic => go.uber.org/atomic v0.0.0-20181018215023-8dc6146f7569

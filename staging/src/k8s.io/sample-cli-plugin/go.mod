@@ -31,7 +31,7 @@ replace (
 	github.com/onsi/gomega => github.com/onsi/gomega v0.0.0-20190113212917-5533ce8a0da3
 	github.com/pkg/errors => github.com/pkg/errors v0.8.0
 	github.com/spf13/cobra => github.com/spf13/cobra v0.0.0-20180319062004-c439c4fa0937
-	github.com/spf13/pflag => github.com/spf13/pflag v1.0.1
+	github.com/spf13/pflag => github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify => github.com/stretchr/testify v1.2.2
 	golang.org/x/crypto => golang.org/x/crypto v0.0.0-20200220183623-bac4c82f6975
 	golang.org/x/sync => golang.org/x/sync v0.0.0-20181108010431-42b317875d0f

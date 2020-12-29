@@ -17,7 +17,7 @@ require (
 	github.com/googleapis/gnostic v0.1.0
 	github.com/gophercloud/gophercloud v0.6.0
 	github.com/grafov/bcast v0.0.0-20190217190352-1447f067e08d
-	github.com/gregjones/httpcache v0.0.0-20170728041850-787624de3eb7
+	github.com/gregjones/httpcache v0.0.0-20180305231024-9cad4c3443a7
 	github.com/imdario/mergo v0.3.5
 	github.com/peterbourgon/diskv v2.0.1+incompatible
 	github.com/spf13/pflag v1.0.5
@@ -48,7 +48,7 @@ replace (
 	github.com/json-iterator/go => github.com/json-iterator/go v0.0.0-20180701071628-ab8a2e0c74be
 	github.com/onsi/ginkgo => github.com/onsi/ginkgo v1.6.0
 	github.com/onsi/gomega => github.com/onsi/gomega v0.0.0-20190113212917-5533ce8a0da3
-	github.com/spf13/pflag => github.com/spf13/pflag v1.0.1
+	github.com/spf13/pflag => github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify => github.com/stretchr/testify v1.2.2
 	golang.org/x/crypto => golang.org/x/crypto v0.0.0-20200220183623-bac4c82f6975
 	golang.org/x/sync => golang.org/x/sync v0.0.0-20181108010431-42b317875d0f
@@ -62,3 +62,5 @@ replace (
 	k8s.io/utils => k8s.io/utils v0.0.0-20190221042446-c2654d5206da
 	sigs.k8s.io/yaml => sigs.k8s.io/yaml v1.1.0
 )
+
+replace github.com/gregjones/httpcache => github.com/gregjones/httpcache v0.0.0-20180305231024-9cad4c3443a7

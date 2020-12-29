@@ -10,7 +10,6 @@ go_library(
     importpath = "golang.org/x/crypto/ed25519",
     visibility = ["//visibility:public"],
     deps = [
-        "//vendor/crypto/ed25519:go_default_library",
         "//vendor/golang.org/x/crypto/ed25519/internal/edwards25519:go_default_library",
     ],
 )

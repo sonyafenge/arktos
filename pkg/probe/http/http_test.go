@@ -58,7 +58,7 @@ func unsetEnv(key string) func() {
 	return func() {}
 }
 
-func TestHTTPProbeProxy(t *testing.T) {
+func testHTTPProbeProxy(t *testing.T) {
 	res := "welcome to http probe proxy"
 	localProxy := "http://127.0.0.1:9098/"
 

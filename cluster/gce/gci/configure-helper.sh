@@ -144,6 +144,7 @@ function main() {
   prepare-mounter-rootfs
   modprobe configs
   ulimit -c unlimited
+  sudo sysctl -w net.netfilter.nf_conntrack_max=26214400      #######enlarge net.netfilter.nf_conntrack_max baseed on https://github.com/CentaurusInfra/arktos/pull/899
   start-collect-pprof &  #### start collect profiling files
   start-prometheus &  #####start prometheus
   echo "Done for the configuration for kubernetes"

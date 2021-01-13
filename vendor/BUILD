@@ -529,6 +529,7 @@ filegroup(
         "//vendor/sigs.k8s.io/structured-merge-diff/merge:all-srcs",
         "//vendor/sigs.k8s.io/structured-merge-diff/schema:all-srcs",
         "//vendor/sigs.k8s.io/structured-merge-diff/typed:all-srcs",
+        "//vendor/sigs.k8s.io/structured-merge-diff/v3/schema:all-srcs",
         "//vendor/sigs.k8s.io/structured-merge-diff/value:all-srcs",
         "//vendor/sigs.k8s.io/yaml:all-srcs",
         "//vendor/vbom.ml/util/sortorder:all-srcs",

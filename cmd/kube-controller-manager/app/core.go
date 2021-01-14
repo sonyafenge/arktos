@@ -357,7 +357,7 @@ func startNamespaceController(ctx ControllerContext) (http.Handler, bool, error)
 	nsKubeconfigs := increaseControllerRateLimit(ctx.ClientBuilder.ConfigOrDie("namespace-controller"), 20, 100)
 	namespaceKubeClient := clientset.NewForConfigOrDie(nsKubeconfigs)
 
-	//add some logs to track the rate limit setting 
+	//add some logs to track the rate limit setting
 	if namespaceKubeClient != nil && namespaceKubeClient.CoreV1().RESTClient().GetRateLimiter() != nil {
 		klog.V(2).Infof("starting namepsace controller: RateLimiter QPS: %v ", namespaceKubeClient.CoreV1().RESTClient().GetRateLimiter().QPS())
 	} else {
@@ -375,7 +375,7 @@ func startTenantController(ctx ControllerContext) (http.Handler, bool, error) {
 	tnKubeConfigs := increaseControllerRateLimit(ctx.ClientBuilder.ConfigOrDie("tenant-controller"), 20, 100)
 	tenantKubeClient := clientset.NewForConfigOrDie(tnKubeConfigs)
 
-	//add some logs to track the rate limit setting 
+	//add some logs to track the rate limit setting
 	if tenantKubeClient != nil && tenantKubeClient.CoreV1().RESTClient().GetRateLimiter() != nil {
 		klog.V(2).Infof("starting tenant controller: RateLimiter QPS: %v ", tenantKubeClient.CoreV1().RESTClient().GetRateLimiter().QPS())
 	} else {

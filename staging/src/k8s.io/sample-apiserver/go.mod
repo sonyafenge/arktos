@@ -52,6 +52,7 @@ replace (
 	google.golang.org/genproto => google.golang.org/genproto v0.0.0-20170731182057-09f6ed296fc6
 	google.golang.org/grpc => google.golang.org/grpc v1.23.0
 	gopkg.in/check.v1 => gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127
+	gopkg.in/square/go-jose.v2 => gopkg.in/square/go-jose.v2 v2.2.2
 	k8s.io/api => ../api
 	k8s.io/apimachinery => ../apimachinery
 	k8s.io/apiserver => ../apiserver

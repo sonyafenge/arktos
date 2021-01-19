@@ -2,6 +2,7 @@
 
 /*
 Copyright The Kubernetes Authors.
+Copyright 2020 Authors of Arktos - file modified.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -30,6 +31,11 @@ func (in *Extensions) DeepCopyInto(out *Extensions) {
 	}
 	if in.XListType != nil {
 		in, out := &in.XListType, &out.XListType
+		*out = new(string)
+		**out = **in
+	}
+	if in.XMapType != nil {
+		in, out := &in.XMapType, &out.XMapType
 		*out = new(string)
 		**out = **in
 	}

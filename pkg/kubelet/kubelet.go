@@ -484,6 +484,10 @@ func NewMainKubelet(kubeCfg *kubeletconfiginternal.KubeletConfiguration,
 		protocol = utilipt.ProtocolIpv6
 	}
 
+	klog.Infof("kube client QPS %v, rate limiter %p", kubeDeps.KubeClient.CoreV1().RESTClient().GetRateLimiter().QPS(),
+		kubeDeps.KubeClient.CoreV1().RESTClient().GetRateLimiter())
+	klog.Infof("kube heartbeat client QPS %v, rate limiter %p", kubeDeps.HeartbeatClient.CoreV1().RESTClient().GetRateLimiter().QPS(),
+		kubeDeps.HeartbeatClient.CoreV1().RESTClient().GetRateLimiter())
 	klet := &Kubelet{
 		hostname:                                hostname,
 		hostnameOverridden:                      len(hostnameOverride) > 0,

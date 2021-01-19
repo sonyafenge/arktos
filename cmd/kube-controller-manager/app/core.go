@@ -368,11 +368,12 @@ func startNamespaceController(ctx ControllerContext) (http.Handler, bool, error)
 }
 
 func startTenantController(ctx ControllerContext) (http.Handler, bool, error) {
+	tenantControllerCommonCfg := ctx.ClientBuilder.ConfigOrDie("tenant-controller")
 	// tenant controller will be even more chatty than namespace controller when doing cleanups.
 	// but tenant deletion probably doesn't have to be very quick. For now we keep the same
 	// QPS/Burst settings as namespace controller. After we implement tenant cleanup, We will
 	// adjust these if there are feedback on the duration of tenant cleanup
-	tnKubeConfigs := increaseControllerRateLimit(ctx.ClientBuilder.ConfigOrDie("tenant-controller"), 20, 100)
+	tnKubeConfigs := increaseControllerRateLimit(tenantControllerCommonCfg, 20, 100)
 	tenantKubeClient := clientset.NewForConfigOrDie(tnKubeConfigs)
 
 	//add some logs to track the rate limit setting
@@ -382,14 +383,14 @@ func startTenantController(ctx ControllerContext) (http.Handler, bool, error) {
 		klog.V(2).Infof("starting tenant controller: RateLimiter is nil ")
 	}
 
-	crConfigs := *tnKubeConfigs
+	crConfigs := *tenantControllerCommonCfg
 	for _, cfg := range crConfigs.GetAllConfigs() {
 		cfg.ContentType = "application/json"
 		cfg.AcceptContentTypes = "application/json"
 	}
 	networkClient := arktos.NewForConfigOrDie(&crConfigs)
 
-	dynamicClient, err := dynamic.NewForConfig(tnKubeConfigs)
+	dynamicClient, err := dynamic.NewForConfig(tenantControllerCommonCfg)
 	if err != nil {
 		return nil, true, err
 	}

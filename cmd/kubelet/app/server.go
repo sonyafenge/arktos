@@ -24,7 +24,6 @@ import (
 	"errors"
 	"fmt"
 	arktos "k8s.io/arktos-ext/pkg/generated/clientset/versioned"
-	"k8s.io/client-go/datapartition"
 	"math/rand"
 	"net"
 	"net/http"
@@ -1137,7 +1136,7 @@ func startKubelet(k kubelet.Bootstrap, podCfg *config.PodConfig, kubeCfg *kubele
 	}
 
 	// start apiserver config manager
-	go datapartition.StartAPIServerConfigManagerAndInformerFactory(kubeDeps.KubeClient, wait.NeverStop)
+	// go datapartition.StartAPIServerConfigManagerAndInformerFactory(kubeDeps.KubeClient, wait.NeverStop)
 }
 
 func createAndInitKubelet(kubeCfg *kubeletconfiginternal.KubeletConfiguration,

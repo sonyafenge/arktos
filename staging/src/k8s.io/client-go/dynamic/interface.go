@@ -23,10 +23,12 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/types"
 	"k8s.io/apimachinery/pkg/watch"
+	"k8s.io/client-go/rest"
 )
 
 type Interface interface {
 	Resource(resource schema.GroupVersionResource) NamespaceableResourceInterface
+	GetClient() *rest.RESTClient
 }
 
 type ResourceInterface interface {

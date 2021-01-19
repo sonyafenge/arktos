@@ -110,6 +110,20 @@ func (c *dynamicClient) Resource(resource schema.GroupVersionResource) Namespace
 	return &dynamicResourceClient{client: c, resource: resource}
 }
 
+func (c *dynamicClient) GetClient() *rest.RESTClient {
+	max := len(c.clients)
+	switch max {
+	case 0:
+		return nil
+	case 1:
+		return c.clients[0]
+	default:
+		rand.Seed(time.Now().UnixNano())
+		ran := rand.Intn(max)
+		return c.clients[ran]
+	}
+}
+
 func (c *dynamicResourceClient) Namespace(ns string) ResourceInterface {
 	return c.NamespaceWithMultiTenancy(ns, metav1.TenantSystem)
 }
@@ -122,6 +136,20 @@ func (c *dynamicResourceClient) NamespaceWithMultiTenancy(ns string, tenant stri
 }
 
 func (c *dynamicResourceClient) getRestClient() *rest.RESTClient {
+	max := len(c.client.clients)
+	switch max {
+	case 0:
+		return nil
+	case 1:
+		return c.client.clients[0]
+	default:
+		rand.Seed(time.Now().UnixNano())
+		ran := rand.Intn(max)
+		return c.client.clients[ran]
+	}
+}
+
+func (c *dynamicResourceClient) GetClient() *rest.RESTClient {
 	max := len(c.client.clients)
 	switch max {
 	case 0:

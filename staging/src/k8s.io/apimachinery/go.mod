@@ -13,11 +13,11 @@ require (
 	github.com/golang/groupcache v0.0.0-20160516000752-02826c3e7903
 	github.com/golang/protobuf v1.3.2
 	github.com/google/go-cmp v0.3.0
-	github.com/google/gofuzz v1.1.0
+	github.com/google/gofuzz v1.0.0
 	github.com/google/uuid v1.1.1
-	github.com/googleapis/gnostic v0.1.0
+	github.com/googleapis/gnostic v0.0.0-20170729233727-0c5108395e2d
 	github.com/hashicorp/golang-lru v0.5.3
-	github.com/json-iterator/go v1.1.8
+	github.com/json-iterator/go v1.1.7
 	github.com/kr/pretty v0.2.0 // indirect
 	github.com/modern-go/reflect2 v1.0.1
 	github.com/mxk/go-flowrate v0.0.0-20140419014527-cca7078d478f
@@ -34,12 +34,11 @@ require (
 	gopkg.in/yaml.v2 v2.2.8
 	k8s.io/klog v1.0.0
 	k8s.io/kube-openapi v0.0.0-20200410145947-61e04a5be9a6
-	sigs.k8s.io/yaml v1.2.0
+	sigs.k8s.io/yaml v1.1.0
 )
 
 replace (
 	github.com/google/gofuzz => github.com/google/gofuzz v0.0.0-20170612174753-24818f796faf
-	github.com/googleapis/gnostic => github.com/googleapis/gnostic v0.0.0-20170729233727-0c5108395e2d
 	github.com/hashicorp/golang-lru => github.com/hashicorp/golang-lru v0.5.0
 	github.com/json-iterator/go => github.com/json-iterator/go v0.0.0-20180701071628-ab8a2e0c74be
 	github.com/mailru/easyjson => github.com/mailru/easyjson v0.0.0-20190626092158-b2ccc519800e
@@ -48,5 +47,4 @@ replace (
 	golang.org/x/text => golang.org/x/text v0.3.1-0.20181227161524-e6919f6577db
 	gopkg.in/check.v1 => gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127
 	k8s.io/apimachinery => ../apimachinery
-	sigs.k8s.io/yaml => sigs.k8s.io/yaml v1.1.0
 )

@@ -27,7 +27,7 @@ require (
 	k8s.io/code-generator v0.0.0
 	k8s.io/component-base v0.0.0
 	k8s.io/klog v1.0.0
-	k8s.io/kube-openapi v0.0.0-20200121204235-bf4fb3bd569c
+	k8s.io/kube-openapi v0.0.0-20200410145947-61e04a5be9a6
 	k8s.io/utils v0.0.0-20200324210504-a9aa75ae1b89
 	sigs.k8s.io/yaml v1.2.0
 )
@@ -72,7 +72,6 @@ replace (
 	k8s.io/client-go => ../client-go
 	k8s.io/code-generator => ../code-generator
 	k8s.io/component-base => ../component-base
-	k8s.io/kube-openapi => k8s.io/kube-openapi v0.0.0-20190228160746-b3a7cee44a30
 	k8s.io/utils => k8s.io/utils v0.0.0-20190221042446-c2654d5206da
 	sigs.k8s.io/yaml => sigs.k8s.io/yaml v1.1.0
 )

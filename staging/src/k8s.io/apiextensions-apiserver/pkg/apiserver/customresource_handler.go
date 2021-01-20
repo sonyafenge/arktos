@@ -67,6 +67,7 @@ import (
 	apifilters "k8s.io/apiserver/pkg/endpoints/filters"
 	"k8s.io/apiserver/pkg/endpoints/handlers"
 	"k8s.io/apiserver/pkg/endpoints/handlers/fieldmanager"
+	"k8s.io/apiserver/pkg/endpoints/handlers/responsewriters"
 	"k8s.io/apiserver/pkg/endpoints/metrics"
 	apirequest "k8s.io/apiserver/pkg/endpoints/request"
 	"k8s.io/apiserver/pkg/features"
@@ -579,7 +580,7 @@ func (r *crdHandler) GetCustomResourceStorage(tenant, crdName, version string) (
 	}
 
 	var crdInfo *crdInfo
-	crdInfo, err = r.getOrCreateServingInfoFor(crd)
+	crdInfo, err = r.getOrCreateServingInfoFor(crd.UID, crd.Name)
 	if err != nil {
 		return nil, fmt.Errorf("cannot get or create CRD info struct for %s of tenant %s: %v", crdName, tenant, err)
 	}

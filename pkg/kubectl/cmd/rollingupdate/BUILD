@@ -8,7 +8,6 @@ go_library(
     deps = [
         "//pkg/kubectl:go_default_library",
         "//pkg/kubectl/cmd/util:go_default_library",
-        "//pkg/kubectl/scheme:go_default_library",
         "//pkg/kubectl/util:go_default_library",
         "//pkg/kubectl/util/i18n:go_default_library",
         "//pkg/kubectl/util/templates:go_default_library",
@@ -23,6 +22,7 @@ go_library(
         "//staging/src/k8s.io/cli-runtime/pkg/resource:go_default_library",
         "//staging/src/k8s.io/client-go/kubernetes:go_default_library",
         "//staging/src/k8s.io/client-go/scale:go_default_library",
+        "//staging/src/k8s.io/kubectl/pkg/scheme:go_default_library",
         "//vendor/github.com/spf13/cobra:go_default_library",
         "//vendor/k8s.io/klog:go_default_library",
     ],

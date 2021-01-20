@@ -46,7 +46,6 @@ go_test(
         "//staging/src/k8s.io/client-go/rest/fake:go_default_library",
         "//staging/src/k8s.io/kubectl/pkg/scheme:go_default_library",
         "//vendor/github.com/spf13/cobra:go_default_library",
-        "//vendor/k8s.io/kubernetes/pkg/kubectl/scheme:go_default_library",
     ],
 )
 

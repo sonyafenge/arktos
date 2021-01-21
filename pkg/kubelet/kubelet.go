@@ -484,10 +484,16 @@ func NewMainKubelet(kubeCfg *kubeletconfiginternal.KubeletConfiguration,
 		protocol = utilipt.ProtocolIpv6
 	}
 
-	klog.Infof("kube client QPS %v, rate limiter %p", kubeDeps.KubeClient.CoreV1().RESTClient().GetRateLimiter().QPS(),
-		kubeDeps.KubeClient.CoreV1().RESTClient().GetRateLimiter())
-	klog.Infof("kube heartbeat client QPS %v, rate limiter %p", kubeDeps.HeartbeatClient.CoreV1().RESTClient().GetRateLimiter().QPS(),
-		kubeDeps.HeartbeatClient.CoreV1().RESTClient().GetRateLimiter())
+	if kubeDeps.KubeClient != nil && kubeDeps.KubeClient.CoreV1().RESTClient() != nil &&
+		kubeDeps.KubeClient.CoreV1().RESTClient().GetRateLimiter() != nil {
+		klog.Infof("kube client QPS %v, rate limiter %p", kubeDeps.KubeClient.CoreV1().RESTClient().GetRateLimiter().QPS(),
+			kubeDeps.KubeClient.CoreV1().RESTClient().GetRateLimiter())
+	}
+	if kubeDeps.HeartbeatClient != nil && kubeDeps.HeartbeatClient.CoreV1().RESTClient() != nil &&
+		kubeDeps.HeartbeatClient.CoreV1().RESTClient().GetRateLimiter() != nil {
+		klog.Infof("kube heartbeat client QPS %v, rate limiter %p", kubeDeps.HeartbeatClient.CoreV1().RESTClient().GetRateLimiter().QPS(),
+			kubeDeps.HeartbeatClient.CoreV1().RESTClient().GetRateLimiter())
+	}
 	klet := &Kubelet{
 		hostname:                                hostname,
 		hostnameOverridden:                      len(hostnameOverride) > 0,

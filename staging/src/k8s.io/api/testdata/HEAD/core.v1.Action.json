@@ -7,9 +7,9 @@
     "tenant": "4",
     "namespace": "5",
     "selfLink": "6",
-    "uid": "ą飋īqJ枊a8衍`Ĩɘ.蘯6ċV夸e",
-    "hashKey": 2234230302359329354,
-    "resourceVersion": "16964250748386560239",
+    "uid": "7",
+    "hashKey": 3414760188119455639,
+    "resourceVersion": "11042405498087606203",
     "generation": 5828590068104375683,
     "creationTimestamp": null,
     "deletionGracePeriodSeconds": 6797158496028726353,
@@ -39,33 +39,33 @@
         "manager": "17",
         "operation": "鐊唊飙Ş-U圴÷a/ɔ}摁(湗Ć]",
         "apiVersion": "18",
-        "fields": {"19":{"20":null}}
+        "fieldsType": "19"
       }
     ]
   },
   "spec": {
-    "nodeName": "25",
-    "podName": "26",
-    "podID": "27",
+    "nodeName": "20",
+    "podName": "21",
+    "podID": "22",
     "rebootAction": {
-      "delayInSeconds": -1978186127
+      "delayInSeconds": 896585016
     },
     "snapshotAction": {
-      "snapshotName": "28"
+      "snapshotName": "23"
     },
     "restoreAction": {
-      "snapshotID": "29"
+      "snapshotID": "24"
     }
   },
   "status": {
-    "error": "30",
-    "podName": "31",
-    "podID": "32",
+    "error": "25",
+    "podName": "26",
+    "podID": "27",
     "rebootStatus": {
-      "rebootSuccessful": true
+      
     },
     "snapshotStatus": {
-      "snapshotID": "33"
+      "snapshotID": "28"
     },
     "restoreStatus": {
       "restoreSuccessful": true

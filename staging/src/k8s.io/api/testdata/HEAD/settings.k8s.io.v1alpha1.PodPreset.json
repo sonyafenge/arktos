@@ -7,9 +7,9 @@
     "tenant": "4",
     "namespace": "5",
     "selfLink": "6",
-    "uid": "ą飋īqJ枊a8衍`Ĩɘ.蘯6ċV夸e",
-    "hashKey": 2234230302359329354,
-    "resourceVersion": "16964250748386560239",
+    "uid": "7",
+    "hashKey": 3414760188119455639,
+    "resourceVersion": "11042405498087606203",
     "generation": 5828590068104375683,
     "creationTimestamp": null,
     "deletionGracePeriodSeconds": 6797158496028726353,
@@ -39,47 +39,47 @@
         "manager": "17",
         "operation": "鐊唊飙Ş-U圴÷a/ɔ}摁(湗Ć]",
         "apiVersion": "18",
-        "fields": {"19":{"20":null}}
+        "fieldsType": "19"
       }
     ]
   },
   "spec": {
     "selector": {
       "matchLabels": {
-        "9n7yd745q0------2-2413-4lu-8-6r4404d5---g8c2-k9/Nx.G": "0M.y.g"
+        "8---jop9641lg.p-g8c2-k-912e5-c-e63-n-3n/E9.8ThjT9s-j41-0-6p-JFHn7y-74.-0MUORQQ.N2.3": "68._bQw.-dG6c-.6--_x.--0wmZk1_8._3s_-_Bq.m_4"
       },
       "matchExpressions": [
         {
-          "key": "68._bQw.-dG6c-.6--_x.--0wmZk1_8._3s_-B",
+          "key": "p503---477-49p---o61---4fy--9---7--9-9s-0-u5lj2--10pq-0-7-9-2-0/fP81.-.9Vdx.TB_M-H_5_.t..bG0",
           "operator": "In",
           "values": [
-            "Trcd-2.-__E_Sv__26KX_R_.-.Nth._--S_4DA_-5_-4lQ2"
+            "D07.a_.y_y_o0_5qN2_---_M.N_._a6.9bHjdH.-.5_.I8__n"
           ]
         }
       ]
     },
     "env": [
       {
-        "name": "31",
-        "value": "32",
+        "name": "26",
+        "value": "27",
         "valueFrom": {
           "fieldRef": {
-            "apiVersion": "33",
-            "fieldPath": "34"
+            "apiVersion": "28",
+            "fieldPath": "29"
           },
           "resourceFieldRef": {
-            "containerName": "35",
-            "resource": "36",
-            "divisor": "904"
+            "containerName": "30",
+            "resource": "31",
+            "divisor": "91"
           },
           "configMapKeyRef": {
-            "name": "37",
-            "key": "38",
-            "optional": true
+            "name": "32",
+            "key": "33",
+            "optional": false
           },
           "secretKeyRef": {
-            "name": "39",
-            "key": "40",
+            "name": "34",
+            "key": "35",
             "optional": true
           }
         }
@@ -87,296 +87,298 @@
     ],
     "envFrom": [
       {
-        "prefix": "41",
+        "prefix": "36",
         "configMapRef": {
-          "name": "42",
-          "optional": false
+          "name": "37",
+          "optional": true
         },
         "secretRef": {
-          "name": "43",
+          "name": "38",
           "optional": false
         }
       }
     ],
     "volumes": [
       {
-        "name": "44",
+        "name": "39",
         "hostPath": {
-          "path": "45",
-          "type": "訩塶\"=y钡n)İ笓珣筩Ɛ"
+          "path": "40",
+          "type": "3fƻfʣ繡楙¯ĦE"
         },
         "emptyDir": {
-          "medium": "_痸荎僋bŭ",
-          "sizeLimit": "837"
+          "sizeLimit": "700"
         },
         "gcePersistentDisk": {
-          "pdName": "46",
-          "fsType": "47",
-          "partition": -656741678
+          "pdName": "41",
+          "fsType": "42",
+          "partition": -1215463021,
+          "readOnly": true
         },
         "awsElasticBlockStore": {
-          "volumeID": "48",
-          "fsType": "49",
-          "partition": 459991461,
+          "volumeID": "43",
+          "fsType": "44",
+          "partition": 1686297225,
           "readOnly": true
         },
         "gitRepo": {
-          "repository": "50",
-          "revision": "51",
-          "directory": "52"
+          "repository": "45",
+          "revision": "46",
+          "directory": "47"
         },
         "secret": {
-          "secretName": "53",
+          "secretName": "48",
           "items": [
             {
-              "key": "54",
-              "path": "55",
-              "mode": 614353626
+              "key": "49",
+              "path": "50",
+              "mode": -815194340
             }
           ],
-          "defaultMode": -649405296,
+          "defaultMode": -999327618,
           "optional": false
         },
         "nfs": {
-          "server": "56",
-          "path": "57",
+          "server": "51",
+          "path": "52",
           "readOnly": true
         },
         "iscsi": {
-          "targetPortal": "58",
-          "iqn": "59",
-          "lun": 578888856,
-          "iscsiInterface": "60",
-          "fsType": "61",
+          "targetPortal": "53",
+          "iqn": "54",
+          "lun": -388204860,
+          "iscsiInterface": "55",
+          "fsType": "56",
           "readOnly": true,
           "portals": [
-            "62"
+            "57"
           ],
           "secretRef": {
-            "name": "63"
+            "name": "58"
           },
-          "initiatorName": "64"
+          "initiatorName": "59"
         },
         "glusterfs": {
-          "endpoints": "65",
-          "path": "66"
+          "endpoints": "60",
+          "path": "61"
         },
         "persistentVolumeClaim": {
-          "claimName": "67"
+          "claimName": "62"
         },
         "rbd": {
           "monitors": [
-            "68"
+            "63"
           ],
-          "image": "69",
-          "fsType": "70",
-          "pool": "71",
-          "user": "72",
-          "keyring": "73",
+          "image": "64",
+          "fsType": "65",
+          "pool": "66",
+          "user": "67",
+          "keyring": "68",
           "secretRef": {
-            "name": "74"
+            "name": "69"
           },
           "readOnly": true
         },
         "flexVolume": {
-          "driver": "75",
-          "fsType": "76",
+          "driver": "70",
+          "fsType": "71",
           "secretRef": {
-            "name": "77"
+            "name": "72"
           },
-          "readOnly": true,
           "options": {
-            "78": "79"
+            "73": "74"
           }
         },
         "cinder": {
-          "volumeID": "80",
-          "fsType": "81",
+          "volumeID": "75",
+          "fsType": "76",
           "secretRef": {
-            "name": "82"
+            "name": "77"
           }
         },
         "cephfs": {
           "monitors": [
-            "83"
+            "78"
           ],
-          "path": "84",
-          "user": "85",
-          "secretFile": "86",
+          "path": "79",
+          "user": "80",
+          "secretFile": "81",
           "secretRef": {
-            "name": "87"
-          }
+            "name": "82"
+          },
+          "readOnly": true
         },
         "flocker": {
-          "datasetName": "88",
-          "datasetUUID": "89"
+          "datasetName": "83",
+          "datasetUUID": "84"
         },
         "downwardAPI": {
           "items": [
             {
-              "path": "90",
+              "path": "85",
               "fieldRef": {
-                "apiVersion": "91",
-                "fieldPath": "92"
+                "apiVersion": "86",
+                "fieldPath": "87"
               },
               "resourceFieldRef": {
-                "containerName": "93",
-                "resource": "94",
-                "divisor": "458"
+                "containerName": "88",
+                "resource": "89",
+                "divisor": "965"
               },
-              "mode": -836939996
+              "mode": 345648859
             }
           ],
-          "defaultMode": -675641027
+          "defaultMode": 1169718433
         },
         "fc": {
           "targetWWNs": [
-            "95"
+            "90"
           ],
-          "lun": 599310027,
-          "fsType": "96",
+          "lun": -460478410,
+          "fsType": "91",
           "wwids": [
-            "97"
+            "92"
           ]
         },
         "azureFile": {
-          "secretName": "98",
-          "shareName": "99"
+          "secretName": "93",
+          "shareName": "94",
+          "readOnly": true
         },
         "configMap": {
-          "name": "100",
+          "name": "95",
           "items": [
             {
-              "key": "101",
-              "path": "102",
-              "mode": 587975894
+              "key": "96",
+              "path": "97",
+              "mode": -513127725
             }
           ],
-          "defaultMode": -1697933829,
-          "optional": false
+          "defaultMode": -958191807,
+          "optional": true
         },
         "vsphereVolume": {
-          "volumePath": "103",
-          "fsType": "104",
-          "storagePolicyName": "105",
-          "storagePolicyID": "106"
+          "volumePath": "98",
+          "fsType": "99",
+          "storagePolicyName": "100",
+          "storagePolicyID": "101"
         },
         "quobyte": {
-          "registry": "107",
-          "volume": "108",
-          "readOnly": true,
-          "user": "109",
-          "group": "110",
-          "tenant": "111"
+          "registry": "102",
+          "volume": "103",
+          "user": "104",
+          "group": "105",
+          "tenant": "106"
         },
         "azureDisk": {
-          "diskName": "112",
-          "diskURI": "113",
-          "cachingMode": "Mȗ礼2ħ籦ö嗏ʑ\u003e季Cʖ畬x骀Š",
-          "fsType": "114",
-          "readOnly": true,
-          "kind": "湙騘"
+          "diskName": "107",
+          "diskURI": "108",
+          "cachingMode": "穠C]躢|)黰eȪ嵛4$%Qɰ",
+          "fsType": "109",
+          "readOnly": false,
+          "kind": "Ï抴ŨfZhUʎ浵ɲõTo\u0026蕭k"
         },
         "photonPersistentDisk": {
-          "pdID": "115",
-          "fsType": "116"
+          "pdID": "110",
+          "fsType": "111"
         },
         "projected": {
           "sources": [
             {
               "secret": {
-                "name": "117",
+                "name": "112",
                 "items": [
                   {
-                    "key": "118",
-                    "path": "119",
-                    "mode": 663386308
+                    "key": "113",
+                    "path": "114",
+                    "mode": -163325250
                   }
                 ],
-                "optional": true
+                "optional": false
               },
               "downwardAPI": {
                 "items": [
                   {
-                    "path": "120",
+                    "path": "115",
                     "fieldRef": {
-                      "apiVersion": "121",
-                      "fieldPath": "122"
+                      "apiVersion": "116",
+                      "fieldPath": "117"
                     },
                     "resourceFieldRef": {
-                      "containerName": "123",
-                      "resource": "124",
-                      "divisor": "354"
+                      "containerName": "118",
+                      "resource": "119",
+                      "divisor": "85"
                     },
-                    "mode": -1545709933
+                    "mode": -1996616480
                   }
                 ]
               },
               "configMap": {
-                "name": "125",
+                "name": "120",
                 "items": [
                   {
-                    "key": "126",
-                    "path": "127",
-                    "mode": -1562726486
+                    "key": "121",
+                    "path": "122",
+                    "mode": -1120128337
                   }
                 ],
                 "optional": false
               },
               "serviceAccountToken": {
-                "audience": "128",
-                "expirationSeconds": 6413320236483872038,
-                "path": "129"
+                "audience": "123",
+                "expirationSeconds": -1239370187818888272,
+                "path": "124"
               }
             }
           ],
-          "defaultMode": 411507758
+          "defaultMode": 1366821517
         },
         "portworxVolume": {
-          "volumeID": "130",
-          "fsType": "131"
+          "volumeID": "125",
+          "fsType": "126",
+          "readOnly": true
         },
         "scaleIO": {
-          "gateway": "132",
-          "system": "133",
+          "gateway": "127",
+          "system": "128",
           "secretRef": {
-            "name": "134"
+            "name": "129"
           },
           "sslEnabled": true,
-          "protectionDomain": "135",
-          "storagePool": "136",
-          "storageMode": "137",
-          "volumeName": "138",
-          "fsType": "139"
+          "protectionDomain": "130",
+          "storagePool": "131",
+          "storageMode": "132",
+          "volumeName": "133",
+          "fsType": "134"
         },
         "storageos": {
-          "volumeName": "140",
-          "volumeNamespace": "141",
-          "fsType": "142",
+          "volumeName": "135",
+          "volumeNamespace": "136",
+          "fsType": "137",
           "secretRef": {
-            "name": "143"
+            "name": "138"
           }
         },
         "csi": {
-          "driver": "144",
-          "readOnly": false,
-          "fsType": "145",
+          "driver": "139",
+          "readOnly": true,
+          "fsType": "140",
           "volumeAttributes": {
-            "146": "147"
+            "141": "142"
           },
           "nodePublishSecretRef": {
-            "name": "148"
+            "name": "143"
           }
         }
       }
     ],
     "volumeMounts": [
       {
-        "name": "149",
-        "mountPath": "150",
-        "subPath": "151",
-        "mountPropagation": "ȥ啕禗Ǐ2啗塧",
-        "subPathExpr": "152"
+        "name": "144",
+        "readOnly": true,
+        "mountPath": "145",
+        "subPath": "146",
+        "mountPropagation": "腿ħ缶.蒅!a",
+        "subPathExpr": "147"
       }
     ]
   }

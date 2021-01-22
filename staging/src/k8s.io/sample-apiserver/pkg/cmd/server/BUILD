@@ -26,8 +26,8 @@ go_library(
         "//staging/src/k8s.io/sample-apiserver/pkg/apiserver:go_default_library",
         "//staging/src/k8s.io/sample-apiserver/pkg/generated/clientset/versioned:go_default_library",
         "//staging/src/k8s.io/sample-apiserver/pkg/generated/informers/externalversions:go_default_library",
+        "//staging/src/k8s.io/sample-apiserver/pkg/generated/openapi:go_default_library",
         "//vendor/github.com/spf13/cobra:go_default_library",
-        "//vendor/k8s.io/sample-apiserver/pkg/generated/openapi:go_default_library",
     ],
 )
 

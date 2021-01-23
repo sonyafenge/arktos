@@ -43,5 +43,6 @@ type ResourceInterface interface {
 // Getter handles both namespaced and non-namespaced resource types consistently.
 type Getter interface {
 	Namespace(string) ResourceInterface
+	NamespaceWithMultiTenancy(string, string) ResourceInterface
 	ResourceInterface
 }

@@ -346,7 +346,7 @@ func (gc *GarbageCollector) isDangling(reference metav1.OwnerReference, item *no
 	// status, but in practice, the difference is small.
 	namespace := resourceDefaultNamespace(namespaced, item.identity.Namespace)
 	tenant := resourceDefaultTenant(tenanted, item.identity.Tenant)
-	owner, err = gc.metadataClien.Resource(resource).NamespaceWithMultiTenancy(namespace, tenant).Get(reference.Name, metav1.GetOptions{})
+	owner, err = gc.metadataClient.Resource(resource).NamespaceWithMultiTenancy(namespace, tenant).Get(reference.Name, metav1.GetOptions{})
 	switch {
 	case errors.IsNotFound(err):
 		gc.absentOwnerCache.Add(reference.UID)

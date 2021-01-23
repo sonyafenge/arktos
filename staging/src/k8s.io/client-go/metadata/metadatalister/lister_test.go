@@ -249,6 +249,7 @@ func newPartialObjectMetadata(apiVersion, kind, namespace, name string) *metav1.
 			Kind:       kind,
 		},
 		ObjectMeta: metav1.ObjectMeta{
+			Tenant:    metav1.TenantSystem,
 			Namespace: namespace,
 			Name:      name,
 		},

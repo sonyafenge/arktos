@@ -74,7 +74,7 @@ func (gc *GarbageCollector) deleteObject(item objectReference, policy *metav1.De
 	return gc.metadataClient.Resource(resource).NamespaceWithMultiTenancy(namespace, tenant).Delete(item.Name, &deleteOptions)
 }
 
-func (gc *GarbageCollector) getObject(item objectReference) (*unstructured.Unstructured, error) {
+func (gc *GarbageCollector) getObject(item objectReference) (*metav1.PartialObjectMetadata, error) {
 	resource, namespaced, tenanted, err := gc.apiResource(item.APIVersion, item.Kind)
 	if err != nil {
 		return nil, err
@@ -85,7 +85,7 @@ func (gc *GarbageCollector) getObject(item objectReference) (*unstructured.Unstr
 	return gc.metadataClient.Resource(resource).NamespaceWithMultiTenancy(namespace, tenant).Get(item.Name, metav1.GetOptions{})
 }
 
-func (gc *GarbageCollector) patchObject(item objectReference, patch []byte, pt types.PatchType) (*unstructured.Unstructured, error) {
+func (gc *GarbageCollector) patchObject(item objectReference, patch []byte, pt types.PatchType) (*metav1.PartialObjectMetadata, error) {
 	resource, namespaced, tenanted, err := gc.apiResource(item.APIVersion, item.Kind)
 	if err != nil {
 		return nil, err

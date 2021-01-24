@@ -235,7 +235,8 @@ func TestClient(t *testing.T) {
 			s := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) { tt.handler(t, w, req) }))
 			defer s.Close()
 
-			cfg := ConfigFor(&rest.Config{Host: s.URL})
+			kubeConfig := &rest.KubeConfig{Host: s.URL}
+			cfg := ConfigFor(rest.NewAggregatedConfig(kubeConfig))
 			client := NewForConfigOrDie(cfg).(*Client)
 			tt.want(t, client)
 		})

@@ -543,9 +543,10 @@ func TestMetadataClient(t *testing.T) {
 					t.Fatalf("unable to create service: %v", err)
 				}
 
-				cfg := metadata.ConfigFor(&restclient.Config{Host: s.URL})
+				kubeConfig := &restclient.KubeConfig{Host: s.URL}
+				cfg := metadata.ConfigFor(restclient.NewAggregatedConfig(kubeConfig))
 				wrapper := &callWrapper{}
-				cfg.Wrap(func(rt http.RoundTripper) http.RoundTripper {
+				cfg.GetConfig().Wrap(func(rt http.RoundTripper) http.RoundTripper {
 					wrapper.nested = rt
 					return wrapper
 				})
@@ -622,7 +623,7 @@ func TestMetadataClient(t *testing.T) {
 
 				cfg := metadata.ConfigFor(config)
 				wrapper := &callWrapper{}
-				cfg.Wrap(func(rt http.RoundTripper) http.RoundTripper {
+				cfg.GetConfig().Wrap(func(rt http.RoundTripper) http.RoundTripper {
 					wrapper.nested = rt
 					return wrapper
 				})
@@ -686,9 +687,10 @@ func TestMetadataClient(t *testing.T) {
 					t.Fatalf("unable to patch cr: %v", err)
 				}
 
-				cfg := metadata.ConfigFor(&restclient.Config{Host: s.URL})
+				kubeConfig := &restclient.KubeConfig{Host: s.URL}
+				cfg := metadata.ConfigFor(restclient.NewAggregatedConfig(kubeConfig))
 				wrapper := &callWrapper{}
-				cfg.Wrap(func(rt http.RoundTripper) http.RoundTripper {
+				cfg.GetConfig().Wrap(func(rt http.RoundTripper) http.RoundTripper {
 					wrapper.nested = rt
 					return wrapper
 				})
@@ -760,7 +762,7 @@ func TestMetadataClient(t *testing.T) {
 				}
 
 				wrapper := &callWrapper{}
-				cfg.Wrap(func(rt http.RoundTripper) http.RoundTripper {
+				cfg.GetConfig().Wrap(func(rt http.RoundTripper) http.RoundTripper {
 					wrapper.nested = rt
 					return wrapper
 				})

@@ -31,7 +31,7 @@ import (
 func TestFieldsRoundTrip(t *testing.T) {
 	tests := []metav1.FieldsV1{
 		{
-			Raw: []byte(`{"f:metadata":{".":{},"f:name":{}}}`),
+			Raw: []byte(`{"f:metadata":{"f:name":{},".":{}}}`),
 		},
 		EmptyFields,
 	}

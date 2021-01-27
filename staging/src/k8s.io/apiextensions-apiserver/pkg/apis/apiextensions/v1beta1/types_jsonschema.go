@@ -99,6 +99,9 @@ type JSONSchemaProps struct {
 	// extension set to "map". Also, the values specified for this attribute must
 	// be a scalar typed field of the child structure (no nesting is supported).
 	//
+	// The properties specified must either be required or have a default value,
+	// to ensure those properties are present for all list items.
+	//
 	// +optional
 	XListMapKeys []string `json:"x-kubernetes-list-map-keys,omitempty" protobuf:"bytes,41,rep,name=xKubernetesListMapKeys"`
 
@@ -110,7 +113,8 @@ type JSONSchemaProps struct {
 	//      may be used on any type of list (struct, scalar, ...).
 	// 2) `set`:
 	//      Sets are lists that must not have multiple items with the same value. Each
-	//      value must be a scalar (or another atomic type).
+	//      value must be a scalar, an object with x-kubernetes-map-type `atomic` or an
+	//      array with x-kubernetes-list-type `atomic`.
 	// 3) `map`:
 	//      These lists are like maps in that their elements have a non-index key
 	//      used to identify them. Order is preserved upon merge. The map tag

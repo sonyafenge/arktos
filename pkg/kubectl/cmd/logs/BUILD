@@ -8,7 +8,7 @@ go_library(
     deps = [
         "//pkg/kubectl/cmd/util:go_default_library",
         "//pkg/kubectl/polymorphichelpers:go_default_library",
-        "//pkg/kubectl/scheme:go_default_library",
+        "//staging/src/k8s.io/kubectl/pkg/scheme:go_default_library",
         "//pkg/kubectl/util:go_default_library",
         "//pkg/kubectl/util/i18n:go_default_library",
         "//pkg/kubectl/util/templates:go_default_library",

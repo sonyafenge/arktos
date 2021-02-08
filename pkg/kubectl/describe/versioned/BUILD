@@ -8,7 +8,7 @@ go_library(
     deps = [
         "//pkg/features:go_default_library",
         "//pkg/kubectl/describe:go_default_library",
-        "//pkg/kubectl/scheme:go_default_library",
+        "//staging/src/k8s.io/kubectl/pkg/scheme:go_default_library",
         "//pkg/kubectl/util/certificate:go_default_library",
         "//pkg/kubectl/util/deployment:go_default_library",
         "//pkg/kubectl/util/event:go_default_library",

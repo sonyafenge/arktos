@@ -22,6 +22,9 @@ pkg/kubectl/cmd/create/create_clusterrolebinding_test.go
 pkg/kubectl/cmd/create/create_namespace_test.go
 pkg/kubectl/cmd/taint/taint_test.go
 pkg/kubelet/container/ref_test.go
+staging/src/k8s.io/api/admissionregistration/v1/doc.go
+staging/src/k8s.io/api/admissionregistration/v1/register.go
+staging/src/k8s.io/api/admissionregistration/v1/types.go
 staging/src/k8s.io/apimachinery/pkg/runtime/negotiate.go
 staging/src/k8s.io/apimachinery/pkg/runtime/serializer/json/json.go
 staging/src/k8s.io/apimachinery/pkg/runtime/serializer/protobuf/protobuf.go
@@ -65,5 +68,6 @@ staging/src/k8s.io/client-go/rest/fake/fake.go
 staging/src/k8s.io/client-go/rest/request_test.go
 staging/src/k8s.io/client-go/util/flowcontrol/throttle.go
 staging/src/k8s.io/client-go/util/flowcontrol/throttle_test.go
+staging/src/k8s.io/kubectl/pkg/scheme/install.go
 test/e2e/node/node_problem_detector.go
 test/integration/garbagecollector/garbage_collector_test.go

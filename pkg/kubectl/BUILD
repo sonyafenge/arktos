@@ -17,7 +17,7 @@ go_test(
     ],
     embed = [":go_default_library"],
     deps = [
-        "//pkg/kubectl/scheme:go_default_library",
+        "//staging/src/k8s.io/kubectl/pkg/scheme:go_default_library",
         "//pkg/kubectl/util:go_default_library",
         "//staging/src/k8s.io/api/apps/v1:go_default_library",
         "//staging/src/k8s.io/api/autoscaling/v1:go_default_library",
@@ -60,7 +60,7 @@ go_library(
     deps = [
         "//pkg/kubectl/apps:go_default_library",
         "//pkg/kubectl/describe/versioned:go_default_library",
-        "//pkg/kubectl/scheme:go_default_library",
+        "//staging/src/k8s.io/kubectl/pkg/scheme:go_default_library",
         "//pkg/kubectl/util:go_default_library",
         "//pkg/kubectl/util/deployment:go_default_library",
         "//pkg/kubectl/util/podutils:go_default_library",
@@ -115,7 +115,7 @@ filegroup(
         "//pkg/kubectl/metricsutil:all-srcs",
         "//pkg/kubectl/polymorphichelpers:all-srcs",
         "//pkg/kubectl/proxy:all-srcs",
-        "//pkg/kubectl/scheme:all-srcs",
+        "//staging/src/k8s.io/kubectl/pkg/scheme:all-srcs",
         "//pkg/kubectl/util:all-srcs",
         "//pkg/kubectl/validation:all-srcs",
         "//pkg/kubectl/version:all-srcs",

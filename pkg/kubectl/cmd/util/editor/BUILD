@@ -18,7 +18,7 @@ go_library(
         "//pkg/kubectl:go_default_library",
         "//pkg/kubectl/cmd/util:go_default_library",
         "//pkg/kubectl/cmd/util/editor/crlf:go_default_library",
-        "//pkg/kubectl/scheme:go_default_library",
+        "//staging/src/k8s.io/kubectl/pkg/scheme:go_default_library",
         "//pkg/kubectl/util/term:go_default_library",
         "//staging/src/k8s.io/api/core/v1:go_default_library",
         "//staging/src/k8s.io/apimachinery/pkg/api/errors:go_default_library",

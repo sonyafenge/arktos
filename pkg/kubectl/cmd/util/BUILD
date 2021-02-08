@@ -15,7 +15,7 @@ go_library(
     deps = [
         "//pkg/kubectl/cmd/util/openapi:go_default_library",
         "//pkg/kubectl/cmd/util/openapi/validation:go_default_library",
-        "//pkg/kubectl/scheme:go_default_library",
+        "//staging/src/k8s.io/kubectl/pkg/scheme:go_default_library",
         "//pkg/kubectl/util/templates:go_default_library",
         "//pkg/kubectl/validation:go_default_library",
         "//pkg/kubectl/version:go_default_library",
@@ -53,7 +53,7 @@ go_test(
     ],
     embed = [":go_default_library"],
     deps = [
-        "//pkg/kubectl/scheme:go_default_library",
+        "//staging/src/k8s.io/kubectl/pkg/scheme:go_default_library",
         "//staging/src/k8s.io/api/core/v1:go_default_library",
         "//staging/src/k8s.io/apimachinery/pkg/api/equality:go_default_library",
         "//staging/src/k8s.io/apimachinery/pkg/api/errors:go_default_library",

@@ -4,6 +4,12 @@ cmd/preferredimports/preferredimports.go
 hack/update-import-aliases.sh
 hack/verify-import-aliases.sh
 hack/make-rules/verify.sh
+pkg/apis/admissionregistration/install/install.go
+pkg/apis/admissionregistration/v1/defaults.go
+pkg/apis/admissionregistration/v1/defaults_test.go
+pkg/apis/admissionregistration/v1beta1/defaults_test.go
+pkg/apis/admissionregistration/v1/doc.go
+pkg/apis/admissionregistration/v1/register.go
 pkg/cloudfabric-controller/client_builder.go
 pkg/cloudfabric-controller/controller_ref_manager.go
 pkg/cloudfabric-controller/controller_ref_manager_test.go
@@ -22,6 +28,10 @@ pkg/kubectl/cmd/create/create_clusterrolebinding_test.go
 pkg/kubectl/cmd/create/create_namespace_test.go
 pkg/kubectl/cmd/taint/taint_test.go
 pkg/kubelet/container/ref_test.go
+pkg/kubectl/scheme/install.go
+staging/src/k8s.io/api/admissionregistration/v1/doc.go
+staging/src/k8s.io/api/admissionregistration/v1/register.go
+staging/src/k8s.io/api/admissionregistration/v1/types.go
 staging/src/k8s.io/apimachinery/pkg/runtime/negotiate.go
 staging/src/k8s.io/apimachinery/pkg/runtime/serializer/json/json.go
 staging/src/k8s.io/apimachinery/pkg/runtime/serializer/protobuf/protobuf.go

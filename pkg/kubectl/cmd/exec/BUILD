@@ -8,7 +8,6 @@ go_library(
     deps = [
         "//pkg/kubectl/cmd/util:go_default_library",
         "//pkg/kubectl/polymorphichelpers:go_default_library",
-        "//staging/src/k8s.io/kubectl/pkg/scheme:go_default_library",
         "//pkg/kubectl/util/i18n:go_default_library",
         "//pkg/kubectl/util/interrupt:go_default_library",
         "//pkg/kubectl/util/templates:go_default_library",
@@ -20,6 +19,7 @@ go_library(
         "//staging/src/k8s.io/client-go/kubernetes/typed/core/v1:go_default_library",
         "//staging/src/k8s.io/client-go/rest:go_default_library",
         "//staging/src/k8s.io/client-go/tools/remotecommand:go_default_library",
+        "//staging/src/k8s.io/kubectl/pkg/scheme:go_default_library",
         "//vendor/github.com/docker/docker/pkg/term:go_default_library",
         "//vendor/github.com/spf13/cobra:go_default_library",
     ],
@@ -31,7 +31,6 @@ go_test(
     embed = [":go_default_library"],
     deps = [
         "//pkg/kubectl/cmd/testing:go_default_library",
-        "//staging/src/k8s.io/kubectl/pkg/scheme:go_default_library",
         "//pkg/kubectl/util/term:go_default_library",
         "//staging/src/k8s.io/api/core/v1:go_default_library",
         "//staging/src/k8s.io/apimachinery/pkg/apis/meta/v1:go_default_library",
@@ -40,6 +39,7 @@ go_test(
         "//staging/src/k8s.io/client-go/rest:go_default_library",
         "//staging/src/k8s.io/client-go/rest/fake:go_default_library",
         "//staging/src/k8s.io/client-go/tools/remotecommand:go_default_library",
+        "//staging/src/k8s.io/kubectl/pkg/scheme:go_default_library",
     ],
 )
 

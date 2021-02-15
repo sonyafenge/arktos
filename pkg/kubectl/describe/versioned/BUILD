@@ -8,7 +8,6 @@ go_library(
     deps = [
         "//pkg/features:go_default_library",
         "//pkg/kubectl/describe:go_default_library",
-        "//staging/src/k8s.io/kubectl/pkg/scheme:go_default_library",
         "//pkg/kubectl/util/certificate:go_default_library",
         "//pkg/kubectl/util/deployment:go_default_library",
         "//pkg/kubectl/util/event:go_default_library",
@@ -50,6 +49,7 @@ go_library(
         "//staging/src/k8s.io/client-go/kubernetes/typed/core/v1:go_default_library",
         "//staging/src/k8s.io/client-go/rest:go_default_library",
         "//staging/src/k8s.io/client-go/tools/reference:go_default_library",
+        "//staging/src/k8s.io/kubectl/pkg/scheme:go_default_library",
         "//vendor/github.com/fatih/camelcase:go_default_library",
         "//vendor/k8s.io/klog:go_default_library",
     ],

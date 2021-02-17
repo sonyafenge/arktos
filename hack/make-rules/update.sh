@@ -78,6 +78,10 @@ done
 
 ${KUBE_ROOT}/hack/arktos_copyright.sh ${KUBE_ROOT} ${KUBE_ROOT}/_output
 
+if [[ "${CHERRY_PICK:-}" == "true" ]]; then
+	${KUBE_ROOT}/hack/arktos_cherrypick.sh ${KUBE_ROOT} ${KUBE_ROOT}/_output
+fi
+
 echo -e "${color_green:?}Update scripts completed successfully${color_norm}"
 
 echo "Now, let's check whether there is file updated."

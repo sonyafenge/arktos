@@ -194,7 +194,7 @@ check_and_add_arktos_copyright() {
     set -e
 }
 
-update_arktos_copyright() {
+patch_arktos_copyright() {
     local REPOFILE=$1
     local tstamp=$($STAT_CMD $REPOFILE)
     if [[ $REPOFILE = *.go ]] || [[ $REPOFILE = *.proto ]]
@@ -202,6 +202,18 @@ update_arktos_copyright() {
         $SED_CMD -i "/$K8S_COPYRIGHT_MATCH/a $ARKTOS_COPYRIGHT_LINE_MODIFIED_GO" $REPOFILE
     else
         $SED_CMD -i "/$K8S_COPYRIGHT_MATCH/a $ARKTOS_COPYRIGHT_LINE_MODIFIED_OTHER" $REPOFILE
+    fi
+    $TOUCH_CMD "$tstamp" $REPOFILE
+}
+
+replace_arktos_copyright() {
+    local REPOFILE=$1
+    local tstamp=$($STAT_CMD $REPOFILE)
+    if [[ $REPOFILE = *.go ]] || [[ $REPOFILE = *.proto ]]
+    then
+        $SED_CMD -i "/$ARKTOS_COPYRIGHT_MATCH/s/.*/$ARKTOS_COPYRIGHT_LINE_NEW_GO/" $REPOFILE
+    else
+        $SED_CMD -i "/$ARKTOS_COPYRIGHT_MATCH/a $ARKTOS_COPYRIGHT_LINE_MODIFIED_OTHER" $REPOFILE
     fi
     $TOUCH_CMD "$tstamp" $REPOFILE
 }
@@ -215,10 +227,11 @@ check_and_update_arktos_copyright() {
         cat $REPOFILE | grep "$ARKTOS_COPYRIGHT_MATCH" > /dev/null 2>&1
         if [ $? -eq 0 ]
         then
-            echo "Modified file $REPOFILE has both K8s and Arktos copyright. Skipping." >> $LOGFILE
+            echo "Modified file $REPOFILE has both K8s and Arktos copyright. Replacing Arktos copyright with new date." >> $LOGFILE
+            replace_arktos_copyright $REPOFILE
         else
             echo "Modified file $REPOFILE has K8s copyright but not Arktos copyright. Patching." >> $LOGFILE
-            update_arktos_copyright $REPOFILE
+            patch_arktos_copyright $REPOFILE
         fi
     else
         echo "Modified file $REPOFILE does not have K8s copyright. Skipping." >> $LOGFILE

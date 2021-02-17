@@ -14,10 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ARKTOS_COPYRIGHT_LINE_NEW_GO="Copyright 2020 Authors of Arktos."
-ARKTOS_COPYRIGHT_LINE_NEW_OTHER="# Copyright 2020 Authors of Arktos."
-ARKTOS_COPYRIGHT_LINE_MODIFIED_GO="Copyright 2020 Authors of Arktos - file modified."
-ARKTOS_COPYRIGHT_LINE_MODIFIED_OTHER="# Copyright 2020 Authors of Arktos - file modified."
+ARKTOS_COPYRIGHT_LINE_NEW_GO="Copyright $( date +'%Y' ) Authors of Arktos."
+ARKTOS_COPYRIGHT_LINE_NEW_OTHER="# Copyright $( date +'%Y' ) Authors of Arktos."
+ARKTOS_COPYRIGHT_LINE_MODIFIED_GO="Copyright $( date +'%Y' ) Authors of Arktos - file modified."
+ARKTOS_COPYRIGHT_LINE_MODIFIED_OTHER="# Copyright $( date +'%Y' ) Authors of Arktos - file modified."
 K8S_COPYRIGHT_MATCH="The Kubernetes Authors"
 ARKTOS_COPYRIGHT_MATCH="Authors of Arktos"
 
@@ -123,9 +123,9 @@ setup_repos() {
 
 get_added_files_list() {
     pushd $REPODIRNAME
-    local DAY0_COMMIT=`git rev-list --max-parents=0 HEAD | tail -n 1`
+    local MERGED_COMMIT=$( git log --show-signature --oneline | grep "gpg: Signature made" | head -n 1 | cut -c1-7 )
     local HEAD_COMMIT=`git rev-list HEAD | head -n 1`
-    git diff --name-only --diff-filter=A $DAY0_COMMIT $HEAD_COMMIT | \
+    git diff --name-only --diff-filter=A $MERGED_COMMIT $HEAD_COMMIT | \
         egrep -v "\.git|\.md|\.bazelrc|\.json|\.pb|\.yaml|BUILD|boilerplate|vendor\/" | \
         egrep -v "perf-tests\/clusterloader2\/" | \
         egrep -v "staging\/src\/k8s.io\/component-base\/metrics\/" | \
@@ -141,9 +141,9 @@ get_added_files_list() {
 
 get_modified_files_list() {
     pushd $REPODIRNAME
-    local DAY0_COMMIT=`git rev-list --max-parents=0 HEAD | tail -n 1`
+    local MERGED_COMMIT=$( git log --show-signature --oneline | grep "gpg: Signature made" | head -n 1 | cut -c1-7 )
     local HEAD_COMMIT=`git rev-list HEAD | head -n 1`
-    git diff --name-only --diff-filter=M $DAY0_COMMIT $HEAD_COMMIT | \
+    git diff --name-only --diff-filter=M $MERGED_COMMIT $HEAD_COMMIT | \
         egrep -v "\.git|\.md|\.bazelrc|\.json|\.pb|\.yaml|BUILD|boilerplate|vendor\/" | \
         egrep -v "perf-tests\/clusterloader2\/" | \
         egrep -v "staging\/src\/k8s.io\/component-base\/metrics\/" | \

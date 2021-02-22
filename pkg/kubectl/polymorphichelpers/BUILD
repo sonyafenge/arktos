@@ -24,7 +24,6 @@ go_library(
     deps = [
         "//pkg/kubectl:go_default_library",
         "//pkg/kubectl/generate:go_default_library",
-        "//staging/src/k8s.io/kubectl/pkg/scheme:go_default_library",
         "//pkg/kubectl/util/podutils:go_default_library",
         "//staging/src/k8s.io/api/apps/v1:go_default_library",
         "//staging/src/k8s.io/api/apps/v1beta1:go_default_library",
@@ -45,6 +44,7 @@ go_library(
         "//staging/src/k8s.io/client-go/kubernetes/typed/core/v1:go_default_library",
         "//staging/src/k8s.io/client-go/rest:go_default_library",
         "//staging/src/k8s.io/client-go/tools/watch:go_default_library",
+        "//staging/src/k8s.io/kubectl/pkg/scheme:go_default_library",
     ],
 )
 

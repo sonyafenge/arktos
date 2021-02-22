@@ -181,6 +181,7 @@ require (
 	k8s.io/kube-openapi v0.0.0-20200121204235-bf4fb3bd569c
 	k8s.io/kube-proxy v0.0.0
 	k8s.io/kube-scheduler v0.0.0
+	k8s.io/kubectl v0.0.0-00010101000000-000000000000
 	k8s.io/kubelet v0.0.0
 	k8s.io/legacy-cloud-providers v0.0.0
 	k8s.io/metrics v0.0.0

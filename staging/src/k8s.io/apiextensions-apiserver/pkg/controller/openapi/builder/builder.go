@@ -42,7 +42,6 @@ import (
 	"k8s.io/kube-openapi/pkg/util"
 
 	"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions"
-	generatedopenapi "k8s.io/apiextensions-apiserver/pkg/generated/openapi"
 )
 
 const (

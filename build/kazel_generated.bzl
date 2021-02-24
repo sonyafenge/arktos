@@ -1,5 +1,4 @@
 # Copyright The Kubernetes Authors.
-# Copyright 2020 Authors of Arktos - file modified.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -105,6 +104,8 @@ tags_values_pkgs = {"openapi-gen": {
         "staging/src/k8s.io/metrics/pkg/apis/metrics/v1alpha1",
         "staging/src/k8s.io/metrics/pkg/apis/metrics/v1beta1",
         "staging/src/k8s.io/node-api/pkg/apis/node/v1alpha1",
+        "staging/src/k8s.io/sample-apiserver/pkg/apis/wardle/v1alpha1",
+        "staging/src/k8s.io/sample-apiserver/pkg/apis/wardle/v1beta1",
     ],
 }}
 
@@ -187,4 +188,6 @@ tags_pkgs_values = {"openapi-gen": {
     "staging/src/k8s.io/metrics/pkg/apis/metrics/v1alpha1": ["true"],
     "staging/src/k8s.io/metrics/pkg/apis/metrics/v1beta1": ["true"],
     "staging/src/k8s.io/node-api/pkg/apis/node/v1alpha1": ["true"],
+    "staging/src/k8s.io/sample-apiserver/pkg/apis/wardle/v1alpha1": ["true"],
+    "staging/src/k8s.io/sample-apiserver/pkg/apis/wardle/v1beta1": ["true"],
 }}

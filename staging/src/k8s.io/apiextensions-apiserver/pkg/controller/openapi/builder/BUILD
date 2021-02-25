@@ -22,7 +22,6 @@ go_library(
         "//staging/src/k8s.io/apimachinery/pkg/util/sets:go_default_library",
         "//staging/src/k8s.io/apiserver/pkg/endpoints:go_default_library",
         "//staging/src/k8s.io/apiserver/pkg/endpoints/openapi:go_default_library",
-        "//staging/src/k8s.io/apiserver/pkg/util/feature:go_default_library",
         "//vendor/github.com/emicklei/go-restful:go_default_library",
         "//vendor/github.com/go-openapi/spec:go_default_library",
         "//vendor/k8s.io/kube-openapi/pkg/aggregator:go_default_library",

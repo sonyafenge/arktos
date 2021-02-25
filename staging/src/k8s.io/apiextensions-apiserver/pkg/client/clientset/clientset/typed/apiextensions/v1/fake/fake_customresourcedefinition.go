@@ -123,15 +123,6 @@ func (c *FakeCustomResourceDefinitions) Delete(name string, options *v1.DeleteOp
 	return err
 }
 
-// DeleteCollection deletes a collection of objects.
-func (c *FakeCustomResourceDefinitions) DeleteCollection(options *v1.DeleteOptions, listOptions v1.ListOptions) error {
-
-	action := testing.NewTenantDeleteCollectionAction(customresourcedefinitionsResource, listOptions, c.te)
-
-	_, err := c.Fake.Invokes(action, &apiextensionsv1.CustomResourceDefinitionList{})
-	return err
-}
-
 // Patch applies the patch and returns the patched customResourceDefinition.
 func (c *FakeCustomResourceDefinitions) Patch(name string, pt types.PatchType, data []byte, subresources ...string) (result *apiextensionsv1.CustomResourceDefinition, err error) {
 	obj, err := c.Fake.

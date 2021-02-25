@@ -48,7 +48,6 @@ type CustomResourceDefinitionInterface interface {
 	Update(*v1.CustomResourceDefinition) (*v1.CustomResourceDefinition, error)
 	UpdateStatus(*v1.CustomResourceDefinition) (*v1.CustomResourceDefinition, error)
 	Delete(name string, options *metav1.DeleteOptions) error
-	DeleteCollection(options *metav1.DeleteOptions, listOptions metav1.ListOptions) error
 	Get(name string, options metav1.GetOptions) (*v1.CustomResourceDefinition, error)
 	List(opts metav1.ListOptions) (*v1.CustomResourceDefinitionList, error)
 	Watch(opts metav1.ListOptions) (watch.Interface, error)
@@ -314,22 +313,6 @@ func (c *customResourceDefinitions) Delete(name string, options *metav1.DeleteOp
 		Tenant(c.te).
 		Resource("customresourcedefinitions").
 		Name(name).
-		Body(options).
-		Do().
-		Error()
-}
-
-// DeleteCollection deletes a collection of objects.
-func (c *customResourceDefinitions) DeleteCollection(options *metav1.DeleteOptions, listOptions metav1.ListOptions) error {
-	var timeout time.Duration
-	if listOptions.TimeoutSeconds != nil {
-		timeout = time.Duration(*listOptions.TimeoutSeconds) * time.Second
-	}
-	return c.client.Delete().
-		Tenant(c.te).
-		Resource("customresourcedefinitions").
-		VersionedParams(&listOptions, scheme.ParameterCodec).
-		Timeout(timeout).
 		Body(options).
 		Do().
 		Error()

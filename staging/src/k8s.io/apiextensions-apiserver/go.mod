@@ -22,7 +22,6 @@ require (
 	go.etcd.io/etcd v0.5.0-alpha.5.0.20200224211402-c65a9e2dd1fd
 	google.golang.org/grpc v1.26.0
 	gopkg.in/yaml.v2 v2.2.8
-	gotest.tools v2.2.0+incompatible
 	k8s.io/api v0.0.0
 	k8s.io/apimachinery v0.0.0
 	k8s.io/apiserver v0.0.0
@@ -76,5 +75,4 @@ replace (
 	k8s.io/code-generator => ../code-generator
 	k8s.io/component-base => ../component-base
 	k8s.io/utils => k8s.io/utils v0.0.0-20190221042446-c2654d5206da
-	sigs.k8s.io/yaml => sigs.k8s.io/yaml v1.1.0
 )

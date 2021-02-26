@@ -22,5 +22,4 @@ replace (
 	k8s.io/api => ../api
 	k8s.io/apimachinery => ../apimachinery
 	k8s.io/kubelet => ../kubelet
-	sigs.k8s.io/yaml => sigs.k8s.io/yaml v1.1.0
 )

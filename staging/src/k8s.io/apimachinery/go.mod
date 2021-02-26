@@ -48,5 +48,4 @@ replace (
 	golang.org/x/text => golang.org/x/text v0.3.1-0.20181227161524-e6919f6577db
 	gopkg.in/check.v1 => gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127
 	k8s.io/apimachinery => ../apimachinery
-	sigs.k8s.io/yaml => sigs.k8s.io/yaml v1.1.0
 )

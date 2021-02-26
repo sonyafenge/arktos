@@ -63,5 +63,4 @@ replace (
 	k8s.io/csi-translation-lib => ../csi-translation-lib
 	k8s.io/legacy-cloud-providers => ../legacy-cloud-providers
 	k8s.io/utils => k8s.io/utils v0.0.0-20190221042446-c2654d5206da
-	sigs.k8s.io/yaml => sigs.k8s.io/yaml v1.1.0
 )

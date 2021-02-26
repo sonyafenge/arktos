@@ -34,5 +34,4 @@ replace (
 	gopkg.in/check.v1 => gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127
 	k8s.io/apimachinery => ../apimachinery
 	k8s.io/code-generator => ../code-generator
-	sigs.k8s.io/yaml => sigs.k8s.io/yaml v1.1.0
 )

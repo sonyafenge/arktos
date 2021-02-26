@@ -31,5 +31,5 @@ require (
 	k8s.io/klog v0.1.0
 	k8s.io/kubernetes v1.13.2
 	k8s.io/utils v0.0.0-20181221173059-8a16e7dd8fb6 // indirect
-	sigs.k8s.io/yaml v1.1.0 // indirect
+	sigs.k8s.io/yaml v1.2.0 // indirect
 )

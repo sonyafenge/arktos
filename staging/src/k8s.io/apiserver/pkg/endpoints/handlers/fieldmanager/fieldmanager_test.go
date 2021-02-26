@@ -136,10 +136,6 @@ func (f *TestFieldManager) Reset() {
 	f.liveObj = f.emptyObj.DeepCopyObject()
 }
 
-func (f *TestFieldManager) Reset() {
-	f.liveObj = f.emptyObj.DeepCopyObject()
-}
-
 func (f *TestFieldManager) Apply(obj runtime.Object, manager string, force bool) error {
 	out, err := fieldmanager.NewFieldManager(f.fieldManager).Apply(f.liveObj, obj, manager, force)
 	if err == nil {

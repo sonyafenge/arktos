@@ -98,11 +98,11 @@ func EncodeObjectManagedFields(obj runtime.Object, managed ManagedInterface) err
 		panic(fmt.Sprintf("couldn't get accessor: %v", err))
 	}
 
-	managed, err := encodeManagedFields(fields)
+	encodedManagedFields, err := encodeManagedFields(managed)
 	if err != nil {
 		return fmt.Errorf("failed to convert back managed fields to API: %v", err)
 	}
-	accessor.SetManagedFields(managed)
+	accessor.SetManagedFields(encodedManagedFields)
 
 	return nil
 }

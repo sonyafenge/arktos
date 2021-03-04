@@ -472,7 +472,7 @@ func toUnstructuredViaJSON(obj interface{}, u *map[string]interface{}) error {
 		return err
 	}
 	return json.Unmarshal(data, u)
-
+}
 
 func toUnstructured(sv, dv reflect.Value) error {
 	// Check if the object has a custom string converter.

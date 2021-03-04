@@ -92,6 +92,7 @@ func (c *typeConverter) ObjectToTyped(obj runtime.Object) (*typed.TypedValue, er
 		return t.FromUnstructured(o.UnstructuredContent())
 	default:
 		return t.FromStructured(obj)
+	}
 }
 
 func (c *typeConverter) TypedToObject(value *typed.TypedValue) (runtime.Object, error) {

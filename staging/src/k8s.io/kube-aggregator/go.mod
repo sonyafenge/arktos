@@ -63,6 +63,5 @@ replace (
 	k8s.io/code-generator => ../code-generator
 	k8s.io/component-base => ../component-base
 	k8s.io/kube-aggregator => ../kube-aggregator
-	k8s.io/utils => k8s.io/utils v0.0.0-20190221042446-c2654d5206da
 	sigs.k8s.io/yaml => sigs.k8s.io/yaml v1.1.0
 )

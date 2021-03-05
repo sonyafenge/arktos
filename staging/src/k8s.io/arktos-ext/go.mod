@@ -25,6 +25,5 @@ replace (
 	k8s.io/apimachinery => ../apimachinery
 	k8s.io/arktos-ext => ../arktos-ext
 	k8s.io/client-go => ../client-go
-	k8s.io/utils => k8s.io/utils v0.0.0-20190221042446-c2654d5206da
 	sigs.k8s.io/yaml => sigs.k8s.io/yaml v1.1.0
 )

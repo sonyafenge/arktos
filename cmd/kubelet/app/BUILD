@@ -149,10 +149,10 @@ go_library(
         "//vendor/k8s.io/utils/nsenter:go_default_library",
     ] + select({
         "@io_bazel_rules_go//go/platform:android": [
-            "//vendor/github.com/sigma/go-inotify:go_default_library",
+            "//vendor/k8s.io/utils/inotify:go_default_library",
         ],
         "@io_bazel_rules_go//go/platform:linux": [
-            "//vendor/github.com/sigma/go-inotify:go_default_library",
+            "//vendor/k8s.io/utils/inotify:go_default_library",
         ],
         "@io_bazel_rules_go//go/platform:windows": [
             "//pkg/windows/service:go_default_library",

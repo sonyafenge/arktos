@@ -193,7 +193,6 @@ go_test(
         ],
         "@io_bazel_rules_go//go/platform:ios": [
             "//pkg/proxy/ipvs:go_default_library",
-            "//pkg/util/iptables:go_default_library",
         ],
         "@io_bazel_rules_go//go/platform:linux": [
             "//pkg/proxy/ipvs:go_default_library",

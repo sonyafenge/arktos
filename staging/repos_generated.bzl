@@ -1,4 +1,5 @@
 # Copyright The Kubernetes Authors.
+# Copyright 2020 Authors of Arktos - file modified.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -37,6 +38,7 @@ staging_repos = [
     "k8s.io/kubelet",
     "k8s.io/legacy-cloud-providers",
     "k8s.io/metrics",
+    "k8s.io/node-api",
     "k8s.io/sample-apiserver",
     "k8s.io/sample-cli-plugin",
     "k8s.io/sample-controller",

@@ -1,4 +1,4 @@
-spackage(default_visibility = ["//visibility:public"])
+package(default_visibility = ["//visibility:public"])
 
 load(
     "@io_bazel_rules_go//go:def.bzl",

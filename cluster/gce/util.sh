@@ -3182,6 +3182,40 @@ function create-master() {
   create-partitionserver
 }
 
+function create-scaleout-master() {
+  set-scaleout-master()
+  create-proxy-server()
+  create-tp-server()
+  create-rp-server()
+}
+
+function set-scaleout-master()
+{
+  # generate all reserved static ip, internal IP
+  # generate all required token
+}
+
+function create-proxy-server()
+{
+  #config proxy server including firewalls, disks
+  #create-server-instance "${server_name}" "${SERVER_RESERVED_IP}" "${SERVER_RESERVED_INTERNAL_IP}"
+
+}
+
+function create-tp-server()
+{
+  #config tp servers including firewalls, disks
+  #create-server-instance "${server_name}" "${SERVER_RESERVED_IP}" "${SERVER_RESERVED_INTERNAL_IP}"
+  #create-server-instance including metadata information
+}
+
+function create-rp-server()
+{
+  #config rp server including firewalls, disks
+  #create-server-instance "${server_name}" "${SERVER_RESERVED_IP}" "${SERVER_RESERVED_INTERNAL_IP}"
+  #create-server-instance including metadata information
+}
+
 function set-partitionserver {
   local partitionserver_name=""
   local is_create=${1:-false}
